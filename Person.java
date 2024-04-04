@@ -23,7 +23,7 @@ public class Person
         age = newAge;
         address = newAddress;
         ssn = newSSN;
-    }
+    } 
 
     // setters 
     public void setName(String nameIn) 
@@ -151,4 +151,4 @@ public class Admin
 
     
 }
-
+ 
