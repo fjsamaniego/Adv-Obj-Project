@@ -11,7 +11,6 @@ This assignment is part of an academic course at The University of Texas at El P
 for the work we produced.
 */ 
 
-
 public class MineCars 
 {
     public class Person 
@@ -262,8 +261,32 @@ public class MineCars
     public class Log 
     {
         // attributes
+        private String password;
+        public Car[] listOfCars;
 
-        // setters & getters
+        /** Setters */
+        public void setPassword(String newPassword)
+        {
+            password = newPassword;
+        }
+
+        public void setListOfCars(Car[] newListC)
+        {
+            listOfCars = newListC;
+        }
+
+        /** Getters */
+
+        public String getPassword()
+        {
+            return password;
+        }
+
+        public Car[] getListOfCars()
+        {
+            return listOfCars;
+        }
+
     }
 
     public class RunShop 
