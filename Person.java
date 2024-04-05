@@ -11,61 +11,37 @@ This assignment is part of an academic course at The University of Texas at El P
 for the work we produced.
 */ 
 
-public class Person 
-{
-    public String name;
-    public int age;
-    public String address;
-    private int ssn ;
+public class Person {
+    private String username;
+    private String password;
 
-    public Person(String newName, int newAge, String newAddress, int newSSN) 
-    {
-        name = newName;
-        age = newAge;
-        address = newAddress;
-        ssn = newSSN;
+    public Person(String username, String password){
+        this.username = username;
+        this.password = password;
     } 
 
     // setters 
     public void setName(String nameIn) 
     {
-        name = nameIn;
+        this.username = nameIn;
     }
 
-    public void setAge(int ageIn) 
+    public void setPassword(String passwordIn) 
     {
-        age = ageIn;
+        this.username = passwordIn;
     }
 
-    public void setAddress(String addressIn) 
-    {
-        address = addressIn;
-    }
-
-    public void setSSN(int ssnIn) 
-    {
-        ssn = ssnIn;
-    }
 
     // getters
     public String getName() 
     {
-        return name;
+        return username;
     }
 
-    public int getAge() 
+    public String getPassword() 
     {
-        return age;
+        return password;
     }
 
-    public String getAddress() 
-    {
-        return address;
-    }
-
-    public int getSSN() 
-    {
-        return ssn;
-    }
 }   
 

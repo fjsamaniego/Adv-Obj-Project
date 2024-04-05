@@ -1,50 +1,28 @@
 public class User extends Person
 {
-    public String username;
-    public int customerID;
-    public int creditScore;
+    private userID;
+    private String firstName;
+    private String lastName;
+    private double moneyAvailable;
+    private int carsPurchased;
     
 
-    public User(String newUsername, int newCustomerID, int newCreditScore, String newName, 
-    int newAge, String newAddress, int newSSN) 
+    
+    public User(String username, String password, double userBudget) 
     {
-        super(newName, newAge, newAddress, newSSN);
-        username = newUsername;
-        customerID = newCustomerID;
-        creditScore = newCreditScore;
-        
+        super(username, password);
+        this.userBudget = userBudget;
     }
 
     /** Setters */
-    public void setUsername(String newUsername)
+    public void setBudget(double userBudget)
     {
-        username = newUsername;
+        this.userBudget = userBudget;
     }
 
-    public void setCustomerID(int newID)
+    public double getBudget()
     {
-        customerID = newID;
+        return userBudget;
     }
-
-    public void setCreditScore(int newCreditScore)
-    {
-        creditScore = newCreditScore;
-    }
-
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public int getCustomerID()
-    {
-        return customerID;
-    }
-
-    public int getCreditScore()
-    {
-        return creditScore;
-    }
-    
     
 }
