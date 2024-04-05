@@ -8,23 +8,20 @@ public class RunShop
     private static final Scanner scan = new Scanner(System.in);
     private static final UserAuthentication authenticate;
     private static List<User> users;
+
     static
     {
+        /** Loading all the users fromt the csv file */
         UserDataLoad loadU = new UserDataLoad();
         users = loadU.loadUsers("user_data.csv");
         authenticate = new UserAuthentication(users);
     }
-    
+
     public static void main(String[] args)
     {
         /** Loading all the cars from the csv file */
         CarDataLoad load = new CarDataLoad();
         List<Car> cars = load.loadCars("car_data.csv");
-
-        /** Loading all the users fromt the csv file */
-        
-        
-        
 
         /** Login page */
         boolean inSystem = true;
@@ -61,10 +58,26 @@ public class RunShop
 
     public static void login()
     {
-
+        boolean verified = false;
+        int attempts = 0;
+        while(attempts < 10 && !verified)
+        {
+            System.out.println("Username: ");
+            String usernameIN = scan.nextLine();
+            System.out.println("Password: ");
+            String passwordIn = scan.nextLine();
+            if(authenticate.verifyCredentials(usernameIN, passwordIn))
+            {
+                System.out.println("Welcome " + usernameIN);
+                verified = true;
+                userMenu();
+                
+            }
+            else
+                System.out.println("Username or password is incorrect. Please try again.");
+            attempts++;
+        }
     }
-    public static void runner3(){}
-
-    // setters & getters
+    
 }
 
