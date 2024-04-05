@@ -1,28 +1,93 @@
+
 public class User extends Person
 {
-    private userID;
+    private int userID;
     private String firstName;
     private String lastName;
     private double moneyAvailable;
     private int carsPurchased;
+    private boolean minerCarsMembership;
     
 
     
-    public User(String username, String password, double userBudget) 
+    public User(String username, String password, int userID, String firstName, String lastName, double moneyAvailable, 
+                int carsPurchased, boolean minerCarsMembership) 
     {
         super(username, password);
-        this.userBudget = userBudget;
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.moneyAvailable = moneyAvailable;
+        this.carsPurchased = carsPurchased;
+        this.minerCarsMembership = minerCarsMembership;
+    
     }
 
     /** Setters */
-    public void setBudget(double userBudget)
+    public void setUserID(int userID)
     {
-        this.userBudget = userBudget;
+        this.userID = userID;
     }
 
-    public double getBudget()
+    public void setFirstName(String firstName)
     {
-        return userBudget;
+        this.firstName = firstName;
     }
+
+    public void lastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    public void setMoneyAvailable(double moneyAvailable)
+    {
+        this.moneyAvailable = moneyAvailable;
+    }
+
+    public void setCarsPurchased(int carsPurchased)
+    {
+        this.carsPurchased = carsPurchased;
+    }
+
+    public void setMinerCarsMembership(boolean minerCarsMembership)
+    {
+        this.minerCarsMembership = minerCarsMembership;
+    }
+
     
+    /**
+     * 
+     * 
+     * @return
+     */
+    public double getID()
+    {
+        return userID;
+    }
+
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    public double getMoneyAvailable()
+    {
+        return moneyAvailable;
+    }
+
+    public int getCarsPurchased()
+    {
+        return carsPurchased;
+    }
+
+    public boolean getMinerCarsMembership()
+    {
+        return minerCarsMembership;
+    }
+
 }
