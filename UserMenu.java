@@ -53,9 +53,6 @@ public class UserMenu
 
     private void displayAllCars()
     {
-        // System.out.println("Car Type\t Model\t Condition\t"
-        // +"Color\t Capacity\t Mileage\t Fuel Type\t Transmission\t"
-        // +"Price\t Cars Available");
         System.out.println(String.format("%-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
             "Car Type", "Model", "Condition", "Color", "Capacity", "Mileage", "Fuel Type", "Transmission", 
             "Price", "Cars Available"));
