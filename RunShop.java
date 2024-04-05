@@ -70,7 +70,7 @@ public class RunShop
             {
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                userMenu();
+                //userMenu();
                 
             }
             else
