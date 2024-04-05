@@ -9,7 +9,11 @@ public class RunShop
     {
         /** Loading all the cars from the csv file */
         CarDataLoad load = new CarDataLoad();
-        List<Car> cars = load.loadCars("cars.csv");
+        List<Car> cars = load.loadCars("car_data.csv");
+
+        /** Loading all the users fromt the csv file */
+        UserDataLoad load2 = new UserDataLoad();
+        List<User> users = load2.loadUsers("user_data.csv");
 
         boolean inSystem = true;
         Scanner scan = new Scanner(System.in);

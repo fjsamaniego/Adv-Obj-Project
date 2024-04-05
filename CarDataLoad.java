@@ -34,6 +34,7 @@ public class CarDataLoad
                 price, carsAvailable);
 
                 cars.add(car);
+                line = br.readLine();
             }
 
         }

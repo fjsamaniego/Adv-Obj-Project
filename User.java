@@ -10,8 +10,9 @@ public class User extends Person
     
 
     
-    public User(String username, String password, int userID, String firstName, String lastName, double moneyAvailable, 
-                int carsPurchased, boolean minerCarsMembership) 
+    public User(int userID, String firstName, String lastName, double moneyAvailable, 
+                int carsPurchased, boolean minerCarsMembership, 
+                String username, String password) 
     {
         super(username, password);
         this.userID = userID;
