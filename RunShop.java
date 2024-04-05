@@ -44,12 +44,6 @@ public class RunShop
 
     }
 
-    public static Car[] retrieveCars()
-    {
-
-
-    }
-
     public static void runner2(){}
     public static void runner3(){}
 
