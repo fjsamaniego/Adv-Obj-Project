@@ -5,6 +5,16 @@ import java.util.List;
 public class RunShop 
 {
     // attributes
+    private static final Scanner scan = new Scanner(System.in);
+    private static final UserAuthentication authenticate;
+    private static List<User> users;
+    static
+    {
+        UserDataLoad loadU = new UserDataLoad();
+        users = loadU.loadUsers("user_data.csv");
+        authenticate = new UserAuthentication(users);
+    }
+    
     public static void main(String[] args)
     {
         /** Loading all the cars from the csv file */
@@ -12,11 +22,12 @@ public class RunShop
         List<Car> cars = load.loadCars("car_data.csv");
 
         /** Loading all the users fromt the csv file */
-        UserDataLoad load2 = new UserDataLoad();
-        List<User> users = load2.loadUsers("user_data.csv");
+        
+        
+        
 
+        /** Login page */
         boolean inSystem = true;
-        Scanner scan = new Scanner(System.in);
         while(inSystem)
         {
             System.out.println("Welcome to MineCars!");
@@ -48,7 +59,10 @@ public class RunShop
 
     }
 
-    public static void runner2(){}
+    public static void login()
+    {
+
+    }
     public static void runner3(){}
 
     // setters & getters
