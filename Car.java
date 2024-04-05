@@ -35,6 +35,7 @@ public class Car
         this.mileage = mileage;
         this.fuelType = fuelType;
         this.transmission = transmission;
+        this.price = price;
         this.vin = vin;
         this.carsAvailable = carsAvailable;
     }
