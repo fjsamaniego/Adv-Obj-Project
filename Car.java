@@ -25,7 +25,7 @@ public class Car {
      * 
      */
     public Car(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
-    String transmission, int vin, double price, int carsAvailable) {
+            String transmission, int vin, double price, int carsAvailable) {
         this.id = id;
         this.carType = carType;
         this.model = model;
