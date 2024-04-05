@@ -1,10 +1,16 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RunShop 
 {
     // attributes
     public static void main(String[] args)
     {
+        /** Loading all the cars from the csv file */
+        CarDataLoad load = new CarDataLoad();
+        List<Car> cars = load.loadCars("cars.csv");
+
         boolean inSystem = true;
         Scanner scan = new Scanner(System.in);
         while(inSystem)
@@ -38,7 +44,12 @@ public class RunShop
 
     }
 
-    public static void runner1(){}
+    public static Car[] retrieveCars()
+    {
+
+
+    }
+
     public static void runner2(){}
     public static void runner3(){}
 
