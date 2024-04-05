@@ -11,6 +11,7 @@ public class CarDataLoad
         List<Car> cars = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(file)))
         {
+            br.readLine();
             String line = br.readLine();
             while(line != null)
             {
