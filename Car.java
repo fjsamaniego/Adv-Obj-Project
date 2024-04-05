@@ -252,7 +252,24 @@ public class Car
     {
         return carsAvailable;
     }
+
+    public String toString()
+    {
+        // return carType + "\t"+
+        //     model + "\t"+
+        //     condition + "\t"+
+        //     color + "\t"+
+        //     capacity + "\t"+
+        //     mileage + "\t"+
+        //     fuelType + "\t"+
+        //     transmission + "\t"+
+        //     price + "\t"+
+        //     carsAvailable;
+        return String.format("%-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
+            carType, model, condition, color, capacity, mileage, fuelType, transmission, price, carsAvailable);
+    }
 }
+
 
 /**
  * 

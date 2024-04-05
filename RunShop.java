@@ -8,6 +8,7 @@ public class RunShop
     private static final Scanner scan = new Scanner(System.in);
     private static final UserAuthentication authenticate;
     private static List<User> users;
+    private static List<Car> cars;
 
     static
     {
@@ -15,13 +16,15 @@ public class RunShop
         UserDataLoad loadU = new UserDataLoad();
         users = loadU.loadUsers("user_data.csv");
         authenticate = new UserAuthentication(users);
+
+        /** Loading all the cars from the csv file */
+        CarDataLoad loadC = new CarDataLoad();
+        cars = loadC.loadCars("car_data.csv");
     }
 
     public static void main(String[] args)
     {
-        /** Loading all the cars from the csv file */
-        CarDataLoad load = new CarDataLoad();
-        List<Car> cars = load.loadCars("car_data.csv");
+        
 
         /** Login page */
         boolean inSystem = true;
@@ -58,6 +61,7 @@ public class RunShop
 
     public static void login()
     {
+        scan.nextLine();
         boolean verified = false;
         int attempts = 0;
         while(attempts < 10 && !verified)
@@ -70,8 +74,7 @@ public class RunShop
             {
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                //userMenu();
-                
+                new UserMenu(cars).MenuDisplay();
             }
             else
                 System.out.println("Username or password is incorrect. Please try again.");
