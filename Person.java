@@ -1,6 +1,6 @@
 /* 
 Cristina Alarcon & Francisco Samaniego
-March 29, 2024
+April 5, 2024
 CS 3331 -- Adv. Object-Oriented Programng
 Dr. Gurijala
 Car Dealership Project
@@ -10,6 +10,7 @@ view/received/modified code written from anyone else. All deliverables were prod
 This assignment is part of an academic course at The University of Texas at El Paso and a grade will be assigned
 for the work we produced.
 */ 
+
 public class Person 
 {
     public String name;
