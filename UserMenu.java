@@ -185,7 +185,7 @@ public class UserMenu
             System.out.println("Color: " + boughtCar.getColor());
             System.out.println();
         } else {
-            System.out.println("Car with ID " + choice + "not purchased or found.");
+            System.out.println("Car with ID " + choice + " not purchased or found.");
         }
     }
     
