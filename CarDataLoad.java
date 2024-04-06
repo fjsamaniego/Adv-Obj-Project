@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileWriter;
 
 public class CarDataLoad
 {
@@ -45,5 +47,27 @@ public class CarDataLoad
         }
 
         return cars;
+    }
+
+    public void updateCars(List<Car> cars, String file)
+    {
+        try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
+        {
+            wr.write("ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Price,Cars Available");
+
+            for(Car car : cars)
+            {
+                String newLine = String.format("%d,%s,%s,%s,%s,%d,%d,%s,%s,%s,%.2f,%d",
+                car.getID(), car.getCarType(), car.getModel(), car.getCondition(), 
+                car.getColor(), car.getCapacity(), car.getMileage(), car.getFuelType(),
+                car.getTransmission(), car.getVin(), car.getPrice(), car.getCarsAvailable());
+
+                wr.write(newLine);
+            }
+        }
+        catch (IOException e)
+        {
+            System.out.println("Error writing the new data");
+        }
     }
 }

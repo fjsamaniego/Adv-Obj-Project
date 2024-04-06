@@ -5,13 +5,20 @@ import java.util.ArrayList;
 public class UserMenu 
 {
     private List<Car> cars;
+    private List<User> users;
     private User currentUser;
     private Scanner scan;
+    private int purchasesMade = 0;
+    private String userFile;
+    private String carFile;
 
-    public UserMenu(List<Car> cars, User currentUser)
+    public UserMenu(List<Car> cars, List<User> users,User currentUser, String userFile, String carFile)
     {
         this.cars = cars;
+        this.users = users;
         this.currentUser = currentUser;
+        this.userFile = userFile;
+        this.carFile = carFile;
         this.scan = new Scanner(System.in);
     }
 
@@ -48,6 +55,7 @@ public class UserMenu
                     break;
                 case 5:
                     stillLoggedIn = false;
+                    signOut();
                     break;
                 default:
                     System.out.println("Please try again.");
@@ -155,11 +163,13 @@ public class UserMenu
                     System.out.println("You now currently have $" + currentUser.getMoneyAvailable() + " available.");
                     chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
+                    purchasesMade++;
                 }
-
-            } else {
+            } 
+            else{
                 System.out.println("Sorry, you currently do not have money available to purchase this car.");
             }
+
         } else {
             System.out.println("Sorry, the chosen car is currently not available for purchase.");
         }
@@ -193,4 +203,12 @@ public class UserMenu
         }
     }
     
+    private void signOut()
+    {
+        if(purchasesMade >= 1)
+        {
+            new UserDataLoad().updateUsers(users, userFile);;
+            new CarDataLoad().updateCars(cars, carFile);;
+        }
+    }
 }

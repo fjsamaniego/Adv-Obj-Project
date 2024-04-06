@@ -44,9 +44,9 @@ public class UserDataLoad
         return users;
     }
 
-    public void updateUsers(List<User> users, String newFile) 
+    public void updateUsers(List<User> users, String file) 
     {
-        try(BufferedWriter wr = new BufferedWriter(new FileWriter(newFile)))
+        try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
         {
             wr.write("ID,First Name,Last Name,Money Availale,Cars Purchased,"+
             "MinerCars Membership, Username, Password\n");
@@ -57,6 +57,8 @@ public class UserDataLoad
                 user.getID(), user.getFirstName(), user.getLastName(),
                 user.getMoneyAvailable(), user.getCarsPurchased(), user.getMinerCarsMembership() ? "True" : "False",
                 user.getUsername(), user.getPassword());
+
+                wr.write(newLine);
             }
         }
         catch (IOException e)
