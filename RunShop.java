@@ -71,6 +71,7 @@ public class RunShop
             String passwordIn = scan.nextLine();
             if(authenticate.verifyCredentials(usernameIN, passwordIn))
             {
+                System.out.println();
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
                 new UserMenu(cars, authenticate.getCurrentUser()).MenuDisplay();                

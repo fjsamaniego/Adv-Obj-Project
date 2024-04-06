@@ -259,6 +259,10 @@ public class Car
         return String.format("%-5s %-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
             id, carType, model, condition, color, capacity, mileage, fuelType, transmission, price, carsAvailable);
     }
+
+    // public String createTicket() {
+    //     return String.format("Car Type: %\nModel: %s\nColor: %s", carType, model, color);
+    // }
 }
 
 

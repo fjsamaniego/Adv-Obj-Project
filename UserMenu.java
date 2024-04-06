@@ -20,6 +20,7 @@ public class UserMenu
         boolean stillLoggedIn = true;
         while(stillLoggedIn)
         {   
+            System.out.println();
             System.out.println("MENU");
             System.out.println("1. Display all cars.");
             System.out.println("2. Filter Cars (used/new)");
@@ -112,6 +113,7 @@ public class UserMenu
         } 
     }
 
+
     private void purchaseCar()
     {
         System.out.println("Enter the ID of the car you would like to purchase:");
@@ -128,14 +130,28 @@ public class UserMenu
         }
 
         if (chosenCar != null && chosenCar.getCarsAvailable() > 0) {
-            System.out.println("You selected: " + chosenCar.getCarType() + ", " + chosenCar.getModel());
+            System.out.println("You selected: " + chosenCar);
 
             if (currentUser.getMoneyAvailable() >= chosenCar.getPrice()) 
             {
-                currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
-                chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
-                currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
-                System.out.println("You have successfully purchased: " + chosenCar + ".");
+                
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Are you sure you would like to continue with this purchase? (Y/N)");
+                String confirmation = scanner.next();
+                boolean proceed = false;
+
+                if (confirmation.equals("Y")){
+                    proceed = true;
+                } else {
+                    System.out.println("Transaction cancelled.");
+                }
+
+                if (proceed) {
+                    currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
+                    chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
+                    currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
+                    System.out.println("You have successfully purchased: " + chosenCar + ".");
+                }
 
             } else {
                 System.out.println("Sorry, you currently do not have money available to purchase this car.");
@@ -148,7 +164,29 @@ public class UserMenu
 
     private void viewTickets()
     {
+        
+        System.out.println("Enter the ID of the car purchased:");
+        displayCars();
+        int choice = scan.nextInt();
+        System.out.println();
 
+        Car boughtCar = null;
+        for (Car car : cars){
+            if (car.getID() == choice) {
+                boughtCar = car;
+                break;
+            }
+        }
+
+        if (boughtCar != null){
+            System.out.println("Tickets for purchased cars: ");
+            System.out.println("Car Type: " + boughtCar.getCarType());
+            System.out.println("Model: " + boughtCar.getModel());
+            System.out.println("Color: " + boughtCar.getColor());
+            System.out.println();
+        } else {
+            System.out.println("Car with ID " + choice + "not purchased or found.");
+        }
     }
     
 }

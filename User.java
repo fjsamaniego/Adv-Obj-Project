@@ -50,7 +50,7 @@ public class User extends Person
     {
         this.minerCarsMembership = minerCarsMembership;
     }
-
+    
     
     /**
      * 
