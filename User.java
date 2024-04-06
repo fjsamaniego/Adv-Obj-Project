@@ -87,4 +87,10 @@ public class User extends Person
         return minerCarsMembership;
     }
 
+    public String toString()
+    {
+        return String.format("%-5s %-15s %-18s %-10s",
+            userID, firstName, lastName, moneyAvailable);
+    }
+
 }

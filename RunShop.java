@@ -73,7 +73,7 @@ public class RunShop
             {
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                new UserMenu(cars).MenuDisplay();
+                new UserMenu(cars, authenticate.getCurrentUser()).MenuDisplay();                
             }
             else
                 System.out.println("Username or password is incorrect. Please try again.");

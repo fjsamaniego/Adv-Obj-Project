@@ -117,6 +117,7 @@ public class UserMenu
         System.out.println("Enter the ID of the car you would like to purchase:");
         displayCars();
         int choice = scan.nextInt();
+        System.out.println();
 
         Car chosenCar = null;
         for (Car car : cars){
@@ -129,7 +130,8 @@ public class UserMenu
         if (chosenCar != null && chosenCar.getCarsAvailable() > 0) {
             System.out.println("You selected: " + chosenCar.getCarType() + ", " + chosenCar.getModel());
 
-            if (currentUser.getMoneyAvailable() >= chosenCar.getPrice()) {
+            if (currentUser.getMoneyAvailable() >= chosenCar.getPrice()) 
+            {
                 currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
                 chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
                 currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);

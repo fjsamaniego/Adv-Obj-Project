@@ -24,7 +24,8 @@ public class UserAuthentication
         return false;
     }
 
-    public User getCurrentUser() {
+    public User getCurrentUser() 
+    {
         return currentUser;
     }
 
