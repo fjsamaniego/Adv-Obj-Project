@@ -147,10 +147,11 @@ public class UserMenu
                 }
 
                 if (proceed) {
+                    System.out.println("You have successfully purchased: " + chosenCar + ".");
                     currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
+                    System.out.println("You now currently have $" + currentUser.getMoneyAvailable() + " available.");
                     chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
-                    System.out.println("You have successfully purchased: " + chosenCar + ".");
                 }
 
             } else {
@@ -164,10 +165,10 @@ public class UserMenu
 
     private void viewTickets()
     {
-        
+
         System.out.println("Enter the ID of the car purchased:");
-        displayCars();
         int choice = scan.nextInt();
+        
         System.out.println();
 
         Car boughtCar = null;
