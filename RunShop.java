@@ -12,7 +12,7 @@ public class RunShop
 
     static
     {
-        /** Loading all the users fromt the csv file */
+        /** Loading all the users from the csv file */
         UserDataLoad loadU = new UserDataLoad();
         users = loadU.loadUsers("user_data.csv");
         authenticate = new UserAuthentication(users);
