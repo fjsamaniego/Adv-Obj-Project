@@ -6,5 +6,4 @@
 car_data.csv
 user_data.csv
 
-# Ignore all .csv files in the root directory (not in subdirectories)
-/*.csv
+

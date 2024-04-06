@@ -1,4 +1,3 @@
-
 public class User extends Person
 {
     private int userID;
@@ -8,9 +7,9 @@ public class User extends Person
     private int carsPurchased;
     private boolean minerCarsMembership;
     
-    public User(String username, String password, int userID, String firstName, String lastName, double moneyAvailable, 
-                int carsPurchased, boolean minerCarsMembership) 
-    {
+    public User(int userID, String firstName, String lastName, double moneyAvailable, 
+        int carsPurchased, boolean minerCarsMembership, String username, String password) {
+
         super(username, password);
         this.userID = userID;
         this.firstName = firstName;

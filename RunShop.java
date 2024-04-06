@@ -1,12 +1,33 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RunShop 
 {
     // attributes
+    private static final Scanner scan = new Scanner(System.in);
+    private static final UserAuthentication authenticate;
+    private static List<User> users;
+    private static List<Car> cars;
+
+    static
+    {
+        /** Loading all the users fromt the csv file */
+        UserDataLoad loadU = new UserDataLoad();
+        users = loadU.loadUsers("user_data.csv");
+        authenticate = new UserAuthentication(users);
+
+        /** Loading all the cars from the csv file */
+        CarDataLoad loadC = new CarDataLoad();
+        cars = loadC.loadCars("car_data.csv");
+    }
+
     public static void main(String[] args)
     {
+        
+
+        /** Login page */
         boolean inSystem = true;
-        Scanner scan = new Scanner(System.in);
         while(inSystem)
         {
             System.out.println("Welcome to MineCars!");
@@ -38,10 +59,28 @@ public class RunShop
 
     }
 
-    public static void runner1(){}
-    public static void runner2(){}
-    public static void runner3(){}
-
-    // setters & getters
+    public static void login()
+    {
+        scan.nextLine();
+        boolean verified = false;
+        int attempts = 0;
+        while(attempts < 10 && !verified)
+        {
+            System.out.println("Username: ");
+            String usernameIN = scan.nextLine();
+            System.out.println("Password: ");
+            String passwordIn = scan.nextLine();
+            if(authenticate.verifyCredentials(usernameIN, passwordIn))
+            {
+                System.out.println("Welcome " + usernameIN);
+                verified = true;
+                new UserMenu(cars).MenuDisplay();
+            }
+            else
+                System.out.println("Username or password is incorrect. Please try again.");
+            attempts++;
+        }
+    }
+    
 }
 

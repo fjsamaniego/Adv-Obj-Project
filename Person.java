@@ -33,7 +33,7 @@ public class Person {
 
 
     // getters
-    public String getName() 
+    public String getUsername() 
     {
         return username;
     }
