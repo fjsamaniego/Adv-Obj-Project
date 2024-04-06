@@ -116,7 +116,10 @@ public class UserMenu
 
     private void purchaseCar()
     {
+        System.out.println();
         System.out.println("Enter the ID of the car you would like to purchase:");
+
+        System.out.println();
         displayCars();
         int choice = scan.nextInt();
         System.out.println();
@@ -147,7 +150,7 @@ public class UserMenu
                 }
 
                 if (proceed) {
-                    System.out.println("You have successfully purchased: " + chosenCar + ".");
+                    System.out.println("Congratulations! You have successfully purchased the " + chosenCar);
                     currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
                     System.out.println("You now currently have $" + currentUser.getMoneyAvailable() + " available.");
                     chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
