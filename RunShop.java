@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 
 public class RunShop 
 {
@@ -14,17 +15,16 @@ public class RunShop
     {
         /** Loading all the users from the csv file */
         UserDataLoad loadU = new UserDataLoad();
-        users = loadU.loadUsers("user_data.csv");
+        users = loadU.loadUsers("updated_user_data.csv");
         authenticate = new UserAuthentication(users);
 
         /** Loading all the cars from the csv file */
         CarDataLoad loadC = new CarDataLoad();
-        cars = loadC.loadCars("car_data.csv");
+        cars = loadC.loadCars("updatedCarData.csv");
     }
 
     public static void main(String[] args)
-    {
-    
+    {  
         /** Login page */
         boolean inSystem = true;
         while(inSystem)
@@ -74,7 +74,7 @@ public class RunShop
                 System.out.println();
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updated_car_data.csv").MenuDisplay();                
+                new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
             }
             else
                 System.out.println("Username or password is incorrect. Please try again.");

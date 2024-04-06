@@ -53,14 +53,23 @@ public class CarDataLoad
     {
         try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
         {
-            wr.write("ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Price,Cars Available");
+            wr.write("ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Price,Cars Available\n");
 
             for(Car car : cars)
             {
-                String newLine = String.format("%d,%s,%s,%s,%s,%d,%d,%s,%s,%s,%.2f,%d",
-                car.getID(), car.getCarType(), car.getModel(), car.getCondition(), 
-                car.getColor(), car.getCapacity(), car.getMileage(), car.getFuelType(),
-                car.getTransmission(), car.getVin(), car.getPrice(), car.getCarsAvailable());
+                String newLine = String.format("%d,%s,%s,%s,%s,%d,%d,%s,%s,%s,%.2f,%d\n",
+                car.getID(), 
+                car.getCarType(), 
+                car.getModel(), 
+                car.getCondition(), 
+                car.getColor(), 
+                car.getCapacity(), 
+                car.getMileage(), 
+                car.getFuelType(),
+                car.getTransmission(), 
+                car.getVin(), 
+                car.getPrice(), 
+                car.getCarsAvailable());
 
                 wr.write(newLine);
             }

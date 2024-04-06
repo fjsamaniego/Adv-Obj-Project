@@ -57,7 +57,7 @@ public class User extends Person
      * 
      * @return
      */
-    public double getID()
+    public int getID()
     {
         return userID;
     }

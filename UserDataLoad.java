@@ -54,9 +54,14 @@ public class UserDataLoad
             for(User user : users)
             {
                 String newLine = String.format("%d,%s,%s,%.2f,%d,%s,%s,%s\n", 
-                user.getID(), user.getFirstName(), user.getLastName(),
-                user.getMoneyAvailable(), user.getCarsPurchased(), user.getMinerCarsMembership() ? "True" : "False",
-                user.getUsername(), user.getPassword());
+                user.getID(),
+                user.getFirstName(), 
+                user.getLastName(),
+                user.getMoneyAvailable(),
+                user.getCarsPurchased(), 
+                user.getMinerCarsMembership() ? "True" : "False",
+                user.getUsername(), 
+                user.getPassword());
 
                 wr.write(newLine);
             }
