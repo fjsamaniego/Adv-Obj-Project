@@ -8,8 +8,6 @@ public class User extends Person
     private int carsPurchased;
     private boolean minerCarsMembership;
     
-
-    
     public User(String username, String password, int userID, String firstName, String lastName, double moneyAvailable, 
                 int carsPurchased, boolean minerCarsMembership) 
     {
