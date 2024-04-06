@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDataLoad 
+public class UserDataLoad
 {
     public List<User> loadUsers (String file)
     {
