@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileWriter;
 
 public class UserDataLoad
 {
@@ -41,4 +43,25 @@ public class UserDataLoad
 
         return users;
     }
+
+    public void updateUsers(List<User> users, String newFile) 
+    {
+        try(BufferedWriter wr = new BufferedWriter(new FileWriter(newFile)))
+        {
+            wr.write("ID,First Name,Last Name,Money Availale,Cars Purchased,"+
+            "MinerCars Membership, Username, Password\n");
+
+            for(User user : users)
+            {
+                String newLine = String.format("%d,%s,%s,%.2f,%d,%s,%s,%s\n", 
+                user.getID(), user.getFirstName(), user.getLastName(),
+                user.getMoneyAvailable(), user.getCarsPurchased(), user.getMinerCarsMembership() ? "True" : "False",
+                user.getUsername(), user.getPassword());
+            }
+        }
+        catch (IOException e)
+        {
+            System.out.println("Error writing the new data");
+        }
+    }   
 }
