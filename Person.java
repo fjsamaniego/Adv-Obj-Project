@@ -21,7 +21,7 @@ public class Person {
     } 
 
     // setters 
-    public void setName(String nameIn) 
+    public void setUsername(String nameIn) 
     {
         this.username = nameIn;
     }
