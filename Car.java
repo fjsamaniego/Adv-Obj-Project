@@ -256,8 +256,8 @@ public class Car
 
     public String toString()
     {
-        return String.format("%-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
-            carType, model, condition, color, capacity, mileage, fuelType, transmission, price, carsAvailable);
+        return String.format("%-5s %-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
+            id, carType, model, condition, color, capacity, mileage, fuelType, transmission, price, carsAvailable);
     }
 }
 

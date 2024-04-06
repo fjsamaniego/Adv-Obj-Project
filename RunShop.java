@@ -24,8 +24,7 @@ public class RunShop
 
     public static void main(String[] args)
     {
-        
-
+    
         /** Login page */
         boolean inSystem = true;
         while(inSystem)

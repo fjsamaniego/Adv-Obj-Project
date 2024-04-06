@@ -3,6 +3,7 @@ import java.util.List;
 public class UserAuthentication 
 {
     private List<User> users;
+    private User currentUser;
 
     public UserAuthentication(List<User> users)
     {
@@ -15,11 +16,16 @@ public class UserAuthentication
         {
             if(user.getUsername().equals(usernameIN) && user.getPassword().equals(passwordIN))
             {
+                currentUser = user;
                 return true;
             }
         }
 
         return false;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 
 }
