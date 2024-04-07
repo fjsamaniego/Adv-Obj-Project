@@ -1,7 +1,15 @@
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
+/**
+ * The class UserMenu display the main menu to the user, as well as
+ * it allows the user to navigate through it. 
+ * Allows tje user to view all the cars and their information, filter them based
+ * on if they are new or used, purchase a car, view the ticket of the purchase
+ * and sign out
+ */
 public class UserMenu 
 {
     private List<Car> cars;
@@ -13,6 +21,14 @@ public class UserMenu
     private String carFile;
     private Log log = new Log();
 
+    /**
+     * Constructs a new object of UserMenu
+     * @param cars list of cars in the dealership
+     * @param users list of users in the dealership
+     * @param currentUser the user that is currently logged in
+     * @param userFile relative path to the user data file
+     * @param carFile relative path to the car data file
+     */
     public UserMenu(List<Car> cars, List<User> users,User currentUser, String userFile, String carFile)
     {
         this.cars = cars;
@@ -23,6 +39,15 @@ public class UserMenu
         this.scan = new Scanner(System.in);
     }
 
+    /**
+     * This method is in charged of displaying the main menu.
+     * It has a loop so that the user stays logged even after using features of
+     * the menu several times. The only way to stop the loop is to sign out 
+     * <p>
+     * Each actions has their own method implementation.
+     * @throws InputMismatchException if the user inputs a string/char that cannot be
+     *      converted to an int 
+     */
     public void MenuDisplay()
     {
         boolean stillLoggedIn = true;
@@ -39,39 +64,59 @@ public class UserMenu
             System.out.print("Please select an option: ");
             System.out.println();
 
-            int choice = scan.nextInt();
-            switch(choice) 
+            try
             {
-                case 1:
-                    displayCars();
-                    log.writeToLog("Displayed all cars", currentUser);
-                    break;
-                case 2:
-                    log.writeToLog("Filtered cars by conditon", currentUser);
-                    filterCars();
-                    break;
-                case 3:
-                    purchaseCar();
-                    break;
-                case 4:
-                    viewTickets();
-                    break;
-                case 5:
-                    stillLoggedIn = false;
+                int choice = scan.nextInt();
+                switch(choice) 
+                {
+                    case 1:
+                        displayCars();
+                        log.writeToLog("Displayed all cars", currentUser);
+                        break;
+                    case 2:
+                        log.writeToLog("Filtered cars by conditon", currentUser);
+                        filterCars();
+                        break;
+                    case 3:
+                        purchaseCar();
+                        break;
+                    case 4:
+                        viewTickets();
+                        break;
+                    case 5:
+                        stillLoggedIn = false;
 
-                    signOut();
-                    break;
-                default:
-                    System.out.println("Please try again.");
+                        signOut();
+                        break;
+                    default:
+                        System.out.println("Please try again.");
+                }
             }
+            catch(InputMismatchException e)
+            {
+                System.out.println("Invalid, please enter a number.");
+                scan.nextLine();
+            }
+            
         }
     }
-
+    /**
+     * This method prints the whole list of cars with their respective information
+     */
     private void displayCars()
     {
         System.out.println(String.format("%-5s %-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
-            "ID", "Car Type", "Model", "Condition", "Color", "Capacity", "Mileage", "Fuel Type", "Transmission", 
-            "Price", "Cars Available"));
+        "ID",
+            "Car Type", 
+            "Model", 
+            "Condition", 
+            "Color", 
+            "Capacity", 
+            "Mileage", 
+            "Fuel Type", 
+            "Transmission", 
+            "Price", 
+            "Cars Available"));
 
         for(Car car : cars)
         {
@@ -82,11 +127,25 @@ public class UserMenu
         }
     }
 
+    /**
+     * An overloaded method of displayCars(), but in this case we only print
+     * based on the filter that was given
+     * @param option could be either "New" of "Used"
+     */
     private void displayCars(String option)
     {
         System.out.println(String.format("%-5s %-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
-            "ID", "Car Type", "Model", "Condition", "Color", "Capacity", "Mileage", "Fuel Type", "Transmission", 
-            "Price", "Cars Available"));
+            "ID", 
+            "Car Type",
+            "Model",
+            "Condition",
+            "Color", 
+            "Capacity",
+            "Mileage", 
+            "Fuel Type", 
+            "Transmission", 
+            "Price",
+            "Cars Available"));
 
         for(Car car : cars)
         {
@@ -99,6 +158,12 @@ public class UserMenu
         }
     }
 
+    /**
+     * In this method we call displayCars(String) to filter the cars that the
+     * user wants to see depending on the cars' condition
+     * @throws InputMismatchException if the user inputs a string/char that cannot be
+     *      converted to an int 
+     */
     private void filterCars()
     {
         while(true)
@@ -107,25 +172,36 @@ public class UserMenu
             System.out.println("2) Used");
             System.out.println("3) Go back");
 
-            int choice = scan.nextInt();
-            switch (choice)
+            try
             {
-                case 1:
-                    displayCars("New");
-                    break;
-                case 2:
-                    displayCars("Used");
-                    break;
-                case 3:
-                    return;
-                default:
-                    System.out.println("Please try again.");
+                int choice = scan.nextInt();
+                switch (choice)
+                {
+                    case 1:
+                        displayCars("New");
+                        break;
+                    case 2:
+                        displayCars("Used");
+                        break;
+                    case 3:
+                        return;
+                    default:
+                        System.out.println("Please try again.");
+                }
             }
-            
+            catch(InputMismatchException e)
+            {
+                System.out.println("Invalid, please enter a number.");
+                scan.nextLine();
+            }
         } 
     }
 
-
+    /**
+     * This method first confirms the users has enough money to buy 
+     * the desired car. Then the purchase is made, and changes to the availability of the car. 
+     * user money are updated
+     */
     private void purchaseCar()
     {
         System.out.println();
@@ -190,6 +266,9 @@ public class UserMenu
         
     }
 
+    /**
+     * Here we just show the ticket of the purchase by the given ID of the car
+     */
     private void viewTickets()
     {
 
@@ -219,6 +298,10 @@ public class UserMenu
         }
     }
     
+    /**
+     * If one or more purchases were made during the session of the user, then
+     * the carData file and userData file are updated by calling their respective classes
+     */
     private void signOut()
     {
         if(purchasesMade >= 1)

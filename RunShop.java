@@ -5,8 +5,9 @@ import java.io.File;
 import java.util.InputMismatchException;
 
 /**
+ * 
  * The RunSop class is where we have our main method, therefore, is where
- * we start to run the dealership
+ * we start to run the dealership.
  */
 public class RunShop 
 {

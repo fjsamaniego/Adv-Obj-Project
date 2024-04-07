@@ -6,8 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
 
+/**
+ * The class UserDataLoad is used to create the list of Users from
+ * the given .csv file, in addition to updating the list and csv file
+ * everytime a user purchases a car
+ */
 public class UserDataLoad
 {
+    /**
+     * Loads all the information of the .csv file to the list of User
+     * @param file the relative path of the csv file (e.g: userData.csv)
+     * @return the list of users 
+     * @throws IOException if the file was not found
+     */
     public List<User> loadUsers (String file)
     {
         List<User> users = new ArrayList<>();
@@ -44,6 +55,13 @@ public class UserDataLoad
         return users;
     }
 
+    /**
+     * We rewrite the .csv file so that we keep tracks of the all the users'
+     * money, as well as the availability of cars
+     * @param users list of the users
+     * @param file the relative path of the csv file (e.g: userData.csv)
+     * @throws IOException if the file was not found
+     */
     public void updateUsers(List<User> users, String file) 
     {
         try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
