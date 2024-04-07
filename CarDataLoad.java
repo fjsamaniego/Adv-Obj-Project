@@ -6,8 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
 
+/**
+ * CarDataLoad reads through car_data csv and find and sets Car attributes
+ * to variables
+ */
 public class CarDataLoad
 {
+    /**
+     * Loads car data from csv file
+     * 
+     * @param file pasth to the csv file
+     * @return list of cars loaded from file
+     */
     public List<Car> loadCars(String file)
     {
         List<Car> cars = new ArrayList<>();
@@ -49,6 +59,12 @@ public class CarDataLoad
         return cars;
     }
 
+    /**
+     * Updates car data in file
+     * 
+     * @param cars list of cars to write to the file
+     * @param file the path to file
+     */
     public void updateCars(List<Car> cars, String file)
     {
         try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))

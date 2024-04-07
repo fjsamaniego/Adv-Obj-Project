@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 /**
  * The class UserMenu display the main menu to the user, as well as
  * it allows the user to navigate through it. 
- * Allows tje user to view all the cars and their information, filter them based
+ * Allows the user to view all the cars and their information, filter them based
  * on if they are new or used, purchase a car, view the ticket of the purchase
  * and sign out
  */
@@ -100,6 +100,7 @@ public class UserMenu
             
         }
     }
+    
     /**
      * This method prints the whole list of cars with their respective information
      */

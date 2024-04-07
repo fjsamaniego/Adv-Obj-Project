@@ -1,10 +1,10 @@
 
 /**
- * This class represents a Car
+ * This class represents a Car and its atrributes. 
+ * Also has car types extending from Car class.
  */
 public class Car 
 {
-    // attributes
     private int id;
     private String carType;
     private String model;
@@ -20,9 +20,20 @@ public class Car
     
     
     /**
-     * Constructs a Car object
-     * @param color
+     * Consructs Car object with its attributes 
      * 
+     * @param id integer of car ID 
+     * @param carType String of the car type
+     * @param model String of car model
+     * @param condition String of car condition
+     * @param color String of car color
+     * @param capacity integer of car capacity
+     * @param mileage integer of car mileage
+     * @param fuelType String of fuel type
+     * @param transmission String of car transmission
+     * @param vin String of car vin
+     * @param price double of car price 
+     * @param carsAvailable integer of cars available
      */
     public Car(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
             String transmission, String vin, double price, int carsAvailable) {
@@ -40,9 +51,9 @@ public class Car
         this.carsAvailable = carsAvailable;
     }
 
-    /** Setters
-     * 
-     * @param id
+    /**
+     * Sets the ID of the car 
+     * @param id the car id to et
      */
     public void setID(int id)
     {
@@ -50,57 +61,57 @@ public class Car
     }
 
 
-    /** 
-     * 
-     * @param carType
-    */
+    /**
+     * Sets thr car type
+     * @param carType the car type to set
+     */
     public void setCarType(String carType)
     {
         this.carType = carType;
     }
 
 
-    /** 
-     * 
-     * @param model
-    */
+    /**
+     * Sets the car model
+     * @param model the model to set
+     */
     public void setModel(String model)
     {
         this.model = model;
     }
 
-    /** 
-     * 
-     * @param condition
-    */
+    /**
+     * Sets the car condition
+     * @param condition car condition to set
+     */
     public void setCondition(String condition)
     {
         this.condition = condition;
     }
 
 
-    /** 
-     * 
-     * @param color
-    */
+    /**
+     * Sets the car color
+     * @param color car color to set
+     */
     public void setColor(String color)
     {
         this.color = color;
     }
 
 
-    /** 
-     * 
-     * @param capacity 
-    */
+    /**
+     * Sets the car capacity
+     * @param capacity car capacity to set
+     */
     public void setCapacity(int capacity)
     {
         this.capacity = capacity;
     }
 
-       /** Setters
-     * 
-     * @param mileage
+    /**
+     * Sets the car mileage
+     * @param mileage car mileage to set
      */
     public void setMileage(int mileage)
     {
@@ -108,38 +119,38 @@ public class Car
     }
 
 
-    /** 
-     * 
-     * @param fuelType
-    */
+    /**
+     * Sets the car fuel type
+     * @param fuelType type of fuel to set
+     */
     public void setFuelType(String fuelType)
     {
         this.fuelType = fuelType;
     }
 
 
-    /** 
-     * 
-     * @param transmission
-    */
+    /**
+     * Sets the car transmission
+     * @param transmission car transmission to set
+     */
     public void setTransmission(String transmission)
     {
         this.transmission = transmission;
     }
 
-    /** 
-     * 
-     * @param vin
-    */
+    /**
+     * Sets the car vin
+     * @param vin vin to be set
+     */
     public void setVin(String vin)
     {
         this.vin = vin;
     }
 
-    /** 
-     * 
-     * @param carsAvailable
-    */
+    /**
+     * Sets the cars available
+     * @param carsAvailable cars available to be set
+     */
     public void setCarsAvailable(int carsAvailable)
     {
         this.carsAvailable = carsAvailable;
@@ -147,8 +158,8 @@ public class Car
 
 
     /**
-     * 
-     * @return
+     * Returns the car ID
+     * @return integer car ID
      */
     public int getID()
     {
@@ -156,8 +167,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car type
+     * @return String car type
      */
     public String getCarType()
     {
@@ -165,8 +176,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car model
+     * @return String car model
      */
     public String getModel()
     {
@@ -174,8 +185,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car condition
+     * @return String car condition
      */
     public String getCondition()
     {
@@ -183,8 +194,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car color
+     * @return String car color
      */
     public String getColor()
     {
@@ -192,8 +203,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car capacity
+     * @return integer for car capacity
      */
     public int getCapacity()
     {
@@ -201,8 +212,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car mileage
+     * @return integer for car mileage
      */
     public int getMileage()
     {
@@ -210,8 +221,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the fuel type
+     * @return String for fuel type
      */
     public String getFuelType()
     {
@@ -219,8 +230,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car transmission
+     * @return String for car transmission
      */
     public String getTransmission()
     {
@@ -228,8 +239,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car vin
+     * @return String for car vin
      */
     public String getVin()
     {
@@ -237,8 +248,8 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the car price
+     * @return double for car price
      */
     public double getPrice()
     {
@@ -246,31 +257,46 @@ public class Car
     }
 
     /**
-     * 
-     * @return
+     * Returns the cars available
+     * @return integer for the cars available
      */
     public int getCarsAvailable()
     {
         return carsAvailable;
     }
 
+    /**
+     * Returns string representation of car object with all previous 
+     * car attributes
+     * @return formatted string of car
+     */
     public String toString()
     {
         return String.format("%-5s %-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
             id, carType, model, condition, color, capacity, mileage, fuelType, transmission, price, carsAvailable);
-    }
-
-    // public String createTicket() {
-    //     return String.format("Car Type: %\nModel: %s\nColor: %s", carType, model, color);
-    // }
+    }   
 }
 
-
 /**
- * 
+ * Car type class Sedan extending from Car class
  */
-
 class Sedan extends Car {
+    /**
+     * Constructs car type Sedan object with attributes
+     * 
+     * @param id
+     * @param carType
+     * @param model
+     * @param condition
+     * @param color
+     * @param capacity
+     * @param mileage
+     * @param fuelType
+     * @param transmission
+     * @param vin
+     * @param price
+     * @param carsAvailable
+     */
     public Sedan(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
         super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
@@ -279,9 +305,25 @@ class Sedan extends Car {
 
 
 /**
- * 
+ *  Car type class SUV extending from Car class
  */
 class SUV extends Car {
+    /**
+     * Constructs the car type SUV object with attributes
+     * 
+     * @param id
+     * @param carType
+     * @param model
+     * @param condition
+     * @param color
+     * @param capacity
+     * @param mileage
+     * @param fuelType
+     * @param transmission
+     * @param vin
+     * @param price
+     * @param carsAvailable
+     */
     public SUV(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
         super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
@@ -289,10 +331,26 @@ class SUV extends Car {
 }
 
 
+
 /**
- * 
+ *  Car type class Hatchback extending from Car class
  */
 class Hatchback extends Car {
+    /**
+     * Constructs the car type Hatchback object with attributes
+     * @param id
+     * @param carType
+     * @param model
+     * @param condition
+     * @param color
+     * @param capacity
+     * @param mileage
+     * @param fuelType
+     * @param transmission
+     * @param vin
+     * @param price
+     * @param carsAvailable
+     */
     public Hatchback(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
         super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
@@ -301,9 +359,25 @@ class Hatchback extends Car {
 
 
 /**
- * 
+ *  Car type class Pickup extending from Car class
  */
 class Pickup extends Car {
+    /**
+     * Constructs the car type Pickup object with attributes
+     * 
+     * @param id
+     * @param carType
+     * @param model
+     * @param condition
+     * @param color
+     * @param capacity
+     * @param mileage
+     * @param fuelType
+     * @param transmission
+     * @param vin
+     * @param price
+     * @param carsAvailable
+     */
     public Pickup(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
         super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
