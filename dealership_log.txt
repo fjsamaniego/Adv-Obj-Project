@@ -1,0 +1,6 @@
+20:05:01 04/06/24 - neo Logged in
+20:05:15 04/06/24 - neo Displayed all cars
+20:05:19 04/06/24 - neo Filtered cars by conditon
+20:05:34 04/06/24 - neo Purchased a car
+20:05:56 04/06/24 - neo Viewed tickets
+20:06:08 04/06/24 - neo Logged out

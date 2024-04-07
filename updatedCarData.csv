@@ -3,7 +3,7 @@ ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Pr
 2,Sedan,Toyota Camry,New,Silver,5,3067,Diesel,Automatic,61J7MKYN8AUG05XV3,20688.35,5
 3,SUV,Toyota RAV4,New,Green,5,2903,Gasoline,Automatic,FVCRJHUHZCEX8LCDC,33050.65,7
 4,Sedan,Honda Accord,New,Blue,5,3037,Hybrid,Manual,R5T34D4J4R4B9AKWL,27905.26,6
-5,Sedan,Toyota Camry,New,Red,5,1549,Electric,Manual,8GMF6CY57FKFWJWF2,49859.1,6
+5,Sedan,Toyota Camry,New,Red,5,1549,Electric,Manual,8GMF6CY57FKFWJWF2,49859.10,6
 6,SUV,Ford Explorer,New,White,7,523,Hybrid,Manual,OPKEZUHPO3JAXON37,20414.56,4
 7,Pickup,Ford F-150,New,Black,5,339,Gasoline,Automatic,9OV4OJ6SREVR4V2ZQ,21687.59,10
 8,Sedan,Honda Accord,Used,Silver,5,102639,Electric,Automatic,LFQPTQR031YTVPP1E,47923.73,4
@@ -21,7 +21,7 @@ ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Pr
 20,SUV,Honda CR-V,Used,Silver,5,44889,Hybrid,Automatic,H819FZ1PIUNP37YIO,29199.99,4
 21,Sedan,Ford Fusion,New,Blue,5,2887,Hybrid,Automatic,LS2DQ4ZIZ6IFRJ6CG,36419.38,8
 22,Sedan,Toyota Camry,Used,Silver,5,41396,Diesel,Manual,IDRMODUU9DQWO8SY3,39618.11,5
-23,SUV,Toyota RAV4,New,Silver,5,3061,Gasoline,Automatic,C4I0O060307TJPAVK,41478.4,5
+23,SUV,Toyota RAV4,New,Silver,5,3061,Gasoline,Automatic,C4I0O060307TJPAVK,41478.40,5
 24,Sedan,Ford Fusion,Used,Yellow,5,116012,Gasoline,Automatic,IUM7446VKAMLQK5RL,18830.37,5
 25,Pickup,Ford F-150,Used,Silver,5,92664,Diesel,Automatic,8GYU59UQHNJCH6RF4,22272.46,5
 26,Hatchback,Toyota Prius,New,Blue,5,1004,Gasoline,Manual,TMVM0ACCVZ7CHHJFJ,30416.16,7
@@ -40,7 +40,7 @@ ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Pr
 39,Pickup,Toyota Tacoma,Used,White,5,75075,Hybrid,Manual,2PP67O86G79YLNV5R,46130.53,6
 40,Sedan,Honda Accord,Used,Red,5,144427,Electric,Manual,QTKY18EO5LP9NDHWX,30149.35,3
 41,Hatchback,Volkswagen Golf,New,Black,5,4865,Gasoline,Automatic,ADM0UTU2X88OSH0I3,33921.89,10
-42,Hatchback,Volkswagen Golf,New,Green,5,128,Diesel,Manual,NDX77XQ10OHENR3KI,43730.3,9
+42,Hatchback,Volkswagen Golf,New,Green,5,128,Diesel,Manual,NDX77XQ10OHENR3KI,43730.30,9
 43,Sedan,Toyota Camry,New,White,5,2644,Electric,Automatic,Z0URK8CET61BD477S,35914.15,10
 44,SUV,Ford Explorer,Used,Yellow,7,48867,Gasoline,Manual,XAFMEYIG8VS9EXROD,36508.15,6
 45,Sedan,Toyota Camry,Used,Yellow,5,141606,Hybrid,Automatic,TZAEYQH6GBNP1EXC6,40220.72,10
@@ -57,12 +57,12 @@ ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Pr
 56,Pickup,Toyota Tacoma,New,White,5,4207,Hybrid,Automatic,4URQ8Q0Q36IVO0C59,48685.85,9
 57,Hatchback,Volkswagen Golf,New,Blue,5,349,Electric,Manual,WRCCI30JQ4WFXRGPV,26171.87,5
 58,Hatchback,Volkswagen Golf,Used,White,5,63104,Gasoline,Automatic,6T4C75GBOTF2NK613,27960.65,4
-59,SUV,Chevrolet Tahoe,Used,Yellow,8,14064,Diesel,Manual,H2KP8DSAYXIDWTJET,17293.0,8
+59,SUV,Chevrolet Tahoe,Used,Yellow,8,14064,Diesel,Manual,H2KP8DSAYXIDWTJET,17293.00,8
 60,Sedan,Honda Accord,New,Black,5,2829,Gasoline,Manual,N4RSGSA65S118D0GV,42187.35,6
-61,SUV,Ford Explorer,New,Silver,7,3976,Hybrid,Manual,MRM4TRR6DKYFI7ZGK,42992.0,5
-62,SUV,Ford Explorer,New,Silver,7,1597,Electric,Automatic,PM980KEEIVE7BJVZF,33249.68,5
-63,Sedan,Honda Accord,New,Yellow,5,434,Diesel,Manual,SFSUA679JJMN1ZZA5,40635.1,8
-64,Hatchback,Volkswagen Golf,Used,Yellow,5,44367,Diesel,Manual,BA8J8392BXDNN6R3D,27940.4,3
+61,SUV,Ford Explorer,New,Silver,7,3976,Hybrid,Manual,MRM4TRR6DKYFI7ZGK,42992.00,5
+62,SUV,Ford Explorer,New,Silver,7,1597,Electric,Automatic,PM980KEEIVE7BJVZF,33249.68,4
+63,Sedan,Honda Accord,New,Yellow,5,434,Diesel,Manual,SFSUA679JJMN1ZZA5,40635.10,8
+64,Hatchback,Volkswagen Golf,Used,Yellow,5,44367,Diesel,Manual,BA8J8392BXDNN6R3D,27940.40,3
 65,Hatchback,Honda Fit,Used,Green,5,59164,Electric,Automatic,1T6MEA3VL57ODS0Q5,38139.48,3
 66,Pickup,Ram 1500,Used,Red,5,139945,Electric,Manual,HKPQE5BI92ASDYTJV,18288.16,7
 67,SUV,Toyota RAV4,New,Green,5,2985,Gasoline,Automatic,24YASG1DIS8HXXI87,16987.01,4
@@ -80,7 +80,7 @@ ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Pr
 79,Pickup,Chevrolet Silverado,Used,Green,5,117641,Diesel,Automatic,N5UAOQDMJQUVIVYFG,38781.99,4
 80,Sedan,Honda Accord,Used,Black,5,143320,Hybrid,Manual,HTN8R6H7GQFNVH7GU,44067.17,4
 81,Pickup,Toyota Tacoma,Used,Black,5,127799,Electric,Manual,A2CTI9CKW2H04Y5MF,39238.33,10
-82,Hatchback,Toyota Prius,Used,Red,5,57548,Gasoline,Manual,IKN8GUTU7JZJWO88S,21740.4,10
+82,Hatchback,Toyota Prius,Used,Red,5,57548,Gasoline,Manual,IKN8GUTU7JZJWO88S,21740.40,10
 83,Hatchback,Honda Fit,New,White,5,1450,Electric,Automatic,OCV90VO9T6IU6R8OM,29023.03,4
 84,Pickup,Chevrolet Silverado,Used,Yellow,5,103543,Gasoline,Manual,4SZAZ7OUWH57D095D,40708.04,2
 85,Hatchback,Volkswagen Golf,Used,Black,5,33286,Hybrid,Automatic,BSMEA68RHKMZXQ99O,48849.49,8
@@ -95,7 +95,7 @@ ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Pr
 94,SUV,Ford Explorer,Used,Black,7,46994,Gasoline,Automatic,Y7DVSVFKV9KAX49HT,36760.17,4
 95,Pickup,Chevrolet Silverado,Used,Black,5,40358,Gasoline,Manual,9FITGCQW37DVZBG7T,25013.07,4
 96,Pickup,Toyota Tacoma,Used,Red,5,36178,Diesel,Automatic,K0IZ1BWFOHRBTADSG,31446.39,9
-97,SUV,Ford Explorer,New,White,7,1482,Hybrid,Manual,KC80RYGURZMRHS08X,46682.9,8
+97,SUV,Ford Explorer,New,White,7,1482,Hybrid,Manual,KC80RYGURZMRHS08X,46682.90,8
 98,Hatchback,Honda Fit,New,White,5,2376,Hybrid,Automatic,X4WP2WEBALSAODGAV,41473.52,10
 99,SUV,Chevrolet Tahoe,New,Yellow,8,4049,Hybrid,Automatic,GPJFC981TWNU72B51,33289.25,5
 100,Hatchback,Toyota Prius,New,Black,5,3005,Gasoline,Manual,7R8A7T8XAH9BKD0U4,24443.93,3
