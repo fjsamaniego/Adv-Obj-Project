@@ -10,7 +10,7 @@ import java.util.InputMismatchException;
  * on if they are new or used, purchase a car, view the ticket of the purchase
  * and sign out
  */
-public class UserMenu 
+public class UserMenu
 {
     private List<Car> cars;
     private List<User> users;
