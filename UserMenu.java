@@ -158,8 +158,15 @@ public class UserMenu
                 }
 
                 if (proceed) {
-                    System.out.println("Congratulations! You have successfully purchased the " + chosenCar);
+                    System.out.println();
+                    System.out.println("Congratulations! You have successfully purchased the:"); 
+                
+                    System.out.println("Car Type: " + chosenCar.getCarType());
+                    System.out.println("Model: " + chosenCar.getModel());
+                    System.out.println("Color: " + chosenCar.getColor());
+
                     currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
+                    System.out.println();
                     System.out.println("You now currently have $" + currentUser.getMoneyAvailable() + " available.");
                     chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
