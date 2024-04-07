@@ -74,6 +74,7 @@ public class RunShop
                 System.out.println();
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
+                new Log().writeToLog("Logged in", authenticate.getCurrentUser());
                 new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
             }
             else

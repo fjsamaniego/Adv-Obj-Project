@@ -11,6 +11,7 @@ public class UserMenu
     private int purchasesMade = 0;
     private String userFile;
     private String carFile;
+    private Log log = new Log();
 
     public UserMenu(List<Car> cars, List<User> users,User currentUser, String userFile, String carFile)
     {
@@ -43,8 +44,10 @@ public class UserMenu
             {
                 case 1:
                     displayCars();
+                    log.writeToLog("Displayed all cars", currentUser);
                     break;
                 case 2:
+                    log.writeToLog("Filtered cars by conditon", currentUser);
                     filterCars();
                     break;
                 case 3:
@@ -55,6 +58,7 @@ public class UserMenu
                     break;
                 case 5:
                     stillLoggedIn = false;
+
                     signOut();
                     break;
                 default:
@@ -164,13 +168,16 @@ public class UserMenu
                     chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
                     purchasesMade++;
+                    log.writeToLog("Purchased a car", currentUser);
                 }
             } 
             else{
+                log.writeToLog("Failed to purchased a car", currentUser);
                 System.out.println("Sorry, you currently do not have money available to purchase this car.");
             }
 
         } else {
+            log.writeToLog("Failed to purchased a car", currentUser);
             System.out.println("Sorry, the chosen car is currently not available for purchase.");
         }
         
@@ -198,6 +205,8 @@ public class UserMenu
             System.out.println("Model: " + boughtCar.getModel());
             System.out.println("Color: " + boughtCar.getColor());
             System.out.println();
+            log.writeToLog("Viewed tickets", currentUser);
+
         } else {
             System.out.println("Car with ID " + choice + " not purchased or found.");
         }
@@ -207,8 +216,9 @@ public class UserMenu
     {
         if(purchasesMade >= 1)
         {
-            new UserDataLoad().updateUsers(users, userFile);;
-            new CarDataLoad().updateCars(cars, carFile);;
+            new UserDataLoad().updateUsers(users, userFile);
+            new CarDataLoad().updateCars(cars, carFile);
+            log.writeToLog("Logged out", currentUser);
         }
     }
 }

@@ -7,12 +7,12 @@ public class Log
 {
     private static final String LOG_FIlE = "dealership_log.txt";
 
-    public static void writeToLog(String action)
+    public void writeToLog(String action, User user)
     {
         try(FileWriter fw = new FileWriter(LOG_FIlE,true))
         {
             String timeString =  new SimpleDateFormat("HH:mm:ss MM/dd/yy").format(new Date());
-            fw.write(timeString + " - " + action + "\n");
+            fw.write(timeString + " - " + user.getUsername() +" "+ action + "\n");
         }
         catch(IOException e)
         {
