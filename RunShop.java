@@ -4,29 +4,55 @@ import java.util.List;
 import java.io.File;
 import java.util.InputMismatchException;
 
+/**
+ * The RunSop class is where we have our main method, therefore, is where
+ * we start to run the dealership
+ */
 public class RunShop 
 {
-    // attributes
+    /**
+     * scan stays as a constant since having multiple scanners can
+     * lead to errors
+     */
     private static final Scanner scan = new Scanner(System.in);
+    /**
+     * Just one object of UserAuthentication to simplify the code
+     */
     private static final UserAuthentication authenticate;
+    /**
+     * The list of users will remain the same throughout the program
+     */
     private static List<User> users;
+    /**
+     * The list of cars remain the same throughout the program
+     */
     private static List<Car> cars;
 
     static
     {
-        /** Loading all the users from the csv file */
+        /** 
+        * Loading all the users from the csv file 
+        */
         UserDataLoad loadU = new UserDataLoad();
         users = loadU.loadUsers("updated_user_data.csv");
         authenticate = new UserAuthentication(users);
 
-        /** Loading all the cars from the csv file */
+        /** 
+        * Loading all the cars from the csv file 
+        */
         CarDataLoad loadC = new CarDataLoad();
         cars = loadC.loadCars("updatedCarData.csv");
     }
 
+    /** 
+     * This method is the starting point of the whole program. Here is where the user
+     * will start interacting with the car delearship
+     * @throws InputMismatchException if the user inputs a string/char that cannot be
+     *      converted to an int 
+     */
     public static void main(String[] args)
     {  
-        /** Login page */
+        
         boolean inSystem = true;
         while(inSystem)
         {
@@ -68,6 +94,10 @@ public class RunShop
 
     }
 
+    /**
+     * Asks the user to input username and password
+     * Gets verified by using veryCredentials() from 
+     */
     public static void login()
     {
         scan.nextLine();
