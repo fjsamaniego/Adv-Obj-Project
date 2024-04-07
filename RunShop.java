@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
+import java.util.InputMismatchException;
 
 public class RunShop 
 {
@@ -34,25 +35,34 @@ public class RunShop
             System.out.println("1. Login");
             System.out.println("2. Exit");
             System.out.println("Select either 1 or 2, please type it:");
-            int choice = scan.nextInt();
+
+            try 
+            {
+                int choice = scan.nextInt();
+                System.out.println();
+
+                if(choice == 1)
+                {
+                    login();
+                    inSystem = false;
+                }
+                else if(choice == 2)
+                {
+                    System.exit(0);
+                    inSystem = false;
+                }
+                else
+                {
+                    System.out.println("Invalid, please select 1 or 2.");
+                }
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println("Invalid, please enter a number.");
+                scan.nextLine();
+
+            }
             System.out.println();
-
-            if(choice == 1)
-            {
-                login();
-                inSystem = false;
-            }
-            else if(choice == 2)
-            {
-                System.exit(0);
-                inSystem = false;
-            }
-            else
-            {
-                System.out.println("Invalid, please select 1 or 2.");
-            }
-
-
         }
 
 
