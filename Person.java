@@ -8,7 +8,8 @@ public class Person
     private String password;
 
     /**
-     * This is the constructor
+     * Constructs the Person object 
+     * 
      * @param username the username of the person
      * @param password the password of the person
      */
