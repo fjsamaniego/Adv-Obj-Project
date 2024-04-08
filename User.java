@@ -12,7 +12,7 @@ public class User extends Person
     private boolean minerCarsMembership;
     
     /**
-     * Creates contructor for user, including super for username & password
+     * Creates contructor for user, including super for username and password
      * from Person class
      * 
      * @param userID ID of the user

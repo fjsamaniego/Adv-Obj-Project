@@ -47,12 +47,13 @@ public class RunShop
         cars = loadC.loadCars("updatedCarData.csv");
     }
 
-    /** 
+    /**
      * This method is the starting point of the whole program. Here is where the user
      * will start interacting with the car delearship
      * 
      * @throws InputMismatchException if the user inputs a string/char that cannot be
      *                                converted to an int 
+     * @param args takes in strings
      */
     public static void main(String[] args)
     {  
@@ -100,7 +101,7 @@ public class RunShop
 
     /**
      * Asks the user to input username and password
-     * Gets verified by using veryCredentials() from 
+     * Verifires them using veryCredentials()
      */
     public static void login()
     {
