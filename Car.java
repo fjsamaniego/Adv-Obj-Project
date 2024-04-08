@@ -284,18 +284,18 @@ class Sedan extends Car {
     /**
      * Constructs car type Sedan object with attributes
      * 
-     * @param id
-     * @param carType
-     * @param model
-     * @param condition
-     * @param color
-     * @param capacity
-     * @param mileage
-     * @param fuelType
-     * @param transmission
-     * @param vin
-     * @param price
-     * @param carsAvailable
+     * @param id integer of car ID 
+     * @param carType String of the car type
+     * @param model String of car model
+     * @param condition String of car condition
+     * @param color String of car color
+     * @param capacity integer of car capacity
+     * @param mileage integer of car mileage
+     * @param fuelType String of fuel type
+     * @param transmission String of car transmission
+     * @param vin String of car vin
+     * @param price double of car price 
+     * @param carsAvailable integer of cars available
      */
     public Sedan(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
@@ -311,18 +311,18 @@ class SUV extends Car {
     /**
      * Constructs the car type SUV object with attributes
      * 
-     * @param id
-     * @param carType
-     * @param model
-     * @param condition
-     * @param color
-     * @param capacity
-     * @param mileage
-     * @param fuelType
-     * @param transmission
-     * @param vin
-     * @param price
-     * @param carsAvailable
+     * @param id integer of car ID 
+     * @param carType String of the car type
+     * @param model String of car model
+     * @param condition String of car condition
+     * @param color String of car color
+     * @param capacity integer of car capacity
+     * @param mileage integer of car mileage
+     * @param fuelType String of fuel type
+     * @param transmission String of car transmission
+     * @param vin String of car vin
+     * @param price double of car price 
+     * @param carsAvailable integer of cars available
      */
     public SUV(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
@@ -338,18 +338,18 @@ class SUV extends Car {
 class Hatchback extends Car {
     /**
      * Constructs the car type Hatchback object with attributes
-     * @param id
-     * @param carType
-     * @param model
-     * @param condition
-     * @param color
-     * @param capacity
-     * @param mileage
-     * @param fuelType
-     * @param transmission
-     * @param vin
-     * @param price
-     * @param carsAvailable
+     * @param id integer of car ID 
+     * @param carType String of the car type
+     * @param model String of car model
+     * @param condition String of car condition
+     * @param color String of car color
+     * @param capacity integer of car capacity
+     * @param mileage integer of car mileage
+     * @param fuelType String of fuel type
+     * @param transmission String of car transmission
+     * @param vin String of car vin
+     * @param price double of car price 
+     * @param carsAvailable integer of cars available
      */
     public Hatchback(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){
@@ -365,18 +365,18 @@ class Pickup extends Car {
     /**
      * Constructs the car type Pickup object with attributes
      * 
-     * @param id
-     * @param carType
-     * @param model
-     * @param condition
-     * @param color
-     * @param capacity
-     * @param mileage
-     * @param fuelType
-     * @param transmission
-     * @param vin
-     * @param price
-     * @param carsAvailable
+     * @param id integer of car ID 
+     * @param carType String of the car type
+     * @param model String of car model
+     * @param condition String of car condition
+     * @param color String of car color
+     * @param capacity integer of car capacity
+     * @param mileage integer of car mileage
+     * @param fuelType String of fuel type
+     * @param transmission String of car transmission
+     * @param vin String of car vin
+     * @param price double of car price 
+     * @param carsAvailable integer of cars available
      */
     public Pickup(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
     String transmission, String vin, double price, int carsAvailable){

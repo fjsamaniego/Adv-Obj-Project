@@ -23,6 +23,7 @@ public class UserMenu
 
     /**
      * Constructs a new object of UserMenu
+     * 
      * @param cars list of cars in the dealership
      * @param users list of users in the dealership
      * @param currentUser the user that is currently logged in

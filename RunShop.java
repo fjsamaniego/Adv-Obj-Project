@@ -5,25 +5,27 @@ import java.io.File;
 import java.util.InputMismatchException;
 
 /**
- * 
  * The RunSop class is where we have our main method, therefore, is where
  * we start to run the dealership.
  */
 public class RunShop 
 {
     /**
-     * scan stays as a constant since having multiple scanners can
+     * Scan stays as a constant since having multiple scanners can
      * lead to errors
      */
     private static final Scanner scan = new Scanner(System.in);
+
     /**
      * Just one object of UserAuthentication to simplify the code
      */
     private static final UserAuthentication authenticate;
+
     /**
      * The list of users will remain the same throughout the program
      */
     private static List<User> users;
+
     /**
      * The list of cars remain the same throughout the program
      */
@@ -48,8 +50,9 @@ public class RunShop
     /** 
      * This method is the starting point of the whole program. Here is where the user
      * will start interacting with the car delearship
+     * 
      * @throws InputMismatchException if the user inputs a string/char that cannot be
-     *      converted to an int 
+     *                                converted to an int 
      */
     public static void main(String[] args)
     {  

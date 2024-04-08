@@ -22,8 +22,8 @@ public class UserAuthentication
     /**
      * Verifies credentials of user with given username and password
      * 
-     * @param usernameIN
-     * @param passwordIN
+     * @param usernameIN username being entered
+     * @param passwordIN password being entered
      * @return True if credentials are valid, and false otherwise
      */
     public boolean verifyCredentials(String usernameIN, String passwordIN)

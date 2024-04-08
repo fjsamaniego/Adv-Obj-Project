@@ -15,14 +15,14 @@ public class User extends Person
      * Creates contructor for user, including super for username & password
      * from Person class
      * 
-     * @param userID
-     * @param firstName
-     * @param lastName
-     * @param moneyAvailable
-     * @param carsPurchased
-     * @param minerCarsMembership
-     * @param username
-     * @param password
+     * @param userID ID of the user
+     * @param firstName first name of the user
+     * @param lastName last name of the user
+     * @param moneyAvailable the money available of the user
+     * @param carsPurchased the amount of cars purchased by user
+     * @param minerCarsMembership whether user has miner cars membership
+     * @param username user's username to sign in
+     * @param password user's password to sign in
      */
     public User(int userID, String firstName, String lastName, double moneyAvailable, 
         int carsPurchased, boolean minerCarsMembership, String username, String password) {
