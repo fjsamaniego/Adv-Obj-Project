@@ -72,10 +72,10 @@ public class UserMenu
                 {
                     case 1:
                         displayCars();
-                        log.writeToLog("Displayed all cars", currentUser);
+                        log.writeToLog("Displayed all cars", currentUser); // updates action to dealership_log.txt
                         break;
                     case 2:
-                        log.writeToLog("Filtered cars by conditon", currentUser);
+                        log.writeToLog("Filtered cars by conditon", currentUser); // updates action to dealership_log.txt
                         filterCars();
                         break;
                     case 3:
@@ -107,6 +107,7 @@ public class UserMenu
      */
     private void displayCars()
     {
+        // formats attributes to be printed in an organized way
         System.out.println(String.format("%-5s %-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
         "ID",
             "Car Type", 
@@ -179,9 +180,11 @@ public class UserMenu
                 int choice = scan.nextInt();
                 switch (choice)
                 {
+                    // if user chooses new car
                     case 1:
                         displayCars("New");
                         break;
+                    // if user chooses used car
                     case 2:
                         displayCars("Used");
                         break;
@@ -214,18 +217,18 @@ public class UserMenu
         int choice = scan.nextInt();
         System.out.println();
 
-        Car chosenCar = null;
-        for (Car car : cars){
-            if (car.getID() == choice) {
+        Car chosenCar = null; 
+        for (Car car : cars){ // iterates through the cars
+            if (car.getID() == choice) { // car ID they choosen become chosenCar
                 chosenCar = car;
                 break;
             }
         }
 
-        if (chosenCar != null && chosenCar.getCarsAvailable() > 0) {
+        if (chosenCar != null && chosenCar.getCarsAvailable() > 0) { // if chosenCar is in file and available
             System.out.println("You selected: " + chosenCar);
 
-            if (currentUser.getMoneyAvailable() >= chosenCar.getPrice()) 
+            if (currentUser.getMoneyAvailable() >= chosenCar.getPrice())  // checks if car is in users budget
             {
                 
                 Scanner scanner = new Scanner(System.in);
@@ -233,7 +236,7 @@ public class UserMenu
                 String confirmation = scanner.next();
                 boolean proceed = false;
 
-                if (confirmation.equals("Y")){
+                if (confirmation.equals("Y")){ // if user chooses to proceed with purchase
                     proceed = true;
                 } else {
                     System.out.println("Transaction cancelled.");
@@ -242,7 +245,8 @@ public class UserMenu
                 if (proceed) {
                     System.out.println();
                     System.out.println("Congratulations! You have successfully purchased the:"); 
-                
+
+                    // display ticket once car is purchased
                     System.out.println("Car Type: " + chosenCar.getCarType());
                     System.out.println("Model: " + chosenCar.getModel());
                     System.out.println("Color: " + chosenCar.getColor());
@@ -257,12 +261,12 @@ public class UserMenu
                 }
             } 
             else{
-                log.writeToLog("Failed to purchased a car", currentUser);
+                log.writeToLog("Failed to purchased a car", currentUser); // log action to dealership_log.txt
                 System.out.println("Sorry, you currently do not have money available to purchase this car.");
             }
 
         } else {
-            log.writeToLog("Failed to purchased a car", currentUser);
+            log.writeToLog("Failed to purchased a car", currentUser); // log action to dealership_log.txt
             System.out.println("Sorry, the chosen car is currently not available for purchase.");
         }
         
@@ -308,9 +312,9 @@ public class UserMenu
     {
         if(purchasesMade >= 1)
         {
-            new UserDataLoad().updateUsers(users, userFile);
-            new CarDataLoad().updateCars(cars, carFile);
-            log.writeToLog("Logged out", currentUser);
+            new UserDataLoad().updateUsers(users, userFile); // updates user data in updated_user_data.csv
+            new CarDataLoad().updateCars(cars, carFile); // updates car data in updatedCarData.csv
+            log.writeToLog("Logged out", currentUser); // logs action to dealership_log.txt
         }
     }
 }

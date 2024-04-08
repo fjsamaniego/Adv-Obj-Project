@@ -72,24 +72,26 @@ public class RunShop
                 int choice = scan.nextInt();
                 System.out.println();
 
+                // if user chooses option 1 
                 if(choice == 1)
                 {
                     login();
                     inSystem = false;
                 }
+                // if user chooses option 2
                 else if(choice == 2)
                 {
                     System.exit(0);
                     inSystem = false;
                 }
-                else
+                else // error if neither is chosen
                 {
                     System.out.println("Invalid, please select 1 or 2.");
                 }
             }
             catch (InputMismatchException e)
             {
-                System.out.println("Invalid, please enter a number.");
+                System.out.println("Invalid, please enter a number."); // prompts if user enters something other than a number
                 scan.nextLine();
 
             }
@@ -108,7 +110,7 @@ public class RunShop
         scan.nextLine();
         boolean verified = false;
         int attempts = 0;
-        while(attempts < 10 && !verified)
+        while(attempts < 10 && !verified) // limits sign in attempts
         {
             System.out.println("Username: ");
             String usernameIN = scan.nextLine();
@@ -119,7 +121,7 @@ public class RunShop
                 System.out.println();
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                new Log().writeToLog("Logged in", authenticate.getCurrentUser());
+                new Log().writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
                 new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
             }
             else

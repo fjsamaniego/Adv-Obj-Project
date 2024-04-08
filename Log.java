@@ -20,12 +20,12 @@ public class Log
     {
         try(FileWriter fw = new FileWriter(LOG_FIlE,true))
         {
-            String timeString =  new SimpleDateFormat("HH:mm:ss MM/dd/yy").format(new Date());
+            String timeString =  new SimpleDateFormat("HH:mm:ss MM/dd/yy").format(new Date()); //  formats the time by hour, minute, second and month day year
             fw.write(timeString + " - " + user.getUsername() +" "+ action + "\n");
         }
         catch(IOException e)
         {
-            System.err.println("Error wrtitin to log file: "+ e.getMessage());
+            System.err.println("Error wrtitin to log file: "+ e.getMessage());  // error message
         }
     }
 }

@@ -30,7 +30,7 @@ public class UserAuthentication
     {
         for(User user : users)
         {
-            if(user.getUsername().equals(usernameIN) && user.getPassword().equals(passwordIN))
+            if(user.getUsername().equals(usernameIN) && user.getPassword().equals(passwordIN)) // if username and password match file info
             {
                 currentUser = user;
                 return true;
