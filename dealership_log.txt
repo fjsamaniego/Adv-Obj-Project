@@ -4,17 +4,7 @@
 20:05:34 04/06/24 - neo Purchased a car
 20:05:56 04/06/24 - neo Viewed tickets
 20:06:08 04/06/24 - neo Logged out
-16:11:00 04/07/24 - jasonbourne Logged in
-16:11:23 04/07/24 - jasonbourne Purchased a car
-16:11:33 04/07/24 - jasonbourne Purchased a car
-16:11:47 04/07/24 - jasonbourne Failed to purchased a car
-16:12:32 04/07/24 - jasonbourne Viewed tickets
-16:12:38 04/07/24 - jasonbourne Logged out
-16:12:54 04/07/24 - jasonbourne Logged in
-16:12:59 04/07/24 - jasonbourne Failed to purchased a car
-16:13:23 04/07/24 - jasonbourne Logged in
-16:13:28 04/07/24 - jasonbourne Failed to purchased a car
-16:14:15 04/07/24 - captainamerica Logged in
-16:14:27 04/07/24 - captainamerica Filtered cars by conditon
-16:22:09 04/07/24 - hermionegranger Logged in
-16:22:58 04/07/24 - hermionegranger Logged in
+19:03:57 04/07/24 - hermionegranger Logged in
+19:04:02 04/07/24 - hermionegranger Displayed all cars
+19:04:04 04/07/24 - hermionegranger Filtered cars by conditon
+19:04:28 04/07/24 - hermionegranger Viewed tickets
