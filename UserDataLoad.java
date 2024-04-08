@@ -14,10 +14,10 @@ import java.io.FileWriter;
 public class UserDataLoad
 {
     /**
-     * Loads all the information of the .csv file to the list of User
+     * Loads all the information of the .csv file to the list of User. Will throw file exception if 
+     * the file was not found
      * @param file the relative path of the csv file (e.g: userData.csv)
      * @return the list of users 
-     * @throws IOException if the file was not found
      */
     public List<User> loadUsers (String file)
     {
@@ -57,10 +57,9 @@ public class UserDataLoad
 
     /**
      * We rewrite the .csv file so that we keep tracks of the all the users'
-     * money, as well as the availability of cars
+     * money, as well as the availability of cars. Will throw file exception if the file was not found.
      * @param users list of the users
      * @param file the relative path of the csv file (e.g: userData.csv)
-     * @throws IOException if the file was not found
      */
     public void updateUsers(List<User> users, String file) 
     {
