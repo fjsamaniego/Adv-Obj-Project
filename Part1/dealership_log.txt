@@ -1,0 +1,28 @@
+20:05:01 04/06/24 - neo Logged in
+20:05:15 04/06/24 - neo Displayed all cars
+20:05:19 04/06/24 - neo Filtered cars by conditon
+20:05:34 04/06/24 - neo Purchased a car
+20:05:56 04/06/24 - neo Viewed tickets
+20:06:08 04/06/24 - neo Logged out
+19:03:57 04/07/24 - hermionegranger Logged in
+19:04:02 04/07/24 - hermionegranger Displayed all cars
+19:04:04 04/07/24 - hermionegranger Filtered cars by conditon
+19:04:28 04/07/24 - hermionegranger Viewed tickets
+19:10:56 04/07/24 - jasonbourne Logged in
+19:11:06 04/07/24 - jasonbourne Displayed all cars
+19:11:46 04/07/24 - jasonbourne Filtered cars by conditon
+19:13:50 04/07/24 - jasonbourne Purchased a car
+19:14:16 04/07/24 - jasonbourne Failed to purchased a car
+19:15:08 04/07/24 - jasonbourne Viewed tickets
+12:05:51 04/08/24 - neo Logged in
+12:06:02 04/08/24 - neo Displayed all cars
+12:06:16 04/08/24 - neo Filtered cars by conditon
+12:07:02 04/08/24 - neo Failed to purchased a car
+12:07:20 04/08/24 - neo Viewed tickets
+14:36:47 04/08/24 - johnwick Logged in
+14:36:53 04/08/24 - johnwick Displayed all cars
+14:37:06 04/08/24 - johnwick Purchased a car
+14:37:24 04/08/24 - johnwick Logged out
+14:40:43 04/08/24 - johnwick Logged in
+14:40:49 04/08/24 - johnwick Viewed tickets
+14:40:57 04/08/24 - johnwick Failed to purchased a car
