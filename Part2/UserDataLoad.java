@@ -11,15 +11,11 @@ import java.io.FileWriter;
  * the given .csv file, in addition to updating the list and csv file
  * everytime a user purchases a car
  */
-public class UserDataLoad
+
+public class UserDataLoad implements DataLoad<User>
 {
-    /**
-     * Loads all the information of the .csv file to the list of User. Will throw file exception if 
-     * the file was not found
-     * @param file the relative path of the csv file (e.g: userData.csv)
-     * @return the list of users 
-     */
-    public List<User> loadUsers (String file)
+    @Override
+    public List<User> loadData(String file)
     {
         List<User> users = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(file)))
@@ -30,14 +26,14 @@ public class UserDataLoad
             {
                 String []userInfo = line.split(",");
 
-                int id = Integer.parseInt(userInfo[0]);
-                String firstName = userInfo[1];
+                double moneyAvailable = Double.parseDouble(userInfo[0]);
+                String password = userInfo[1];
                 String lastName = userInfo[2];
-                double moneyAvailable = Double.parseDouble(userInfo[3]);
+                int id = Integer.parseInt(userInfo[3]);
                 int carsPurchased = Integer.parseInt(userInfo[4]);
-                boolean minerCarsMembership = Boolean.parseBoolean(userInfo[5]);
+                String firstName = userInfo[5];
                 String username = userInfo[6];
-                String password = userInfo[7];
+                boolean minerCarsMembership = Boolean.parseBoolean(userInfo[7]);
 
                 User user = new User(id, firstName, lastName,
                 moneyAvailable, carsPurchased, minerCarsMembership,
@@ -55,30 +51,24 @@ public class UserDataLoad
         return users;
     }
 
-    /**
-     * We rewrite the .csv file so that we keep tracks of the all the users'
-     * money, as well as the availability of cars. Will throw file exception if the file was not found.
-     * @param users list of the users
-     * @param file the relative path of the csv file (e.g: userData.csv)
-     */
-    public void updateUsers(List<User> users, String file) 
+    @Override
+    public void updateData(List<User> users, String file) 
     {
         try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
         {
-            wr.write("ID,First Name,Last Name,Money Availale,Cars Purchased,"+
-            "MinerCars Membership, Username, Password\n");
+            wr.write("Money Available,Password,Last Name,ID,Cars Purchased,First Name,Username,MinerCars Membership\n");
 
             for(User user : users)
             {
-                String newLine = String.format("%d,%s,%s,%.2f,%d,%s,%s,%s\n", 
-                user.getID(),
-                user.getFirstName(), 
-                user.getLastName(),
+                String newLine = String.format("%.2f,%s,%s,%d,%d,%s,%s,%s\n", 
                 user.getMoneyAvailable(),
+                user.getPassword(),
+                user.getLastName(),
+                user.getID(),
                 user.getCarsPurchased(), 
-                user.getMinerCarsMembership() ? "True" : "False",
+                user.getFirstName(), 
                 user.getUsername(), 
-                user.getPassword());
+                user.getMinerCarsMembership() ? "True" : "False");
 
                 wr.write(newLine);
             }

@@ -36,11 +36,11 @@ public class CarDataLoad implements DataLoad<Car>
                 String vin = carInformation[9];
                 String fuelType = carInformation[10];
                 String model = carInformation[11];
-                String hasTurbo = carInformation[12];
+                String hasTurbo = carInformation[12]; //added
 
                 Car car = new Car(id, carType ,model, condition,
-                color, capacity, mileage, fuelType, transmission, vin,
-                price, carsAvailable);
+                color, capacity, year, fuelType, transmission, vin,
+                price, carsAvailable, hasTurbo);
 
                 cars.add(car);
                 line = br.readLine();
@@ -60,23 +60,24 @@ public class CarDataLoad implements DataLoad<Car>
     {
         try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
         {
-            wr.write("ID,Car Type,Model,Condition,Color,Capacity,Mileage,Fuel Type,Transmission,VIN,Price,Cars Available\n");
+            wr.write("Capacity,Car Type,Cars Available,Condition,Color,ID,Year,Price,Transmission,VIN,Fuel Type,Model,hasTurbo\n");
 
             for(Car car : cars)
             {
                 String newLine = String.format("%d,%s,%s,%s,%s,%d,%d,%s,%s,%s,%.2f,%d\n",
-                car.getID(), 
+                car.getCapacity(), 
                 car.getCarType(), 
-                car.getModel(), 
+                car.getCarsAvailable(),
                 car.getCondition(), 
                 car.getColor(), 
-                car.getCapacity(), 
-                car.getMileage(), 
-                car.getFuelType(),
+                car.getID(), 
+                car.getYear(),
+                car.getPrice(), 
                 car.getTransmission(), 
                 car.getVin(), 
-                car.getPrice(), 
-                car.getCarsAvailable());
+                car.getFuelType(),
+                car.getModel(), 
+                car.getHasTurbo());
 
                 wr.write(newLine);
             }

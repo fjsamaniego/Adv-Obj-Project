@@ -11,13 +11,13 @@ public class Car
     private String condition;
     private String color;
     private int capacity;
-    private int mileage;
+    private int year;
     private String fuelType;
     private String transmission;
     private String vin;
     private double price;
     private int carsAvailable;
-    
+    private String hasTurbo;
     
     /**
      * Consructs Car object with its attributes 
@@ -35,20 +35,21 @@ public class Car
      * @param price double of car price 
      * @param carsAvailable integer of cars available
      */
-    public Car(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
-            String transmission, String vin, double price, int carsAvailable) {
+    public Car(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
+            String transmission, String vin, double price, int carsAvailable, String hasTurbo) {
         this.id = id;
         this.carType = carType;
         this.model = model;
         this.condition = condition;
         this.color = color;
         this.capacity = capacity;
-        this.mileage = mileage;
+        this.year = year;
         this.fuelType = fuelType;
         this.transmission = transmission;
         this.price = price;
         this.vin = vin;
         this.carsAvailable = carsAvailable;
+        this.hasTurbo = hasTurbo;
     }
 
     /**
@@ -113,9 +114,9 @@ public class Car
      * Sets the car mileage
      * @param mileage car mileage to set
      */
-    public void setMileage(int mileage)
+    public void setYear(int year)
     {
-        this.mileage = mileage;
+        this.year = year;
     }
 
 
@@ -156,6 +157,10 @@ public class Car
         this.carsAvailable = carsAvailable;
     }
 
+    public void setHasTurbo(String hasTurbo)
+    {
+        this.hasTurbo = hasTurbo;
+    }
 
     /**
      * Returns the car ID
@@ -215,9 +220,9 @@ public class Car
      * Returns the car mileage
      * @return integer for car mileage
      */
-    public int getMileage()
+    public int getYear()
     {
-        return mileage;
+        return year;
     }
 
     /**
@@ -265,6 +270,10 @@ public class Car
         return carsAvailable;
     }
 
+    public String getHasTurbo()
+    {
+        return hasTurbo;
+    }
     /**
      * Returns string representation of car object with all previous 
      * car attributes
@@ -273,7 +282,7 @@ public class Car
     public String toString()
     {
         return String.format("%-5s %-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
-            id, carType, model, condition, color, capacity, mileage, fuelType, transmission, price, carsAvailable);
+            id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable);
     }   
 }
 
