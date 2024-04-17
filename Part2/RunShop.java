@@ -37,14 +37,14 @@ public class RunShop
         * Loading all the users from the csv file 
         */
         UserDataLoad loadU = new UserDataLoad();
-        users = loadU.loadUsers("updated_user_data.csv");
+        users = loadU.loadData("updated_user_data.csv");
         authenticate = new UserAuthentication(users);
 
         /** 
         * Loading all the cars from the csv file 
         */
         CarDataLoad loadC = new CarDataLoad();
-        cars = loadC.loadCars("updatedCarData.csv");
+        cars = loadC.loadData("updatedCarData.csv");
     }
 
     /**

@@ -312,8 +312,8 @@ public class UserMenu
     {
         if(purchasesMade >= 1)
         {
-            new UserDataLoad().updateUsers(users, userFile); // updates user data in updated_user_data.csv
-            new CarDataLoad().updateCars(cars, carFile); // updates car data in updatedCarData.csv
+            new UserDataLoad().updateData(users, userFile); // updates user data in updated_user_data.csv
+            new CarDataLoad().updateData(cars, carFile); // updates car data in updatedCarData.csv
             log.writeToLog("Logged out", currentUser); // logs action to dealership_log.txt
         }
     }
