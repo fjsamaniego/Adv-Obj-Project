@@ -281,8 +281,8 @@ public class Car
      */
     public String toString()
     {
-        return String.format("%-5s %-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
-            id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable);
+        return String.format("%-5s %-11s %-18s %-12s %-8s %-9s %-11s %-15s %-5s %-8s %s %-5s",
+            id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable, hasTurbo);
     }   
 }
 

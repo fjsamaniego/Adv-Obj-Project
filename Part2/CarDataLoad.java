@@ -22,7 +22,7 @@ public class CarDataLoad implements DataLoad<Car>
             String line = br.readLine();
             while(line != null)
             {
-                String []carInformation = line.split(",");
+                String []carInformation = line.split(",",-1);
 
                 int capacity = Integer.parseInt(carInformation[0]);
                 String carType = carInformation[1];

@@ -108,18 +108,19 @@ public class UserMenu
     private void displayCars()
     {
         // formats attributes to be printed in an organized way
-        System.out.println(String.format("%-5s %-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
+        System.out.println(String.format("%-5s %-11s %-18s %-12s %-8s %-9s %-11s %-15s %-5s %-8s %s %-5s",
         "ID",
             "Car Type", 
             "Model", 
             "Condition", 
             "Color", 
             "Capacity", 
-            "Mileage", 
+            "Year", 
             "Fuel Type", 
             "Transmission", 
             "Price", 
-            "Cars Available"));
+            "Cars Available",
+            "Turbo"));
 
         for(Car car : cars)
         {
