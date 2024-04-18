@@ -23,24 +23,7 @@ public class CarDataLoad implements DataLoad<Car>
             while(line != null)
             {
                 String []carInformation = line.split(",",-1);
-
-                int capacity = Integer.parseInt(carInformation[0]);
-                String carType = carInformation[1];
-                int carsAvailable = Integer.parseInt(carInformation[2]);
-                String condition = carInformation[3];
-                String color = carInformation[4];
-                int id = Integer.parseInt(carInformation[5]);
-                int year = Integer.parseInt(carInformation[6]);
-                double price = Double.parseDouble(carInformation[7]);
-                String transmission = carInformation[8];
-                String vin = carInformation[9];
-                String fuelType = carInformation[10];
-                String model = carInformation[11];
-                String hasTurbo = carInformation[12]; //added
-
-                Car car = new Car(id, carType ,model, condition,
-                color, capacity, year, fuelType, transmission, vin,
-                price, carsAvailable, hasTurbo);
+                Car car = CarFactory.createCar(carInformation);
 
                 cars.add(car);
                 line = br.readLine();

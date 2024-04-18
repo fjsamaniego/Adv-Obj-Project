@@ -1,4 +1,3 @@
-
 /**
  * This class represents a Car and its atrributes. 
  * Also has car types extending from Car class.
