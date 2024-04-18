@@ -14,7 +14,7 @@ public class CarFactory
         String vin = carInformation[9];
         String fuelType = carInformation[10];
         String model = carInformation[11];
-        String hasTurbo = carInformation[12];
+        String hasTurbo = carInformation[12].isEmpty() ? "No" : carInformation[12];
 
         switch (carType.toLowerCase())
          {
