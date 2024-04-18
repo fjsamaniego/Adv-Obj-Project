@@ -33,7 +33,7 @@ public class RunShop
      * Logger
      */
 
-     private static final Log logger = new Log();
+    private static final Log logger = new Log();
 
     static
     {
@@ -134,7 +134,7 @@ public class RunShop
                 logger.writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
                 new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
             }
-            else
+            else 
                 System.out.println("Username or password is incorrect. Please try again.");
             attempts++;
         }

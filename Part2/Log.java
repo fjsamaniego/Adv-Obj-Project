@@ -40,5 +40,5 @@ public class Log
         {
             System.err.println("Error wrtitin to log file: "+ e.getMessage());  // error message
         }
-    
+    }
 }
