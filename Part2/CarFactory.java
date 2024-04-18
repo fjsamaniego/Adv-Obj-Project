@@ -40,18 +40,18 @@ public class CarFactory
     public static Car createCar(ArrayList<String> carInformation)
     {
         int capacity = Integer.parseInt(carInformation.get(0));
-        String carType = carInformation.get(0);
-        int carsAvailable = Integer.parseInt(carInformation.get(0));
-        String condition = carInformation.get(0);
-        String color = carInformation.get(0);
-        int id = Integer.parseInt(carInformation.get(0));
-        int year = Integer.parseInt(carInformation.get(0));
-        double price = Double.parseDouble(carInformation.get(0));
-        String transmission = carInformation.get(0);
-        String vin = carInformation.get(0);
-        String fuelType = carInformation.get(0);
-        String model = carInformation.get(0);
-        String hasTurbo = carInformation.get(0);
+        String carType = carInformation.get(1);
+        int carsAvailable = Integer.parseInt(carInformation.get(2));
+        String condition = carInformation.get(3);
+        String color = carInformation.get(4);
+        int id = Integer.parseInt(carInformation.get(5));
+        int year = Integer.parseInt(carInformation.get(6));
+        double price = Double.parseDouble(carInformation.get(7));
+        String transmission = carInformation.get(8);
+        String vin = carInformation.get(9);
+        String fuelType = carInformation.get(10);
+        String model = carInformation.get(11);
+        String hasTurbo = carInformation.get(12);
 
         switch (carType.toLowerCase())
          {

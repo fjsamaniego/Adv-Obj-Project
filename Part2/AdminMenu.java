@@ -71,65 +71,75 @@ public class AdminMenu
 
     private void addCar()
     {
-        ArrayList<String> newInformation = new ArrayList<>();
-        System.out.println("Please enter the information of the car. ");
-        System.out.println();
+        boolean addingCars = true;
+        while(addingCars)
+        {
+            ArrayList<String> newInformation = new ArrayList<>();
+            System.out.println("Please enter the information of the car. ");
+            System.out.println();
 
-        System.out.println("Enter capacity:");
-        String input =  scan.next();
-        newInformation.add(input);
+            System.out.println("Enter capacity:");
+            String input =  scan.next();
+            newInformation.add(input);
 
-        System.out.println("Enter car type:");
-        input =  scan.next();
-        newInformation.add(input);
+            System.out.println("Enter car type:");
+            input =  scan.next();
+            newInformation.add(input);
+            
+            System.out.println("Enter availability");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the condition");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the color");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the ID");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the year");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the price");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the type of transmission");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the vin");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the type of fuel");
+            input =  scan.next();
+            newInformation.add(input);
+
+            System.out.println("Enter the model");
+            String model = scan.nextLine();
+
+            System.out.println("Enter the if has turbo (Yes/No)");
+            input =  scan.next();
+            newInformation.add(input);
+
+            Car newCar = CarFactory.createCar(newInformation);
+            cars.add(newCar);
+            new CarDataLoad().updateData(cars, carFile);
+
+            System.out.println("Do you want to add another car (Y/N)");
+            String answer = scan.next();
+
+            if(answer.equalsIgnoreCase("N"))
+                addingCars = false;
         
-        System.out.println("Enter availability");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the condition");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the color");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the ID");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the year");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the price");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the type of transmission");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the vin");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the type of fuel");
-        input =  scan.next();
-        newInformation.add(input);
-
-        System.out.println("Enter the model");
-        String model = scan.nextLine();
-
-        System.out.println("Enter the if has turbo (Yes/No)");
-        input =  scan.next();
-        newInformation.add(input);
-
-        Car newCar = CarFactory.createCar(null)
-        
-        
-        
+        }
     }
 
     private void getRevenue()
