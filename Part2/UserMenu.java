@@ -230,7 +230,6 @@ public class UserMenu
 
             if (currentUser.getMoneyAvailable() >= chosenCar.getPrice())  // checks if car is in users budget
             {
-                
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Are you sure you would like to continue with this purchase? (Y/N)");
                 String confirmation = scanner.next();
@@ -244,20 +243,21 @@ public class UserMenu
                 
                 if (proceed) {
                     System.out.println();
+                    double totalPrice = chosenCar.getPrice();
                     if (currentUser.getMinerCarsMembership()) {
                         double discountAmount = 0.10 * totalPrice; // 10% discount
                         totalPrice -= discountAmount;
-                        System.out.println("Miner Car Membership applied $" + discountAmount);
+                        System.out.println("MinerCar Membership applied $" + discountAmount);
                     
                     }
                      // state taxes
                     double taxAmount = totalPrice * 0.0625; // 6.25% tax
                     totalPrice += taxAmount;
-                    System.out.println("State Taxes (6.25%): $" + taxAmount);
+                    System.out.println("State Tax: $" + taxAmount);
 
                     // final price including taxes
-                    double finalPrice = totalPrice + stateTaxes;
-                    System.out.println("Final price (with tax): $" + finalPrice);
+                    //double finalPrice = totalPrice + stateTaxes;
+                    //System.out.println("Final price (with tax): $" + finalPrice);
                     System.out.println("Congratulations! You have successfully purchased the:"); 
 
                     // display ticket once car is purchased
@@ -271,6 +271,7 @@ public class UserMenu
                     chosenCar.setCarsAvailable(chosenCar.getCarsAvailable() - 1);
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
                     purchasesMade++;
+
                     log.writeToLog("Purchased a car", currentUser);
                 }
             } 
