@@ -144,7 +144,7 @@ public class RunShop
     {
         scan.nextLine();
         logger.writeToLog("Logged in");
-        new AdminMenu();
+        new AdminMenu(cars, users, "updated_user_data.csv", "updatedCarData.csv");
     }
     
 }

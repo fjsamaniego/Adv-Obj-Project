@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -70,46 +71,63 @@ public class AdminMenu
 
     private void addCar()
     {
+        ArrayList<String> newInformation = new ArrayList<>();
         System.out.println("Please enter the information of the car. ");
         System.out.println();
 
         System.out.println("Enter capacity:");
-        int capacity = scan.nextInt();
+        String input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter car type:");
-        String carType = scan.next();
+        input =  scan.next();
+        newInformation.add(input);
         
         System.out.println("Enter availability");
-        int carsAvailable = scan.nextInt();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the condition");
-        String conditon = scan.nextLine();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the color");
-        String color = scan.next();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the ID");
-        int id = scan.nextInt();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the year");
-        int year = scan.nextInt();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the price");
-        double price = scan.nextDouble();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the type of transmission");
-        String transmission = scan.nextLine();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the vin");
-        String vin = scan.nextLine();
+        input =  scan.next();
+        newInformation.add(input);
 
         System.out.println("Enter the type of fuel");
-        String fuelType = scan.nex;
-        String model = carInformation[11];
-        String hasTurbo
+        input =  scan.next();
+        newInformation.add(input);
 
+        System.out.println("Enter the model");
+        String model = scan.nextLine();
+
+        System.out.println("Enter the if has turbo (Yes/No)");
+        input =  scan.next();
+        newInformation.add(input);
+
+        Car newCar = CarFactory.createCar(null)
         
-
         
         
     }
