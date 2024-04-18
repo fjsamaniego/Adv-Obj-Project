@@ -29,6 +29,12 @@ public class RunShop
      */
     private static List<Car> cars;
 
+    /**
+     * Logger
+     */
+
+     private static final Log logger = new Log();
+
     static
     {
         /** 
@@ -73,11 +79,16 @@ public class RunShop
                 // if user chooses option 1 
                 if(choice == 1)
                 {
-                    login();
+                    userLogin();
                     inSystem = false;
                 }
-                // if user chooses option 2
                 else if(choice == 2)
+                {
+                    adminLogin();
+                    inSystem = false;
+                }                
+                // if user chooses option 3
+                else if(choice == 3)
                 {
                     System.exit(0);
                     inSystem = false;
@@ -103,7 +114,7 @@ public class RunShop
      * Asks the user to input username and password
      * Verifires them using veryCredentials()
      */
-    public static void login()
+    public static void userLogin()
     {
         scan.nextLine();
         boolean verified = false;
@@ -119,13 +130,20 @@ public class RunShop
                 System.out.println();
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                new Log().writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
+                logger.writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
                 new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
             }
             else
                 System.out.println("Username or password is incorrect. Please try again.");
             attempts++;
         }
+    }
+
+    public static void adminLogin()
+    {
+        scan.nextLine();
+        logger.writeToLog("Logged in");
+        new AdminMenu();
     }
     
 }

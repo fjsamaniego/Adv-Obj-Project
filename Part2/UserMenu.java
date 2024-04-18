@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 /**
@@ -60,7 +59,7 @@ public class UserMenu
             System.out.println("2. Filter Cars (used/new)");
             System.out.println("3. Purchase a car.");
             System.out.println("4. View Tickets.");
-            System.out.println("5. Sign out");
+            System.out.println("5. Sign out.");
             System.out.println();
             System.out.print("Please select an option: ");
             System.out.println();
