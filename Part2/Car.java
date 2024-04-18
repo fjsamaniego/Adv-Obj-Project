@@ -33,7 +33,7 @@ public class Car
      * @param transmission String of car transmission
      * @param vin String of car vin
      * @param price double of car price 
-     * @param carsAvailable integer of cars available
+     * @param carsAvailable integer of cars available 
      */
     public Car(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
             String transmission, String vin, double price, int carsAvailable, String hasTurbo) {
