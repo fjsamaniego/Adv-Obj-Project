@@ -241,9 +241,23 @@ public class UserMenu
                 } else {
                     System.out.println("Transaction cancelled.");
                 }
-
+                
                 if (proceed) {
                     System.out.println();
+                    if (currentUser.getMinerCarsMembership()) {
+                        double discountAmount = 0.10 * totalPrice; // 10% discount
+                        totalPrice -= discountAmount;
+                        System.out.println("Miner Car Membership applied $" + discountAmount);
+                    
+                    }
+                     // state taxes
+                    double taxAmount = totalPrice * 0.0625; // 6.25% tax
+                    totalPrice += taxAmount;
+                    System.out.println("State Taxes (6.25%): $" + taxAmount);
+
+                    // final price including taxes
+                    double finalPrice = totalPrice + stateTaxes;
+                    System.out.println("Final price (with tax): $" + finalPrice);
                     System.out.println("Congratulations! You have successfully purchased the:"); 
 
                     // display ticket once car is purchased
