@@ -79,9 +79,38 @@ public class AdminMenu
         System.out.println("Enter car type:");
         String carType = scan.next();
         
-        System.out.println("Enter");
+        System.out.println("Enter availability");
+        int carsAvailable = scan.nextInt();
 
+        System.out.println("Enter the condition");
+        String conditon = scan.nextLine();
 
+        System.out.println("Enter the color");
+        String color = scan.next();
+
+        System.out.println("Enter the ID");
+        int id = scan.nextInt();
+
+        System.out.println("Enter the year");
+        int year = scan.nextInt();
+
+        System.out.println("Enter the price");
+        double price = scan.nextDouble();
+
+        System.out.println("Enter the type of transmission");
+        String transmission = scan.nextLine();
+
+        System.out.println("Enter the vin");
+        String vin = scan.nextLine();
+
+        System.out.println("Enter the type of fuel");
+        String fuelType = scan.nex;
+        String model = carInformation[11];
+        String hasTurbo
+
+        
+
+        
         
     }
 
