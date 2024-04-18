@@ -1,7 +1,5 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.List;
-import java.io.File;
 import java.util.InputMismatchException;
 
 /**
@@ -31,20 +29,26 @@ public class RunShop
      */
     private static List<Car> cars;
 
+    /**
+     * Logger
+     */
+
+     private static final Log logger = new Log();
+
     static
     {
         /** 
         * Loading all the users from the csv file 
         */
         UserDataLoad loadU = new UserDataLoad();
-        users = loadU.loadUsers("updated_user_data.csv");
+        users = loadU.loadData("updated_user_data.csv");
         authenticate = new UserAuthentication(users);
 
         /** 
         * Loading all the cars from the csv file 
         */
         CarDataLoad loadC = new CarDataLoad();
-        cars = loadC.loadCars("updatedCarData.csv");
+        cars = loadC.loadData("updatedCarData.csv");
     }
 
     /**
@@ -64,7 +68,8 @@ public class RunShop
             System.out.println("Welcome to MineCars!");
             System.out.println("Please choose one of the following:");
             System.out.println("1. Login");
-            System.out.println("2. Exit");
+            System.out.println("2. Admin");
+            System.out.println("3. Exit");
             System.out.println("Select either 1 or 2, please type it:");
 
             try 
@@ -75,11 +80,16 @@ public class RunShop
                 // if user chooses option 1 
                 if(choice == 1)
                 {
-                    login();
+                    userLogin();
                     inSystem = false;
                 }
-                // if user chooses option 2
                 else if(choice == 2)
+                {
+                    adminLogin();
+                    inSystem = false;
+                }                
+                // if user chooses option 3
+                else if(choice == 3)
                 {
                     System.exit(0);
                     inSystem = false;
@@ -105,7 +115,7 @@ public class RunShop
      * Asks the user to input username and password
      * Verifires them using veryCredentials()
      */
-    public static void login()
+    public static void userLogin()
     {
         scan.nextLine();
         boolean verified = false;
@@ -121,13 +131,20 @@ public class RunShop
                 System.out.println();
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
-                new Log().writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
+                logger.writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
                 new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
             }
             else
                 System.out.println("Username or password is incorrect. Please try again.");
             attempts++;
         }
+    }
+
+    public static void adminLogin()
+    {
+        scan.nextLine();
+        logger.writeToLog("Logged in");
+        new AdminMenu();
     }
     
 }

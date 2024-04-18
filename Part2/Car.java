@@ -1,4 +1,3 @@
-
 /**
  * This class represents a Car and its atrributes. 
  * Also has car types extending from Car class.
@@ -281,8 +280,8 @@ public class Car
      */
     public String toString()
     {
-        return String.format("%-5s %-15s %-18s %-10s %-8s %-9d %-15d %-12s %-12s $%-8.2f %d",
-            id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable);
+        return String.format("%-5s %-11s %-18s %-12s %-8s %-9s %-11s %-15s %-5s %-8s %s %-5s",
+            id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable, hasTurbo);
     }   
 }
 
@@ -306,9 +305,9 @@ class Sedan extends Car {
      * @param price double of car price 
      * @param carsAvailable integer of cars available
      */
-    public Sedan(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
-    String transmission, String vin, double price, int carsAvailable){
-        super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
+    public Sedan(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
+    String transmission, String vin, double price, int carsAvailable, String hasTurbo){
+        super(id, carType, model, condition, color, capacity, year, fuelType, transmission, vin, price, carsAvailable, hasTurbo);
     }
 }
 
@@ -333,9 +332,9 @@ class SUV extends Car {
      * @param price double of car price 
      * @param carsAvailable integer of cars available
      */
-    public SUV(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
-    String transmission, String vin, double price, int carsAvailable){
-        super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
+    public SUV(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
+    String transmission, String vin, double price, int carsAvailable, String hasTurbo){
+        super(id, carType, model, condition, color, capacity, year, fuelType, transmission, vin, price, carsAvailable, hasTurbo);
     }
 }
 
@@ -360,9 +359,9 @@ class Hatchback extends Car {
      * @param price double of car price 
      * @param carsAvailable integer of cars available
      */
-    public Hatchback(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
-    String transmission, String vin, double price, int carsAvailable){
-        super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
+    public Hatchback(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
+    String transmission, String vin, double price, int carsAvailable, String hasTurbo){
+        super(id, carType, model, condition, color, capacity, year, fuelType, transmission, vin, price, carsAvailable, hasTurbo);
     }
 }   
 
@@ -387,8 +386,8 @@ class Pickup extends Car {
      * @param price double of car price 
      * @param carsAvailable integer of cars available
      */
-    public Pickup(int id, String carType, String model, String condition, String color, int capacity, int mileage, String fuelType,
-    String transmission, String vin, double price, int carsAvailable){
-        super(id, carType, model, condition, color, capacity, mileage, fuelType, transmission, vin, price, carsAvailable);
+    public Pickup(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
+    String transmission, String vin, double price, int carsAvailable, String hasTurbo){
+        super(id, carType, model, condition, color, capacity, year, fuelType, transmission, vin, price, carsAvailable, hasTurbo);
     }
 }    

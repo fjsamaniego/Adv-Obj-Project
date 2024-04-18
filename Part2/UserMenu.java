@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 /**
@@ -60,7 +59,7 @@ public class UserMenu
             System.out.println("2. Filter Cars (used/new)");
             System.out.println("3. Purchase a car.");
             System.out.println("4. View Tickets.");
-            System.out.println("5. Sign out");
+            System.out.println("5. Sign out.");
             System.out.println();
             System.out.print("Please select an option: ");
             System.out.println();
@@ -108,18 +107,19 @@ public class UserMenu
     private void displayCars()
     {
         // formats attributes to be printed in an organized way
-        System.out.println(String.format("%-5s %-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
+        System.out.println(String.format("%-5s %-11s %-18s %-12s %-8s %-9s %-11s %-15s %-5s %-8s %s %-5s",
         "ID",
             "Car Type", 
             "Model", 
             "Condition", 
             "Color", 
             "Capacity", 
-            "Mileage", 
+            "Year", 
             "Fuel Type", 
             "Transmission", 
             "Price", 
-            "Cars Available"));
+            "Cars Available",
+            "Turbo"));
 
         for(Car car : cars)
         {
@@ -326,8 +326,8 @@ public class UserMenu
     {
         if(purchasesMade >= 1)
         {
-            new UserDataLoad().updateUsers(users, userFile); // updates user data in updated_user_data.csv
-            new CarDataLoad().updateCars(cars, carFile); // updates car data in updatedCarData.csv
+            new UserDataLoad().updateData(users, userFile); // updates user data in updated_user_data.csv
+            new CarDataLoad().updateData(cars, carFile); // updates car data in updatedCarData.csv
             log.writeToLog("Logged out", currentUser); // logs action to dealership_log.txt
         }
     }
