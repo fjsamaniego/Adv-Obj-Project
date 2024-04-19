@@ -78,68 +78,51 @@ public class AdminMenu
             System.out.println("Please enter the information of the car. ");
             System.out.println();
 
-            System.out.println("Enter capacity:");
-            String input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter car type:");
-            input =  scan.next();
-            newInformation.add(input);
-            
-            System.out.println("Enter availability");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the condition");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the color");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the ID");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the year");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the price");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the type of transmission");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the vin");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the type of fuel");
-            input =  scan.next();
-            newInformation.add(input);
-
-            System.out.println("Enter the model");
-            String model = scan.nextLine();
-
-            System.out.println("Enter the if has turbo (Yes/No)");
-            input =  scan.next();
-            newInformation.add(input);
+            newInformation.add(userInput("Enter capacity:"));
+            newInformation.add(userInput("Enter car type:"));
+            newInformation.add(userInput("Enter availability"));
+            newInformation.add(userInput("Enter the condition"));
+            newInformation.add(userInput("Enter the color"));
+            newInformation.add(userInput("Enter the ID"));
+            newInformation.add(userInput("Enter the year"));
+            newInformation.add(userInput("Enter the price"));
+            newInformation.add(userInput("Enter the type of transmission"));
+            newInformation.add(userInput("Enter the vin"));
+            newInformation.add(userInput("Enter the type of fuel"));
+            newInformation.add(userInput("Enter the model"));
+            newInformation.add(userInput("Enter the if it has turbo (Yes/No)"));
 
             Car newCar = CarFactory.createCar(newInformation);
             cars.add(newCar);
-            new CarDataLoad().updateData(cars, carFile);
 
             System.out.println("Do you want to add another car (Y/N)");
             String answer = scan.next();
 
             if(answer.equalsIgnoreCase("N"))
                 addingCars = false;
-        
         }
+
+        new CarDataLoad().updateData(cars, carFile);
+    }
+
+    /**
+     * 
+     * @param text
+     * @return
+     */
+    private String userInput(String text)
+    {
+        String input;
+        do
+        {
+            System.out.println(text);
+            input = scan.nextLine().trim();
+
+            if(input.isEmpty())
+                System.out.println("Please enter a valid value.");
+        }
+        while(input.isEmpty());
+        return input;
     }
 
     private void getRevenue()

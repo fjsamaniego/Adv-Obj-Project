@@ -47,7 +47,7 @@ public class CarDataLoad implements DataLoad<Car>
 
             for(Car car : cars)
             {
-                String newLine = String.format("%d,%s,%s,%s,%s,%d,%d,%s,%s,%s,%.2f,%d\n",
+                String newLine = String.format("%d,%s,%d,%s,%s,%d,%d,%.2f,%s,%s,%s,%s,%s\n",
                 car.getCapacity(), 
                 car.getCarType(), 
                 car.getCarsAvailable(),
