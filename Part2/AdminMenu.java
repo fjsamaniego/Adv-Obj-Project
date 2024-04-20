@@ -80,17 +80,17 @@ public class AdminMenu
 
             newInformation.add(userInput("Enter capacity:"));
             newInformation.add(userInput("Enter car type:"));
-            newInformation.add(userInput("Enter availability"));
-            newInformation.add(userInput("Enter the condition"));
-            newInformation.add(userInput("Enter the color"));
-            newInformation.add(userInput("Enter the ID"));
-            newInformation.add(userInput("Enter the year"));
-            newInformation.add(userInput("Enter the price"));
-            newInformation.add(userInput("Enter the type of transmission"));
-            newInformation.add(userInput("Enter the vin"));
-            newInformation.add(userInput("Enter the type of fuel"));
-            newInformation.add(userInput("Enter the model"));
-            newInformation.add(userInput("Enter the if it has turbo (Yes/No)"));
+            newInformation.add(userInput("Enter availability:"));
+            newInformation.add(userInput("Enter the condition:"));
+            newInformation.add(userInput("Enter the color:"));
+            newInformation.add(userInput("Enter the ID:"));
+            newInformation.add(userInput("Enter the year:"));
+            newInformation.add(userInput("Enter the price:"));
+            newInformation.add(userInput("Enter the type of transmission:"));
+            newInformation.add(userInput("Enter the vin:"));
+            newInformation.add(userInput("Enter the type of fuel:"));
+            newInformation.add(userInput("Enter the model:"));
+            newInformation.add(userInput("Enter the if it has turbo: (Yes/No)"));
 
             Car newCar = CarFactory.createCar(newInformation);
             cars.add(newCar);
