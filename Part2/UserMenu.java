@@ -56,10 +56,11 @@ public class UserMenu
             System.out.println();
             System.out.println("MENU");
             System.out.println("1. Display all cars.");
-            System.out.println("2. Filter Cars (used/new)");
+            System.out.println("2. Filter Cars (used/new).");
             System.out.println("3. Purchase a car.");
-            System.out.println("4. View Tickets.");
-            System.out.println("5. Sign out.");
+            System.out.println("4. Return a Car.");
+            System.out.println("5. View Tickets.");
+            System.out.println("6. Sign out.");
             System.out.println();
             System.out.print("Please select an option: ");
             System.out.println();
@@ -81,9 +82,12 @@ public class UserMenu
                         purchaseCar();
                         break;
                     case 4:
-                        viewTickets();
+                        returnCar();
                         break;
                     case 5:
+                        viewTickets();
+                        break;
+                    case 6:
                         stillLoggedIn = false;
 
                         signOut();
@@ -247,23 +251,31 @@ public class UserMenu
                     if (currentUser.getMinerCarsMembership()) {
                         double discountAmount = 0.10 * totalPrice; // 10% discount
                         totalPrice -= discountAmount;
-                        System.out.println("MinerCar Membership applied $" + discountAmount);
+                        System.out.println("MinerCar Membership applied: -$" + discountAmount); 
                     
                     }
                      // state taxes
                     double taxAmount = totalPrice * 0.0625; // 6.25% tax
                     totalPrice += taxAmount;
-                    System.out.println("State Tax: $" + taxAmount);
+                    System.out.println("Tax: $" + taxAmount);
+                    System.out.println("Total: $" + totalPrice);
 
                     // final price including taxes
                     //double finalPrice = totalPrice + stateTaxes;
                     //System.out.println("Final price (with tax): $" + finalPrice);
+                    System.out.println();
                     System.out.println("Congratulations! You have successfully purchased the:"); 
 
                     // display ticket once car is purchased
                     System.out.println("Car Type: " + chosenCar.getCarType());
                     System.out.println("Model: " + chosenCar.getModel());
                     System.out.println("Color: " + chosenCar.getColor());
+
+                    // add purchased car to users purchased car list
+                    currentUser.getPurchasedCars().add(chosenCar);
+
+                    // update number of cars purchased by user
+                    currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
 
                     currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() - chosenCar.getPrice());
                     System.out.println();
@@ -288,35 +300,80 @@ public class UserMenu
     }
 
     /**
-     * Here we just show the ticket of the purchase by the given ID of the car
+     * Here we just show the ticket of the user's purchased cars, 
+     * as per the purchased cars list.
      */
     private void viewTickets()
     {
+        // if current user has an empty purchased cars list
+        if (currentUser.getPurchasedCars().isEmpty()) {
+            System.out.println();
+            System.out.println("You have not purchased any cars yet.");
+            return; 
+        }
 
-        System.out.println("Enter the ID of the car purchased:");
+        // go over purchased cars
+        for (Car car : currentUser.getPurchasedCars()) { 
+            System.out.println();
+            System.out.println("Tickets for purchased cars:");
+            System.out.println("Car Type: " + car.getCarType());
+            System.out.println("Model: " + car.getModel());
+            System.out.println("Color: " + car.getColor());
+    
+            System.out.println();
+            log.writeToLog("Viewed ticket of purchased car", currentUser);
+            break; 
+        }
+    }
+
+    /**
+     * Method first checks if user has purchased car. If true, user can return car and gets refunded.
+     * The car availability is updated and number of cars purchased by user is updated.
+     */
+    private void returnCar(){
+        System.out.println();
+        System.out.println("Enter the ID of the car you would like to return.");
         int choice = scan.nextInt();
-        
         System.out.println();
 
-        Car boughtCar = null;
-        for (Car car : cars){
+        boolean purchased = false; // if selected car is in purchased car list
+        
+        //Car returnedCar = null;
+        for (Car car : currentUser.getPurchasedCars()) {
             if (car.getID() == choice) {
-                boughtCar = car;
+                purchased = true;
+                // reset the car available amount
+                car.setCarsAvailable(car.getCarsAvailable() + 1);
+                
+
+                // return current user's money
+                currentUser.setMoneyAvailable(currentUser.getMoneyAvailable() + car.getPrice());
+                System.out.println("You have successfully returned the following car:");
+
+                System.out.println("Car Type: " + car.getCarType());
+                System.out.println("Model: " + car.getModel());
+                System.out.println("Color: " + car.getColor());
+
+                System.out.println();
+                System.out.println("You now have: $" + currentUser.getMoneyAvailable());
+
+                // remove car from user's purchased cars list
+                currentUser.getPurchasedCars().remove(car);
+
+                // update number of cars purchased by user
+                currentUser.setCarsPurchased(currentUser.getCarsPurchased() - 1);
+
+                // log action to file
+                log.writeToLog("Returned a car", currentUser);
                 break;
             }
+        } 
+
+        // if car has not been found in users purchased car list
+        if(!purchased){
+            System.out.println("Sorry, selected car can't be returned as it has not been purchased.");
         }
 
-        if (boughtCar != null){
-            System.out.println("Tickets for purchased cars: ");
-            System.out.println("Car Type: " + boughtCar.getCarType());
-            System.out.println("Model: " + boughtCar.getModel());
-            System.out.println("Color: " + boughtCar.getColor());
-            System.out.println();
-            log.writeToLog("Viewed tickets", currentUser);
-
-        } else {
-            System.out.println("Car with ID " + choice + " not purchased or found.");
-        }
     }
     
     /**

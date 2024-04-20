@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The User class extends the Person class and represents the user and all 
  * their attributes and functions
@@ -10,6 +13,7 @@ public class User extends Person
     private double moneyAvailable;
     private int carsPurchased;
     private boolean minerCarsMembership;
+    private List<Car> purchasedCars;
     
     /**
      * Creates contructor for user, including super for username and password
@@ -34,6 +38,7 @@ public class User extends Person
         this.moneyAvailable = moneyAvailable;
         this.carsPurchased = carsPurchased;
         this.minerCarsMembership = minerCarsMembership;
+        this.purchasedCars = new ArrayList<>();
     
     }
 
@@ -91,7 +96,14 @@ public class User extends Person
     {
         this.minerCarsMembership = minerCarsMembership;
     }
-    
+
+    /**
+     * Sets the users purchased cars
+     * @param purchasedCars purchased cars to be set
+     */
+    public void setPurchasedCars(List<Car> purchasedCars) {
+        this.purchasedCars = purchasedCars;
+    }
     
     /**
      * Returns the user ID
@@ -145,6 +157,14 @@ public class User extends Person
     public boolean getMinerCarsMembership()
     {
         return minerCarsMembership;
+    }
+
+    /**
+     * Returns the list of users purchased cars
+     * @return list of the cars user has purchased
+     */
+    public List<Car> getPurchasedCars() {
+        return purchasedCars;
     }
 
     /**

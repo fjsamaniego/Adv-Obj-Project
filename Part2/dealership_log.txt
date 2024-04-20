@@ -61,3 +61,45 @@
 16:32:27 04/19/24 - neo Logged in
 16:32:29 04/19/24 - neo Displayed all cars
 16:32:48 04/19/24 - Admin Logged in
+20:49:09 04/19/24 - jasonbourne Logged in
+20:49:56 04/19/24 - jasonbourne Purchased a car
+20:51:00 04/19/24 - jasonbourne Logged out
+20:51:20 04/19/24 - captainjacksparrow Logged in
+20:51:31 04/19/24 - captainjacksparrow Purchased a car
+20:54:04 04/19/24 - jasonbourne Logged in
+20:54:31 04/19/24 - jasonbourne Logged in
+20:54:38 04/19/24 - jasonbourne Failed to purchased a car
+20:55:08 04/19/24 - hermionegranger Logged in
+20:55:12 04/19/24 - hermionegranger Failed to purchased a car
+20:55:23 04/19/24 - hermionegranger Purchased a car
+21:00:18 04/19/24 - johnwick Logged in
+21:00:27 04/19/24 - johnwick Purchased a car
+21:12:06 04/19/24 - tonystark Logged in
+21:15:58 04/19/24 - tonystark Logged in
+21:17:21 04/19/24 - tonystark Logged in
+21:17:41 04/19/24 - tonystark Returned a car
+21:44:03 04/19/24 - morpheus Logged in
+21:44:23 04/19/24 - morpheus Purchased a car
+21:48:52 04/19/24 - morpheus Logged in
+21:49:02 04/19/24 - morpheus Purchased a car
+21:50:06 04/19/24 - morpheus Logged in
+21:50:12 04/19/24 - morpheus Purchased a car
+21:50:54 04/19/24 - morpheus Logged in
+21:50:59 04/19/24 - morpheus Purchased a car
+21:51:07 04/19/24 - morpheus Returned a car
+21:53:25 04/19/24 - tonystark Logged in
+21:55:26 04/19/24 - tonystark Purchased a car
+22:00:16 04/19/24 - tonystark Logged in
+22:00:20 04/19/24 - tonystark Purchased a car
+22:03:04 04/19/24 - tonystark Logged in
+22:03:17 04/19/24 - tonystark Purchased a car
+22:03:21 04/19/24 - tonystark Viewed ticket of purchased car
+22:05:06 04/19/24 - tonystark Logged in
+22:05:12 04/19/24 - tonystark Purchased a car
+22:06:34 04/19/24 - tonystark Viewed ticket of purchased car
+22:06:45 04/19/24 - tonystark Returned a car
+22:07:19 04/19/24 - tonystark Purchased a car
+22:07:26 04/19/24 - tonystark Viewed ticket of purchased car
+22:07:53 04/19/24 - tonystark Returned a car
+22:10:10 04/19/24 - tonystark Logged in
+22:10:43 04/19/24 - tonystark Logged in
