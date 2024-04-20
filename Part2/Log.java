@@ -29,6 +29,10 @@ public class Log
         }
     }
 
+    /**
+     * Writes the log entry to the log file when Admin uses the program
+     * @param action the action performed by the Admin
+     */
     public void writeToLog(String action)
     {
         try(FileWriter fw = new FileWriter(LOG_FIlE,true))

@@ -63,7 +63,15 @@ public class AdminMenu
                     case 4:
                         addMoreUsers();
                         break;
+<<<<<<< HEAD
+=======
+                    case 5:
+                        stillLoggedIn = false;
+                        logger.writeToLog("Logged out");
+                        break;
+>>>>>>> 7fc930aa363f2281cfbffe1616e84287038378ed
                     default:
+                        System.out.println("Please try again.");
                         break;
                 }
             }
@@ -72,9 +80,6 @@ public class AdminMenu
                 System.out.println("Invalid, please enter a number.");
                 scan.nextLine();
             }
-            
-            
-            
         }
     }
 
@@ -112,6 +117,8 @@ public class AdminMenu
 
             if(answer.equalsIgnoreCase("N"))
                 addingCars = false;
+            
+            logger.writeToLog("added a car of ID: "+ newCar.getID());
         }
 
         new CarDataLoad().updateData(cars, carFile);
@@ -204,37 +211,57 @@ public class AdminMenu
                 System.out.println("How many do you want to delete?");
                 int amount = scan.nextInt();
 
+                scan.nextLine();
+
                 boolean wasFound = false;
                 for(Car car: cars)
                 {
                     if(carID == car.getID())
                     {
-                        if(car.getCarsAvailable() > amount)
+                        if(car.getCarsAvailable() >= amount)
                         {
                             car.setCarsAvailable(car.getCarsAvailable() - amount);
+                            wasFound = true;
+                            break;
                         }
-                        wasFound = true;
-                        break;
+                        else
+                        {
+                            System.out.println("There are less cars than the specified.");
+                            System.out.println("Please try again.");
+                        }
+                        
                     }
                 }
 
                 if(!wasFound)
                 {
                     System.out.println("Car not found");
+                    logger.writeToLog("Failed to delete a car");
+                    break;
                 }
+
+                new CarDataLoad().updateData(cars, carFile);
+                logger.writeToLog("deleted " + amount + (amount > 1 ? " cars of ID: "+carID : "car of ID: "+carID));
             }
             catch(InputMismatchException e)
             {
                 System.out.println("Please enter a number.");
+                scan.nextLine();
             }
 
             
             System.out.println("Do you want to delete another car? (Y/N)");
-            String input = scan.nextLine();
+            String input;
+            do
+            {   System.out.println("Please input either Y or N.");
+                input = scan.nextLine();
+            }
+            while(!input.equalsIgnoreCase("Y") && !input.equalsIgnoreCase("N"));
+
             if(input.equalsIgnoreCase("N"))
                 stillInSystem = false;
-        }
-        
+            
+        }    
     }
 
     /**
@@ -271,6 +298,9 @@ public class AdminMenu
         new UserDataLoad().updateData(users, userFile);
     }
     
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7fc930aa363f2281cfbffe1616e84287038378ed
 }

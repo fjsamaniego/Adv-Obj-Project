@@ -99,5 +99,5 @@ Capacity,Car Type,Cars Available,Condition,Color,ID,Year,Price,Transmission,VIN,
 5,Hatchback,10,New,White,98,2019,41473.52,Automatic,X4WP2WEBALSAODGAV,Hybrid,Honda Fit,No
 8,SUV,4,New,Yellow,99,2022,33289.25,Automatic,GPJFC981TWNU72B51,Hybrid,Chevrolet Tahoe,No
 5,Hatchback,3,New,Black,100,2023,24443.93,Manual,7R8A7T8XAH9BKD0U4,Gasoline,Toyota Prius,No
-4,Sedan,4,New,Blue,101,2024,35000.50,Gasoline,ZZZZZZZZZZZZZZZZ,Gasoline,Honda Civic,Yes
+4,Sedan,0,New,Blue,101,2024,35000.50,Gasoline,ZZZZZZZZZZZZZZZZ,Gasoline,Honda Civic,Yes
 4,Sedan,3,New,Grey,102,2024,30987.55,Automatic,BJQAK617SPRPN8K5L,Gasoline,Ford Explorer,Yes
