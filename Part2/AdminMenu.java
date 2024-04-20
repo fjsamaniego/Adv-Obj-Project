@@ -149,7 +149,47 @@ public class AdminMenu
 
     private void removeCar()
     {
+        System.out.println("Enter the ID of the car you want to remove:");
+        boolean stillInSystem = true;
+        while(stillInSystem)
+        {
+            try
+            {
+                int carID  = scan.nextInt();
+                System.out.println("How many do you want to delete?");
+                int amount = scan.nextInt();
 
+                boolean wasFound = false;
+                for(Car car: cars)
+                {
+                    if(carID == car.getID())
+                    {
+                        if(car.getCarsAvailable() > amount)
+                        {
+                            car.setCarsAvailable(car.getCarsAvailable() - amount);
+                        }
+                        wasFound = true;
+                        break;
+                    }
+                }
+
+                if(!wasFound)
+                {
+                    System.out.println("Car not found");
+                }
+            }
+            catch(InputMismatchException e)
+            {
+                System.out.println("Please enter a number.");
+            }
+
+            
+            System.out.println("Do you want to delete another car? (Y/N)");
+            String input = scan.nextLine();
+            if(input.equalsIgnoreCase("N"))
+                stillInSystem = false;
+        }
+        
     }
 
     /**
