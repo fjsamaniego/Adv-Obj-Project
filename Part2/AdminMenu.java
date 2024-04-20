@@ -63,13 +63,6 @@ public class AdminMenu
                     case 4:
                         addMoreUsers();
                         break;
-<<<<<<< HEAD
-=======
-                    case 5:
-                        stillLoggedIn = false;
-                        logger.writeToLog("Logged out");
-                        break;
->>>>>>> 7fc930aa363f2281cfbffe1616e84287038378ed
                     default:
                         System.out.println("Please try again.");
                         break;
@@ -166,7 +159,7 @@ public class AdminMenu
             }
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Please enter a number.");
-            scan.nextLine(); // Consume the invalid input
+            scan.nextLine(); 
         }
     }
 
@@ -297,10 +290,4 @@ public class AdminMenu
 
         new UserDataLoad().updateData(users, userFile);
     }
-    
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7fc930aa363f2281cfbffe1616e84287038378ed
 }
