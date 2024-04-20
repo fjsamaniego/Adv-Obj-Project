@@ -298,6 +298,7 @@ public class UserMenu
         }
         
     }
+    
 
     /**
      * Here we just show the ticket of the user's purchased cars, 

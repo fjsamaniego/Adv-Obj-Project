@@ -46,7 +46,6 @@ public class AdminMenu
             System.out.println("2. Get revenue.");
             System.out.println("3. Remove a car.");
             System.out.println("4. Add more users.");
-            System.out.println("5. Sign out.");
 
             try
             {
@@ -64,9 +63,6 @@ public class AdminMenu
                     case 4:
                         addMoreUsers();
                         break;
-                    case 5:
-                        stillLoggedIn = false;
-                        signOut();
                     default:
                         break;
                 }
@@ -144,7 +140,56 @@ public class AdminMenu
 
     private void getRevenue()
     {
+        System.out.println("Choose how you want to get revenue:");
+        System.out.println("1. By ID");
+        System.out.println("2. By Car Type");
 
+        try {
+            int choice = scan.nextInt();
+            switch (choice) {
+                case 1:
+                    getRevenueById();
+                    break;
+                case 2:
+                    getRevenueByCarType();
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please choose 1 or 2.");
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a number.");
+            scan.nextLine(); // Consume the invalid input
+        }
+    }
+
+    private void getRevenueById() {
+        System.out.println("Enter the car ID for which you want to get revenue:");
+        int id = scan.nextInt();
+        double revenue = 0.0;
+    
+        int carsSold = 0;
+        for (Car car : cars) {
+             if (car.getID() == id) {
+                 revenue = car.getCarsAvailable();
+                 break;
+             }
+        }
+    
+        System.out.println("Number of cars sold for ID " + id + ": " + carsSold);
+        System.out.println("Revenue for ID " + id + ": $" + revenue);
+    }
+
+    private void getRevenueByCarType() {
+        // System.out.println("Enter the car type for which you want to get revenue:");
+        // String choice = scan.next().trim();
+    
+        // for(Car car : cars){
+        //     if (car.getCarType() == "sedan"){
+        //         System.out.println("Revenue for Sedan: $" + sedanRevenue);
+        //     }
+       
+        // }
     }
 
     private void removeCar()
@@ -200,20 +245,20 @@ public class AdminMenu
         boolean addingUser = true;
         while(addingUser)
         {
-            ArrayList<String> userInformation = new ArrayList<>();
+            ArrayList<String> newInfo = new ArrayList<>();
             System.out.println("Please enter the information of the user. ");
             System.out.println();
 
-            userInformation.add(userInput("Enter money available:"));
-            userInformation.add(userInput("Enter password:"));
-            userInformation.add(userInput("Enter user last name:"));
-            userInformation.add(userInput("Enter user ID:"));
-            userInformation.add(userInput("Enter number of cars purchased:"));
-            userInformation.add(userInput("Enter user first name:"));
-            userInformation.add(userInput("Enter username:"));
-            userInformation.add(userInput("Enter whether user has MinerCars membership: (TRUE/FALSE)"));
+            newInfo.add(userInput("Enter money available:"));
+            newInfo.add(userInput("Enter password:"));
+            newInfo.add(userInput("Enter user last name:"));
+            newInfo.add(userInput("Enter user ID:"));
+            newInfo.add(userInput("Enter number of cars purchased:"));
+            newInfo.add(userInput("Enter user first name:"));
+            newInfo.add(userInput("Enter username:"));
+            newInfo.add(userInput("Enter whether user has MinerCars membership: (TRUE/FALSE)"));
 
-            User newUser = UserDataLoad.loadData(userFile);
+            User newUser = UserFactory.createUser(newInfo);
             users.add(newUser);
 
             System.out.println("Do you want to add another user (Y/N)");
@@ -226,11 +271,6 @@ public class AdminMenu
         new UserDataLoad().updateData(users, userFile);
     }
     
-
-    private void signOut()
-    {
-
-    }
 
 
 }
