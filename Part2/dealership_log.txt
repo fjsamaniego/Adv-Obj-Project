@@ -116,6 +116,5 @@
 17:11:28 04/20/24 - Admin Logged in
 17:11:40 04/20/24 - Admin Failed to delete a car
 17:13:09 04/20/24 - Admin Logged in
-17:13:31 04/20/24 - Admin deleted 4 cars of ID: 101
 17:14:41 04/20/24 - Admin Logged in
 17:14:51 04/20/24 - Admin deleted 4 cars of ID: 101
