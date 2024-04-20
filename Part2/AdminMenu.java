@@ -78,9 +78,6 @@ public class AdminMenu
                 System.out.println("Invalid, please enter a number.");
                 scan.nextLine();
             }
-            
-            
-            
         }
     }
 
@@ -191,7 +188,7 @@ public class AdminMenu
                     logger.writeToLog("Failed to delete a car");
                     break;
                 }
-                
+
                 new CarDataLoad().updateData(cars, carFile);
                 logger.writeToLog("deleted " + amount + (amount > 1 ? " cars of ID: "+carID : "car of ID: "+carID));
             }
