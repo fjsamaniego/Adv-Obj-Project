@@ -23,6 +23,7 @@ public class AdminMenu
      * @param users list of users
      * @param userFile path to file storing user data
      * @param carFile path to file storing car data
+     * @param purchasedCarsByUsers list storing the cars
      */
     public AdminMenu(List<Car> cars, List<User> users, String userFile, String carFile, List<Car> purchasedCarsByUsers)
     {

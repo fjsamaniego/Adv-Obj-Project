@@ -30,7 +30,7 @@ public class RegisterCarsPurchased
     /**
      * Function to add purchased car to list of cars sold
      * 
-     * @param purchasedCarpurchasedCar The car to be added to the list of purchased cars 
+     * @param purchasedCar The car to be added to the list of purchased cars 
      */
     public void addPurchasedCarsByUsers(Car purchasedCar) {
         carsSold.add(purchasedCar);
