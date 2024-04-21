@@ -135,3 +135,5 @@
 18:20:02 04/20/24 - sherlockholmes Logged in
 18:21:31 04/20/24 - sherlockholmes Purchased a car
 18:21:38 04/20/24 - sherlockholmes Returned a car
+20:08:01 04/20/24 - Admin Logged in
+20:12:28 04/20/24 - Admin Logged in

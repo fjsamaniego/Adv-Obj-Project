@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.List;
 import java.util.InputMismatchException;
+import java.util.ArrayList;
 
 /**
  * The RunSop class is where we have our main method, therefore, is where
@@ -147,7 +148,8 @@ public class RunShop
     {
         scan.nextLine();
         logger.writeToLog("Logged in");
-        new AdminMenu(cars, users, "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();
+        List<Car> purchasedCarsByUsers = new ArrayList<>(); 
+        new AdminMenu(cars, users, "updated_user_data.csv", "updatedCarData.csv", purchasedCarsByUsers).MenuDisplay();
     }
     
 }
