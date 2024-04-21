@@ -49,6 +49,7 @@ public class AdminMenu
             System.out.println("2. Get revenue.");
             System.out.println("3. Remove a car.");
             System.out.println("4. Add more users.");
+            System.out.println("5. Sign Out");
 
             try
             {
@@ -65,6 +66,9 @@ public class AdminMenu
                         removeCar();
                     case 4:
                         addMoreUsers();
+                        break;
+                    case 5:
+                        stillLoggedIn = false;
                         break;
                     default:
                         System.out.println("Please try again.");
