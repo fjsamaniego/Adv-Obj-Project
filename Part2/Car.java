@@ -27,12 +27,13 @@ public class Car
      * @param condition String of car condition
      * @param color String of car color
      * @param capacity integer of car capacity
-     * @param mileage integer of car mileage
+     * @param year integer of year of the car
      * @param fuelType String of fuel type
      * @param transmission String of car transmission
      * @param vin String of car vin
      * @param price double of car price 
      * @param carsAvailable integer of cars available 
+     * @param hasTurbo String if car has turbo or not
      */
     public Car(int id, String carType, String model, String condition, String color, int capacity, int year, String fuelType,
             String transmission, String vin, double price, int carsAvailable, String hasTurbo) {
@@ -110,8 +111,8 @@ public class Car
     }
 
     /**
-     * Sets the car mileage
-     * @param mileage car mileage to set
+     * Sets the car year
+     * @param year year of car to be set
      */
     public void setYear(int year)
     {
@@ -158,7 +159,7 @@ public class Car
 
     /**
      *  Sets if the car has turbo
-     * @param hasTurbo
+     * @param hasTurbo if car has turbo or not to be set
      */
     public void setHasTurbo(String hasTurbo)
     {
@@ -167,7 +168,7 @@ public class Car
 
     /**
      * Sets the price of the car
-     * @param price
+     * @param price car price to be set
      */
     public void setPrice(double price)
     {
