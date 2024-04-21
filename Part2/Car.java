@@ -157,7 +157,7 @@ public class Car
     }
 
     /**
-     * 
+     *  Sets if the car has turbo
      * @param hasTurbo
      */
     public void setHasTurbo(String hasTurbo)
@@ -166,7 +166,7 @@ public class Car
     }
 
     /**
-     * 
+     * Sets the price of the car
      * @param price
      */
     public void setPrice(double price)
@@ -282,6 +282,10 @@ public class Car
         return carsAvailable;
     }
 
+    /**
+     * Ff the car has turbo
+     * @return yes,otherwise no
+     */
     public String getHasTurbo()
     {
         return hasTurbo;

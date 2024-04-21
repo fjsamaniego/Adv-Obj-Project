@@ -16,6 +16,8 @@ public interface DataLoad<T>
      * @throws IOException if error occurs while reading file
      */
     List<T> loadData(String filePath) throws IOException;
+
+    
     /**
      * Updates the data in file.
      * 

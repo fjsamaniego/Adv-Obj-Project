@@ -43,7 +43,6 @@ public class RunShop
     /**
      * use data file path
      */
-
     private static String user_data_file = "updatedCarData.csv";
 
     static

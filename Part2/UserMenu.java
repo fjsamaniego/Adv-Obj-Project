@@ -19,7 +19,6 @@ public class UserMenu
     private String userFile;
     private String carFile;
     private Log log = new Log();
-    private RegisterCarsPurchased purchasedCarsByUsers;
 
     /**
      * Constructs a new object of UserMenu

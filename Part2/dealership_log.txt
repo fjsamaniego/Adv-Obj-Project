@@ -106,11 +106,9 @@
 22:24:29 04/19/24 - Admin Logged in
 22:34:09 04/19/24 - Admin Logged in
 23:09:42 04/19/24 - Admin Logged in
-<<<<<<< HEAD
 17:21:39 04/20/24 - Admin Logged in
 17:22:21 04/20/24 - Admin Logged in
 17:24:10 04/20/24 - Admin Logged in
-=======
 14:39:09 04/20/24 - neo Logged in
 14:40:08 04/20/24 - neo Purchased a car
 14:40:11 04/20/24 - neo Viewed ticket of purchased car
@@ -123,7 +121,6 @@
 17:13:09 04/20/24 - Admin Logged in
 17:14:41 04/20/24 - Admin Logged in
 17:14:51 04/20/24 - Admin deleted 4 cars of ID: 101
->>>>>>> 7fc930aa363f2281cfbffe1616e84287038378ed
 17:44:54 04/20/24 - Admin Logged in
 18:12:09 04/20/24 - Admin Logged in
 18:14:35 04/20/24 - Admin Logged in
