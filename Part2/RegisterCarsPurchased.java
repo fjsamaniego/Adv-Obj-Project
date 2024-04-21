@@ -1,14 +1,25 @@
 import java.util.List;
 
+/**
+ * 
+ */
 public class RegisterCarsPurchased 
 {
     List<Car> carsSold;
 
+    /**
+     * 
+     * @param carsSold
+     */
     public RegisterCarsPurchased(List<Car> carsSold)
     {
         this.carsSold = carsSold;
     }
 
+    /**
+     * 
+     * @param charactetistic
+     */
     public void showRevenue(String charactetistic)
     {
         if(charactetistic.length() < 3)
@@ -33,6 +44,10 @@ public class RegisterCarsPurchased
         
     }
 
+    /**
+     * 
+     * @param charactetistic
+     */
     public void showRevenue(int charactetistic)
     {
         if(charactetistic <= 0)

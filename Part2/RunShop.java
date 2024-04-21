@@ -140,6 +140,9 @@ public class RunShop
         }
     }
 
+    /**
+     * The login process for an admin user and displays the admin menu.
+     */
     public static void adminLogin()
     {
         scan.nextLine();

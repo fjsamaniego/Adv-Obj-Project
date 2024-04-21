@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 /**
- * 
+ * Class represents menu for managing cars and users from administrative perspective.
  */
 public class AdminMenu 
 {
@@ -18,11 +18,11 @@ public class AdminMenu
     private List<Car> purchasedCarsByUsers;
 
     /**
-     * 
-     * @param cars
-     * @param users
-     * @param userFile
-     * @param carFile
+     * Constructs menu for managing cars and users. 
+     * @param cars list of cars
+     * @param users list of users
+     * @param userFile path to file storing user data
+     * @param carFile path to file storing car data
      */
     public AdminMenu(List<Car> cars, List<User> users, String userFile, String carFile, List<Car> purchasedCarsByUsers)
     {
@@ -34,7 +34,7 @@ public class AdminMenu
     }
 
     /**
-     * 
+     * Displays menu containing option admin can perform.
      */
     public void MenuDisplay()
     {
@@ -78,7 +78,8 @@ public class AdminMenu
     }
 
     /**
-     * 
+     * Allows admin to all a car with all the fields required, to the 
+     * updated car data file.
      */
     private void addCar()
     {
@@ -119,9 +120,9 @@ public class AdminMenu
     }
 
     /**
-     * 
-     * @param text
-     * @return
+     * Takes user input from the console after displaying the specified text prompt.
+     * @param text Prompt to display to user
+     * @return returns user input
      */
     private String userInput(String text)
     {
@@ -138,7 +139,9 @@ public class AdminMenu
         return input;
     }
 
-
+    /**
+     * 
+     */
     private void getRevenue()
     {
         System.out.println("Choose how you want to get revenue:");
@@ -164,6 +167,9 @@ public class AdminMenu
         }
     }
 
+    /**
+     * 
+     */
     private void getRevenueById() {
         System.out.println("Enter the car ID for which you want to get revenue:");
         int id = scan.nextInt();
@@ -193,6 +199,10 @@ public class AdminMenu
         }
     }
 
+    /**
+     * Admin enters ID to remove car from the car dealership byt deleting it
+     * from the carsAvailable amount.
+     */
     private void removeCar()
     {
         System.out.println("Enter the ID of the car you want to remove:");
@@ -259,7 +269,8 @@ public class AdminMenu
     }
 
     /**
-     * 
+     * Admin can all new users by entering all the user fields, 
+     * and updating the user file.
      */
     private void addMoreUsers()
     {

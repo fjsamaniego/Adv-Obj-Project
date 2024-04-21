@@ -45,6 +45,7 @@ public class UserMenu
      * the menu several times. The only way to stop the loop is to sign out 
      * <p>
      * Each actions has their own method implementation.
+     * 
      * @throws InputMismatchException if the user inputs a string/char that cannot be
      *      converted to an int 
      */
@@ -137,6 +138,7 @@ public class UserMenu
     /**
      * An overloaded method of displayCars(), but in this case we only print
      * based on the filter that was given
+     * 
      * @param option could be either "New" of "Used"
      */
     private void displayCars(String option)
@@ -168,6 +170,7 @@ public class UserMenu
     /**
      * In this method we call displayCars(String) to filter the cars that the
      * user wants to see depending on the cars' condition
+     * 
      * @throws InputMismatchException if the user inputs a string/char that cannot be
      *      converted to an int 
      */
@@ -339,7 +342,7 @@ public class UserMenu
 
         boolean purchased = false; // if selected car is in purchased car list
         
-        //Car returnedCar = null;
+        // Car returnedCar = null;
         for (Car car : currentUser.getPurchasedCars()) {
             if (car.getID() == choice) {
                 purchased = true;

@@ -1,10 +1,17 @@
 import java.util.ArrayList;
 
 /**
- * 
+ * File to create new car and set car fields from file to variables.
+ * This simplfies adding new cars by the admin
  */
 public class CarFactory
 {
+    /**
+     * Sets a new Car object based on the provided car information.
+     * 
+     * @param carInformation an array containing car information based on car file order
+     * @return new car object
+     */
     public static Car createCar(String[] carInformation)
     {
         int capacity = Integer.parseInt(carInformation[0]);
@@ -40,6 +47,12 @@ public class CarFactory
         }
     }
 
+    /**
+     * Gets car object based on the provided car information.
+     * 
+     * @param carInformation An ArrayList containing car information
+     * @return The newly created Car object.
+     */
     public static Car createCar(ArrayList<String> carInformation)
     {
         try

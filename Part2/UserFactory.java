@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 
 /**
- * 
+ * File to create new user and store user fields in variables.
+ * Simplifies addind new users to user file by admin. 
  */
 public class UserFactory {
     /**
+     * Sets a new User object based on the provided user information.
      * 
-     * @param userInformation
-     * @return
+     * @param userInformation an array containing user information based on user file order
+     * @return new user object
      */
     public static User createUser(String[] userInformation)
     {
@@ -25,9 +27,10 @@ public class UserFactory {
     }
 
     /**
+     * Gets User object based on the provided user information
      * 
-     * @param userInformation
-     * @return
+     * @param userInformation An ArrayList containing user information
+     * @return The newly created User object.
      */
     public static User createUser(ArrayList<String> userInformation)
     {
