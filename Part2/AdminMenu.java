@@ -15,7 +15,7 @@ public class AdminMenu
     private String carFile;
     private Log logger = new Log();
     private int changesMade = 0;
-    private List<Car> purchasedCarsByUsers;
+    private List<Car> purchasedCars;
 
     /**
      * Constructs menu for managing cars and users. 
@@ -24,13 +24,14 @@ public class AdminMenu
      * @param userFile path to file storing user data
      * @param carFile path to file storing car data
      */
-    public AdminMenu(List<Car> cars, List<User> users, String userFile, String carFile, List<Car> purchasedCarsByUsers)
+    public AdminMenu(List<Car> cars, List<User> users, String userFile, String carFile)
     {
         this.cars = cars;
         this.users = users;
         this.userFile = userFile;
         this.carFile = carFile;
         this.scan = new Scanner(System.in);
+        this.purchasedCars = 
     }
 
     /**
@@ -172,6 +173,37 @@ public class AdminMenu
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Please enter a number.");
             scan.nextLine(); 
+        }
+    }
+
+    /**
+     * 
+     */
+    private void getRevenueById() {
+        System.out.println("Enter the car ID for which you want to get revenue:");
+        int id = scan.nextInt();
+        double revenue = 0.0;
+    
+        int carsSold = 0;
+        for (Car car : cars) {
+             if (car.getID() == id) {
+                 revenue = car.getCarsAvailable();
+                 break;
+             }
+        }
+    
+        
+    }
+
+    private void getRevenueByCarType() {
+        System.out.println("Enter the car type for which you want to get revenue:");
+        String choice = scan.next().trim();
+    
+        for(Car car : cars){
+            if (car.getCarType() == "sedan"){
+                System.out.println("Revenue for Sedan: $" + sedanRevenue);
+            }
+       
         }
     }
 

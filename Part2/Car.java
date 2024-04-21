@@ -156,9 +156,22 @@ public class Car
         this.carsAvailable = carsAvailable;
     }
 
+    /**
+     * 
+     * @param hasTurbo
+     */
     public void setHasTurbo(String hasTurbo)
     {
         this.hasTurbo = hasTurbo;
+    }
+
+    /**
+     * 
+     * @param price
+     */
+    public void setPrice(double price)
+    {
+        this.price = price;
     }
 
     /**

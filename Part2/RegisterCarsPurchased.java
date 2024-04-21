@@ -1,16 +1,12 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-/**
- * 
- */
 public class RegisterCarsPurchased 
 {
-    List<Car> carsSold;
+    private static List<Car> carsSold = new ArrayList<>();
 
-    /**
-     * 
-     * @param carsSold
-     */
+
     public RegisterCarsPurchased(List<Car> carsSold)
     {
         this.carsSold = carsSold;
