@@ -14,6 +14,9 @@ import java.io.FileWriter;
 
 public class UserDataLoad implements DataLoad<User>
 {
+    /**
+     * 
+     */
     @Override
     public List<User> loadData(String file)
     {
@@ -51,6 +54,9 @@ public class UserDataLoad implements DataLoad<User>
         return users;
     }
 
+    /**
+     * 
+     */
     @Override
     public void updateData(List<User> users, String file) 
     {

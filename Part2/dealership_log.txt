@@ -125,3 +125,13 @@
 17:14:51 04/20/24 - Admin deleted 4 cars of ID: 101
 >>>>>>> 7fc930aa363f2281cfbffe1616e84287038378ed
 17:44:54 04/20/24 - Admin Logged in
+18:12:09 04/20/24 - Admin Logged in
+18:14:35 04/20/24 - Admin Logged in
+18:16:57 04/20/24 - Admin Logged in
+18:17:31 04/20/24 - jasonbourne Logged in
+18:17:47 04/20/24 - jasonbourne Failed to purchased a car
+18:18:29 04/20/24 - sherlockholmes Logged in
+18:19:10 04/20/24 - sherlockholmes Purchased a car
+18:20:02 04/20/24 - sherlockholmes Logged in
+18:21:31 04/20/24 - sherlockholmes Purchased a car
+18:21:38 04/20/24 - sherlockholmes Returned a car

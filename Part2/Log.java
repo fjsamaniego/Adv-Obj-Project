@@ -30,7 +30,8 @@ public class Log
     }
 
     /**
-     * Writes the log entry to the log file when Admin uses the program
+     * Writes the log entry to the log file when Admin uses the program.
+     * 
      * @param action the action performed by the Admin
      */
     public void writeToLog(String action)

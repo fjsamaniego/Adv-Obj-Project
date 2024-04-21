@@ -289,6 +289,7 @@ public class Car
     /**
      * Returns string representation of car object with all previous 
      * car attributes
+     * 
      * @return formatted string of car
      */
     public String toString()

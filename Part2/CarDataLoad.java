@@ -12,6 +12,12 @@ import java.io.FileWriter;
  */
 public class CarDataLoad implements DataLoad<Car>
 {
+    /**
+     * Loads car data from csv file.
+     * 
+     * @param file The path of the csv file to load data from.
+     * @return A list containing Car objects loaded from the csv file
+     */
     @Override
     public List<Car> loadData(String file)
     {
@@ -38,6 +44,12 @@ public class CarDataLoad implements DataLoad<Car>
         return cars;
     }
 
+    /**
+     * Updates car data in csv file.
+     * 
+     * @param cars The list of Car objects containing updated data.
+     * @param file The path of the csv file to update.
+     */
     @Override
     public void updateData(List<Car> cars, String file)
     {
