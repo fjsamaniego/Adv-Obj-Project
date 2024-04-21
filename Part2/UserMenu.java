@@ -277,11 +277,6 @@ public class UserMenu
                     // add purchased car to users purchased car list
                     currentUser.getPurchasedCars().add(chosenCar);
 
-                    // add to the register
-                    RegisterCarsPurchased register = new RegisterCarsPurchased(carsSold);
-                    register.addPurchasedCarsByUsers(chosenCar);
-
-
                     // update number of cars purchased by user
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);
 
