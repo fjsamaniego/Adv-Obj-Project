@@ -177,36 +177,6 @@ public class AdminMenu
         }
     }
 
-    /**
-     * 
-     */
-    // private void getRevenueById() {
-    //     System.out.println("Enter the car ID for which you want to get revenue:");
-    //     int id = scan.nextInt();
-    //     double revenue = 0.0;
-    
-    //     int carsSold = 0;
-    //     for (Car car : cars) {
-    //          if (car.getID() == id) {
-    //              revenue = car.getCarsAvailable();
-    //              break;
-    //          }
-    //     }
-    
-        
-    
-
-    // private void getRevenueByCarType() {
-    //     System.out.println("Enter the car type for which you want to get revenue:");
-    //     String choice = scan.next().trim();
-    
-    //     for(Car car : cars){
-    //         if (car.getCarType() == "sedan"){
-    //             System.out.println("Revenue for Sedan: $" + sedanRevenue);
-    //         }
-       
-    //     }
-    // }
 
     /**
      * Admin enters ID to remove car from the car dealership byt deleting it

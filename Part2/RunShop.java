@@ -35,6 +35,16 @@ public class RunShop
      */
 
     private static final Log logger = new Log();
+    /**
+     * car data file path
+     */
+    private static String car_data_file = "updated_user_data.csv";
+
+    /**
+     * use data file path
+     */
+
+    private static String user_data_file = "updatedCarData.csv";
 
     static
     {
@@ -42,14 +52,14 @@ public class RunShop
         * Loading all the users from the csv file 
         */
         UserDataLoad loadU = new UserDataLoad();
-        users = loadU.loadData("updated_user_data.csv");
+        users = loadU.loadData(car_data_file);
         authenticate = new UserAuthentication(users);
 
         /** 
         * Loading all the cars from the csv file 
         */
         CarDataLoad loadC = new CarDataLoad();
-        cars = loadC.loadData("updatedCarData.csv");
+        cars = loadC.loadData(user_data_file);
     }
 
     /**
@@ -133,7 +143,7 @@ public class RunShop
                 System.out.println("Welcome " + usernameIN);
                 verified = true;
                 logger.writeToLog("Logged in", authenticate.getCurrentUser()); // updates log in action to dealership_log.txt
-                new UserMenu(cars, users, authenticate.getCurrentUser(), "updated_user_data.csv", "updatedCarData.csv").MenuDisplay();                
+                new UserMenu(cars, users, authenticate.getCurrentUser(), user_data_file, car_data_file).MenuDisplay();                
             }
             else 
                 System.out.println("Username or password is incorrect. Please try again.");
@@ -149,7 +159,7 @@ public class RunShop
         scan.nextLine();
         logger.writeToLog("Logged in");
         List<Car> purchasedCarsByUsers = new ArrayList<>(); 
-        new AdminMenu(cars, users, "updated_user_data.csv", "updatedCarData.csv", purchasedCarsByUsers).MenuDisplay();
+        new AdminMenu(cars, users, user_data_file, car_data_file, purchasedCarsByUsers).MenuDisplay();
     }
     
 }
