@@ -145,6 +145,7 @@ public class AdminMenu
      */
     private void getRevenue()
     {
+        System.out.println();
         System.out.println("Choose how you want to get revenue:");
         System.out.println("1. By ID");
         System.out.println("2. By Car Type");
@@ -153,12 +154,19 @@ public class AdminMenu
             int choice = scan.nextInt();
             switch (choice) {
                 case 1:
-                    getRevenueById();
+                    System.out.println();
+                    System.out.println("Enter the ID for which you want to get revenue:");
+                    int id = scan.nextInt();
+                    new RegisterCarsPurchased(cars).showRevenue(id);
                     break;
                 case 2:
-                    getRevenueByCarType();
+                    System.out.println();
+                    System.out.println("Enter the car type for which you want to get revenue:");
+                    String carType = scan.next().trim();
+                    new RegisterCarsPurchased(cars).showRevenue(carType);
                     break;
                 default:
+                    System.out.println();
                     System.out.println("Invalid choice. Please choose 1 or 2.");
                     break;
             }
@@ -239,8 +247,8 @@ public class AdminMenu
 
                 if(!wasFound)
                 {
-                    System.out.println("Car not found");
-                    logger.writeToLog("Failed to delete a car");
+                    System.out.println("Car was not found");
+                    logger.writeToLog("Failed to delete car.");
                     break;
                 }
 
@@ -278,7 +286,7 @@ public class AdminMenu
         while(addingUser)
         {
             ArrayList<String> newInfo = new ArrayList<>();
-            System.out.println("Please enter the information of the user. ");
+            System.out.println("Please enter all the information of the user. ");
             System.out.println();
 
             newInfo.add(userInput("Enter money available:"));
@@ -300,6 +308,6 @@ public class AdminMenu
                 addingUser = false;
         }
 
-        new UserDataLoad().updateData(users, userFile);
+        new UserDataLoad().updateData(users, userFile); // updates user file
     }
 }

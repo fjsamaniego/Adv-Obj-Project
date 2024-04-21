@@ -12,80 +12,60 @@ public class RegisterCarsPurchased
         this.carsSold = carsSold;
     }
 
-    public static void addPurchasedCar(Car car)
+    /**
+     * 
+     * @param characteristic
+     */
+    public void showRevenue(String characteristic)
     {
-        if(car != null)
-        {
-            carsSold.add(car);
-        }
-    }
-
-    public List<Car> getPurchasedCars(Car car)
-    {
-        return Collections.unmodifiableList(carsSold);
-    }
-
-    public void showRevenue(String charactetistic)
-    {
-        if(charactetistic.isEmpty())
-        {
-            System.out.println("Invalid type");
-            return;
-        }
+        // if (characteristic.length() < 3) {
+        //     System.out.println("Invalid type");
+        //     return;
+        // }
 
         int numCarsSold = 0;
         double revenue = 0;
 
-        for(Car car: carsSold)
-        {
-            if(car.getCarType().equalsIgnoreCase(charactetistic))
-            {
+        for (Car car : carsSold) {
+            if (car.getCarType().equalsIgnoreCase(characteristic)) {
                 numCarsSold++;
                 revenue += car.getPrice();
             }
         }
 
-        if(numCarsSold == 0)
-        {
-            System.out.println("Car type not found in the register");
-            return;
+        if (numCarsSold == 0) {
+            System.out.println("No cars of type " + characteristic + " were sold.");
+        } else {
+            System.out.println();
+            System.out.println("Total number of " + characteristic + " cars sold: " + numCarsSold);
+            System.out.println("Total revenue from " + characteristic + " cars: $" + revenue);
         }
-
-        System.out.println("Total number of cars sold of type: "+charactetistic+" is "+numCarsSold);
-        System.out.println("Revenue: "+ revenue);
-
         
     }
 
-    public void showRevenue(int charactetistic)
+    /**
+     * 
+     * @param charactetistic
+     */
+    public void showRevenue(int characteristic)
     {
-        if(charactetistic <= 0)
-        {
-            System.out.println("Invalid ID");
-            return;
-        }
-
         int numCarsSold = 0;
         double revenue = 0;
 
-        for(Car car: carsSold)
-        {
-            if(car.getID() == charactetistic)
-            {
+        for (Car car : carsSold) {
+            if (car.getID() == characteristic) {
                 numCarsSold++;
                 revenue += car.getPrice();
             }
         }
 
-        if(numCarsSold == 0 || numCarsSold == 0)
-        {
-            System.out.println("ID not found in the register");
-            return;
+        if (numCarsSold == 0) {
+            System.out.println("No cars with ID " + characteristic + " were sold.");
+        } else {
+            System.out.println();
+            System.out.println("Total number of cars sold with ID " + characteristic + ": " + numCarsSold);
+            System.out.println("Total revenue from cars with ID " + characteristic + ": $" + revenue);
         }
-
-        System.out.println("Total number of cars sold of ID: "+charactetistic+" is "+numCarsSold);
-        System.out.println("Revenue: "+revenue);
-
     }
 
 }
