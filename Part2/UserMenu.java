@@ -19,6 +19,7 @@ public class UserMenu
     private String userFile;
     private String carFile;
     private Log log = new Log();
+    private RegisterCarsPurchased purchasedCars;
 
     /**
      * Constructs a new object of UserMenu
@@ -252,13 +253,13 @@ public class UserMenu
                         double discountAmount = 0.10 * totalPrice; // 10% discount
                         totalPrice -= discountAmount;
                         System.out.println("MinerCar Membership applied: -$" + discountAmount); 
-                    
+                        chosenCar.setPrice(totalPrice);
                     }
                      // state taxes
                     double taxAmount = totalPrice * 0.0625; // 6.25% tax
-                    totalPrice += taxAmount;
+                    double finalSalePrice = totalPrice + taxAmount;
                     System.out.println("Tax: $" + taxAmount);
-                    System.out.println("Total: $" + totalPrice);
+                    System.out.println("Total: $" + finalSalePrice);
 
                     // final price including taxes
                     //double finalPrice = totalPrice + stateTaxes;
@@ -273,6 +274,10 @@ public class UserMenu
 
                     // add purchased car to users purchased car list
                     currentUser.getPurchasedCars().add(chosenCar);
+
+                    // add to the register
+                    RegisterCarsPurchased.addPurchasedCar(chosenCar);
+
 
                     // update number of cars purchased by user
                     currentUser.setCarsPurchased(currentUser.getCarsPurchased() + 1);

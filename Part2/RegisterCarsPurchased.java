@@ -1,17 +1,33 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class RegisterCarsPurchased 
 {
-    List<Car> carsSold;
+    private static List<Car> carsSold = new ArrayList<>();
+
 
     public RegisterCarsPurchased(List<Car> carsSold)
     {
         this.carsSold = carsSold;
     }
 
+    public static void addPurchasedCar(Car car)
+    {
+        if(car != null)
+        {
+            carsSold.add(car);
+        }
+    }
+
+    public List<Car> getPurchasedCars(Car car)
+    {
+        return Collections.unmodifiableList(carsSold);
+    }
+
     public void showRevenue(String charactetistic)
     {
-        if(charactetistic.length() < 3)
+        if(charactetistic.isEmpty())
         {
             System.out.println("Invalid type");
             return;
@@ -29,7 +45,15 @@ public class RegisterCarsPurchased
             }
         }
 
-        if()
+        if(numCarsSold == 0)
+        {
+            System.out.println("Car type not found in the register");
+            return;
+        }
+
+        System.out.println("Total number of cars sold of type: "+charactetistic+" is "+numCarsSold);
+        System.out.println("Revenue: "+ revenue);
+
         
     }
 
@@ -60,6 +84,8 @@ public class RegisterCarsPurchased
         }
 
         System.out.println("Total number of cars sold of ID: "+charactetistic+" is "+numCarsSold);
+        System.out.println("Revenue: "+revenue);
+
     }
 
 }

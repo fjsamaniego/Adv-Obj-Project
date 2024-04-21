@@ -15,7 +15,7 @@ public class AdminMenu
     private String carFile;
     private Log logger = new Log();
     private int changesMade = 0;
-    private List<Car> purchasedCarsByUsers;
+    private List<Car> purchasedCars;
 
     /**
      * 
@@ -24,13 +24,14 @@ public class AdminMenu
      * @param userFile
      * @param carFile
      */
-    public AdminMenu(List<Car> cars, List<User> users, String userFile, String carFile, List<Car> purchasedCarsByUsers)
+    public AdminMenu(List<Car> cars, List<User> users, String userFile, String carFile)
     {
         this.cars = cars;
         this.users = users;
         this.userFile = userFile;
         this.carFile = carFile;
         this.scan = new Scanner(System.in);
+        this.purchasedCars = 
     }
 
     /**
@@ -177,8 +178,7 @@ public class AdminMenu
              }
         }
     
-        System.out.println("Number of cars sold for ID " + id + ": " + carsSold);
-        System.out.println("Revenue for ID " + id + ": $" + revenue);
+        
     }
 
     private void getRevenueByCarType() {
