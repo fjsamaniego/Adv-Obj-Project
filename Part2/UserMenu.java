@@ -19,7 +19,7 @@ public class UserMenu
     private String userFile;
     private String carFile;
     private Log log = new Log();
-    private RegisterCarsPurchased purchasedCars;
+    private RegisterCarsPurchased purchasedCarsByUsers;
 
     /**
      * Constructs a new object of UserMenu
@@ -279,7 +279,8 @@ public class UserMenu
                     currentUser.getPurchasedCars().add(chosenCar);
 
                     // add to the register
-                    RegisterCarsPurchased.addPurchasedCar(chosenCar);
+                    RegisterCarsPurchased register = new RegisterCarsPurchased(carsSold);
+                    register.addPurchasedCarsByUsers(chosenCar);
 
 
                     // update number of cars purchased by user
