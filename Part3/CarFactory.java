@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * File to create new car and set car fields from file to variables.
@@ -12,21 +14,21 @@ public class CarFactory
      * @param carInformation an array containing car information based on car file order
      * @return new car object
      */
-    public static Car createCar(String[] carInformation)
+    public static Car createCar(Map<String,String> carInformation)
     {
-        int capacity = Integer.parseInt(carInformation[0]);
-        String carType = carInformation[1];
-        int carsAvailable = Integer.parseInt(carInformation[2]);
-        String condition = carInformation[3];
-        String color = carInformation[4];
-        int id = Integer.parseInt(carInformation[5]);
-        int year = Integer.parseInt(carInformation[6]);
-        double price = Double.parseDouble(carInformation[7]);
-        String transmission = carInformation[8];
-        String vin = carInformation[9];
-        String fuelType = carInformation[10];
-        String model = carInformation[11];
-        String hasTurbo = carInformation[12].isEmpty() ? "No" : carInformation[12];
+        int capacity = Integer.parseInt(carInformation.get("Capacity"));
+        String carType = carInformation.get("Car Type");
+        int carsAvailable = Integer.parseInt(carInformation.get("Cars Available"));
+        String condition = carInformation.get("Condition");
+        String color = carInformation.get("Color");
+        int id = Integer.parseInt(carInformation.get("ID"));
+        int year = Integer.parseInt(carInformation.get("Year"));
+        double price = Double.parseDouble(carInformation.get("Price"));
+        String transmission = carInformation.get("Transmission");
+        String vin = carInformation.get("VIN");
+        String fuelType = carInformation.get("Fuel Type");
+        String model = carInformation.get("Model");
+        String hasTurbo = carInformation.get("hasTurbo").isEmpty() ? "No" : carInformation.get("hasTurbo");
 
         switch (carType.toLowerCase())
          {

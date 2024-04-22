@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * CarDataLoad reads through car_data csv and find and sets Car attributes
@@ -18,17 +20,27 @@ public class CarDataLoad implements DataLoad<Car>
      * @param file The path of the csv file to load data from.
      * @return A list containing Car objects loaded from the csv file
      */
-    @Override
+
     public List<Car> loadData(String file)
     {
         List<Car> cars = new ArrayList<>();
+        
+
         try(BufferedReader br = new BufferedReader(new FileReader(file)))
         {
-            br.readLine();
+            String[] headers = br.readLine().split(",");
+            
             String line = br.readLine();
             while(line != null)
             {
-                String []carInformation = line.split(",",-1);
+                Map<String, String> carInformation = new HashMap<>();
+                String []details = line.split(",",-1);
+                int i = 0;
+                for(String header:headers)
+                {
+                    carInformation.put(header,details[i]);
+                    i++;
+                }
                 Car car = CarFactory.createCar(carInformation);
 
                 cars.add(car);
@@ -43,6 +55,32 @@ public class CarDataLoad implements DataLoad<Car>
 
         return cars;
     }
+
+    // @Override
+    // public List<Car> loadData(String file)
+    // {
+    //     List<Car> cars = new ArrayList<>();
+    //     try(BufferedReader br = new BufferedReader(new FileReader(file)))
+    //     {
+    //         br.readLine();
+    //         String line = br.readLine();
+    //         while(line != null)
+    //         {
+    //             String []carInformation = line.split(",",-1);
+    //             Car car = CarFactory.createCar(carInformation);
+
+    //             cars.add(car);
+    //             line = br.readLine();
+    //         }
+
+    //     }
+    //     catch(IOException e)
+    //     {
+    //         e.printStackTrace();
+    //     }
+
+    //     return cars;
+    // }
 
     /**
      * Updates car data in csv file.
