@@ -38,12 +38,12 @@ public class RunShop
     /**
      * car data file path
      */
-    private static String car_data_file = "updated_user_data.csv";
+    private static String car_data_file = "updatedCarData.csv";
 
     /**
      * use data file path
      */
-    private static String user_data_file = "updatedCarData.csv";
+    private static String user_data_file = "updated_user_data.csv";
 
     static
     {
@@ -51,14 +51,14 @@ public class RunShop
         * Loading all the users from the csv file 
         */
         UserDataLoad loadU = new UserDataLoad();
-        users = loadU.loadData(car_data_file);
+        users = loadU.loadData(user_data_file);
         authenticate = new UserAuthentication(users);
 
         /** 
         * Loading all the cars from the csv file 
         */
         CarDataLoad loadC = new CarDataLoad();
-        cars = loadC.loadData(user_data_file);
+        cars = loadC.loadData(car_data_file);
     }
 
     /**
