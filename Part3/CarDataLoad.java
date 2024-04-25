@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,21 +15,22 @@ import java.util.HashMap;
  */
 public class CarDataLoad implements DataLoad<Car>
 {
+
     /**
      * Loads car data from csv file.
      * 
      * @param file The path of the csv file to load data from.
      * @return A list containing Car objects loaded from the csv file
      */
-
-    public List<Car> loadData(String file)
+    @Override
+    public List<Car> loadData(String carFile)
     {
         List<Car> cars = new ArrayList<>();
         
 
-        try(BufferedReader br = new BufferedReader(new FileReader(file)))
+        try(BufferedReader br = new BufferedReader(new FileReader(carFile)))
         {
-            String[] headers = br.readLine().split(",");
+            String[] headers = getHeaders(cars, carFile);
             
             String line = br.readLine();
             while(line != null)
@@ -56,31 +58,22 @@ public class CarDataLoad implements DataLoad<Car>
         return cars;
     }
 
-    // @Override
-    // public List<Car> loadData(String file)
-    // {
-    //     List<Car> cars = new ArrayList<>();
-    //     try(BufferedReader br = new BufferedReader(new FileReader(file)))
-    //     {
-    //         br.readLine();
-    //         String line = br.readLine();
-    //         while(line != null)
-    //         {
-    //             String []carInformation = line.split(",",-1);
-    //             Car car = CarFactory.createCar(carInformation);
+    @Override
+    public String[] getHeaders(List<Car> cars, String filePath)
+    {
+        String[] headers = null;
+        try(BufferedReader br =  new BufferedReader(new FileReader(filePath)))
+        {   
+            headers = br.readLine().split(",");
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
 
-    //             cars.add(car);
-    //             line = br.readLine();
-    //         }
+        return headers;
+    }
 
-    //     }
-    //     catch(IOException e)
-    //     {
-    //         e.printStackTrace();
-    //     }
-
-    //     return cars;
-    // }
 
     /**
      * Updates car data in csv file.
@@ -89,11 +82,18 @@ public class CarDataLoad implements DataLoad<Car>
      * @param file The path of the csv file to update.
      */
     @Override
-    public void updateData(List<Car> cars, String file)
+    public void updateData(List<Car> cars, String carFile)
     {
-        try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
+        String[] headers = getHeaders(cars, carFile);
+        if(headers==null)
         {
-            wr.write("Capacity,Car Type,Cars Available,Condition,Color,ID,Year,Price,Transmission,VIN,Fuel Type,Model,hasTurbo\n");
+            System.out.println("Headers were not gotten");
+            return;
+        }
+
+        try(BufferedWriter wr = new BufferedWriter(new FileWriter(carFile)))
+        {
+            wr.write(String.join(",", headers));
 
             for(Car car : cars)
             {

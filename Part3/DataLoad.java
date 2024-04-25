@@ -17,6 +17,8 @@ public interface DataLoad<T>
      */
     List<T> loadData(String filePath) throws IOException;
 
+
+
     
     /**
      * Updates the data in file.
@@ -25,4 +27,6 @@ public interface DataLoad<T>
      * @param filePath the path of file to update.
      */
     void updateData(List<T> data, String filePath);
+
+    String[] getHeaders(List<T> data, String filePath);
 }
