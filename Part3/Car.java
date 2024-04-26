@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.HashMap;
+
 /**
  * This class represents a Car and its atrributes. 
  * Also has car types extending from Car class.
@@ -301,8 +304,29 @@ public class Car
     {
         return String.format("%-5s %-11s %-18s %-12s %-8s %-9s %-11s %-15s %-5s %-8s %s %-5s",
             id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable, hasTurbo);
-    }   
+    } 
+    
+    //New method
+    public Map<String, String> toMap() 
+    {
+        Map<String, String> carInfoMap = new HashMap<>();
+        carInfoMap.put("Capacity", String.valueOf(getCapacity()));
+        carInfoMap.put("Car Type", getCarType());
+        carInfoMap.put("Cars Available", String.valueOf(getCarsAvailable()));
+        carInfoMap.put("Condition", getCondition());
+        carInfoMap.put("Color", getColor());
+        carInfoMap.put("ID", String.valueOf(getID()));
+        carInfoMap.put("Year", String.valueOf(getYear()));
+        carInfoMap.put("Price", String.valueOf(getPrice()));
+        carInfoMap.put("Transmission", getTransmission());
+        carInfoMap.put("VIN", getVin());
+        carInfoMap.put("Fuel Type", getFuelType());
+        carInfoMap.put("Model", getModel());
+        carInfoMap.put("hasTurbo", getHasTurbo());
+        return carInfoMap;
+    }
 }
+
 
 /**
  * Car type class Sedan extending from Car class

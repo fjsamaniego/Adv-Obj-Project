@@ -27,15 +27,19 @@ public class CarDataLoad implements DataLoad<Car>
     {
         List<Car> cars = new ArrayList<>();
         
-
         try(BufferedReader br = new BufferedReader(new FileReader(carFile)))
         {
-            String[] headers = getHeaders(cars, carFile);
+            String[] headers = br.readLine().split(",");
             
             String line = br.readLine();
+            
             while(line != null)
             {
+                if (line.trim().isEmpty()) {
+                    continue; // Skip the empty line and move to the next
+                }
                 Map<String, String> carInformation = new HashMap<>();
+
                 String []details = line.split(",",-1);
                 int i = 0;
                 for(String header:headers)
@@ -85,39 +89,29 @@ public class CarDataLoad implements DataLoad<Car>
     public void updateData(List<Car> cars, String carFile)
     {
         String[] headers = getHeaders(cars, carFile);
-        if(headers==null)
-        {
-            System.out.println("Headers were not gotten");
-            return;
-        }
+        
 
         try(BufferedWriter wr = new BufferedWriter(new FileWriter(carFile)))
         {
-            wr.write(String.join(",", headers));
+            wr.write(String.join(",", headers)+"\n");
 
-            for(Car car : cars)
+            for (Car car : cars) 
             {
-                String newLine = String.format("%d,%s,%d,%s,%s,%d,%d,%.2f,%s,%s,%s,%s,%s\n",
-                car.getCapacity(), 
-                car.getCarType(), 
-                car.getCarsAvailable(),
-                car.getCondition(), 
-                car.getColor(), 
-                car.getID(), 
-                car.getYear(),
-                car.getPrice(), 
-                car.getTransmission(), 
-                car.getVin(), 
-                car.getFuelType(),
-                car.getModel(), 
-                car.getHasTurbo());
+                Map<String, String> carMap = car.toMap();
+                //System.out.println("**********************"+carMap.get("Car Type"));
+                List<String> info = new ArrayList<>();
 
-                wr.write(newLine);
+                for (String header : headers)
+                    info.add(carMap.getOrDefault(header, "Not found"));
+
+                wr.write(String.join(",", info));
+                wr.newLine();
             }
-        }
+        }    
         catch (IOException e)
         {
             System.out.println("Error writing the new data");
         }
+        
     }
 }

@@ -10,7 +10,6 @@ public class CarFactory
 {
     /**
      * Sets a new Car object based on the provided car information.
-     * 
      * @param carInformation an array containing car information based on car file order
      * @return new car object
      */

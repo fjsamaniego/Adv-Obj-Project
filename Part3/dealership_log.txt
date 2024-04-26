@@ -146,3 +146,18 @@
 17:53:30 04/22/24 - neo Displayed all cars
 11:11:33 04/23/24 - Admin Logged in
 11:11:52 04/23/24 - Admin deleted 2 cars of ID: 100
+18:31:37 04/25/24 - Admin Logged in
+18:32:49 04/25/24 - Admin added a car of ID: 222222
+18:53:28 04/25/24 - neo Logged in
+18:53:30 04/25/24 - neo Displayed all cars
+18:55:08 04/25/24 - Admin Logged in
+18:55:58 04/25/24 - Admin added a car of ID: 103
+16:08:36 04/26/24 - Admin Logged in
+16:09:17 04/26/24 - Admin Logged in
+16:10:22 04/26/24 - Admin added a car of ID: 123456
+16:17:17 04/26/24 - Admin Logged in
+16:18:10 04/26/24 - Admin added a car of ID: 123456
+16:18:45 04/26/24 - Admin Logged in
+16:19:28 04/26/24 - Admin added a car of ID: 123456
+16:22:35 04/26/24 - Admin Logged in
+16:23:32 04/26/24 - Admin added a car of ID: 123456
