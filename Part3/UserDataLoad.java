@@ -54,6 +54,22 @@ public class UserDataLoad implements DataLoad<User>
         return users;
     }
 
+    @Override
+    public String[] getHeaders(List<User> users, String filePath)
+    {
+        String[] headers = null;
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath)));
+        {
+            headers = br.readLine().split(",");
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return headers;
+    }
+
     /**
      * 
      */

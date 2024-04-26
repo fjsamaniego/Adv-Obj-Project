@@ -17,8 +17,6 @@ public interface DataLoad<T>
      */
     List<T> loadData(String filePath) throws IOException;
 
-
-
     
     /**
      * Updates the data in file.
