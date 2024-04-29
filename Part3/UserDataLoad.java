@@ -3,8 +3,11 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.io.FileWriter;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * The class UserDataLoad is used to create the list of Users from
@@ -18,29 +21,33 @@ public class UserDataLoad implements DataLoad<User>
      * 
      */
     @Override
-    public List<User> loadData(String file)
+    public List<User> loadData(String userFile)
     {
         List<User> users = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(file)))
+
+        try(BufferedReader br = new BufferedReader(new FileReader(userFile)))
         {
-            br.readLine();
+            String[] headers = br.readLine().split(",");
+
             String line = br.readLine();
+
             while(line != null)
             {
-                String []userInfo = line.split(",");
+                if(line.trim().isEmpty())
+                    continue;
 
-                double moneyAvailable = Double.parseDouble(userInfo[0]);
-                String password = userInfo[1];
-                String lastName = userInfo[2];
-                int id = Integer.parseInt(userInfo[3]);
-                int carsPurchased = Integer.parseInt(userInfo[4]);
-                String firstName = userInfo[5];
-                String username = userInfo[6];
-                boolean minerCarsMembership = Boolean.parseBoolean(userInfo[7]);
+                Map<String, String> userInfo = new HashMap<>();
 
-                User user = new User(id, firstName, lastName,
-                moneyAvailable, carsPurchased, minerCarsMembership,
-                username, password);
+                String []details = line.split(",");
+                int i = 0;
+
+                for(String header: headers)
+                {
+                    userInfo.put(header, details[i]);
+                    i++;
+                }
+
+                User user = UserFactory.createUser(userInfo);
 
                 users.add(user);
                 line = br.readLine();
@@ -58,7 +65,7 @@ public class UserDataLoad implements DataLoad<User>
     public String[] getHeaders(List<User> users, String filePath)
     {
         String[] headers = null;
-        try(BufferedReader br = new BufferedReader(new FileReader(filePath)));
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath)))
         {
             headers = br.readLine().split(",");
         }
@@ -74,25 +81,24 @@ public class UserDataLoad implements DataLoad<User>
      * 
      */
     @Override
-    public void updateData(List<User> users, String file) 
+    public void updateData(List<User> users, String userFile) 
     {
-        try(BufferedWriter wr = new BufferedWriter(new FileWriter(file)))
+        String[] headers = getHeaders(users, userFile);
+
+        try(BufferedWriter wr = new BufferedWriter(new FileWriter(userFile)))
         {
-            wr.write("Money Available,Password,Last Name,ID,Cars Purchased,First Name,Username,MinerCars Membership\n");
+            wr.write(String.join(",",headers)+"\n");
 
             for(User user : users)
             {
-                String newLine = String.format("%.2f,%s,%s,%d,%d,%s,%s,%s\n", 
-                user.getMoneyAvailable(),
-                user.getPassword(),
-                user.getLastName(),
-                user.getID(),
-                user.getCarsPurchased(), 
-                user.getFirstName(), 
-                user.getUsername(), 
-                user.getMinerCarsMembership() ? "True" : "False");
+                Map<String, String> userMap = user.toMap();
+                List<String> info = new ArrayList<>();
 
-                wr.write(newLine);
+                for(String header : headers)
+                    info.add(userMap.getOrDefault(header, "Not found"));
+
+                wr.write(String.join(",", info));
+                wr.newLine();
             }
         }
         catch (IOException e)
