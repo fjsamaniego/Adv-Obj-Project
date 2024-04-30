@@ -65,6 +65,7 @@ public class AdminMenu
                         break;
                     case 3:
                         removeCar();
+                        break;
                     case 4:
                         addMoreUsers();
                         break;
@@ -97,28 +98,36 @@ public class AdminMenu
             System.out.println("Please enter the information of the car. ");
             System.out.println();
 
-            newInformation.add(userInput("Enter capacity:"));
-            newInformation.add(userInput("Enter car type:"));
-            newInformation.add(userInput("Enter availability:"));
-            newInformation.add(userInput("Enter the condition:"));
-            newInformation.add(userInput("Enter the color:"));
-            newInformation.add(userInput("Enter the ID:"));
-            newInformation.add(userInput("Enter the year:"));
-            newInformation.add(userInput("Enter the price:"));
-            newInformation.add(userInput("Enter the type of transmission:"));
-            newInformation.add(userInput("Enter the vin:"));
-            newInformation.add(userInput("Enter the type of fuel:"));
-            newInformation.add(userInput("Enter the model:"));
-            newInformation.add(userInput("Enter the if it has turbo: (Yes/No)"));
+            newInformation.add(CarInput("Enter capacity:", "capacity"));
+            newInformation.add(Input("Enter car type:"));
+            newInformation.add(CarInput("Enter availability:", "availability"));
+            newInformation.add(CarInput("Enter the condition:", "condition"));
+            newInformation.add(Input("Enter the color:"));
+            newInformation.add(CarInput("Enter the ID:", "ID"));
+            newInformation.add(CarInput("Enter the year:", "year"));
+            newInformation.add(CarInput("Enter the price:", "price"));
+            newInformation.add(CarInput("Enter the type of transmission:", "transmission"));
+            newInformation.add(CarInput("Enter the vin:", "vin"));
+            newInformation.add(CarInput("Enter the type of fuel:", "fuel type"));
+            newInformation.add(Input("Enter the model:"));
+            newInformation.add(CarInput("Enter the if it has turbo: (Yes/No)", "turbo"));
 
             Car newCar = CarFactory.createCar(newInformation);
             cars.add(newCar);
 
-            System.out.println("Do you want to add another car (Y/N)");
-            String answer = scan.next();
+            String answer;
 
-            if(answer.equalsIgnoreCase("N"))
+            do{
+                System.out.println("Do you want to add another car (Y/N)");
+                answer = scan.nextLine().trim();
+            }
+            while(answer.isEmpty() || (!answer.equalsIgnoreCase("N") && !answer.equalsIgnoreCase("Y")));
+
+            if(answer.equalsIgnoreCase("N")){
                 addingCars = false;
+                System.out.println("Invalid response, please enter 'Y' for Yes or 'N' for No.");
+            }
+
             
             logger.writeToLog("added a car of ID: "+ newCar.getID());
         }
@@ -131,7 +140,13 @@ public class AdminMenu
      * @param text Prompt to display to user
      * @return returns user input
      */
-    private String userInput(String text)
+    private String CarInput(String text, String request)
+    {
+        ValidateCarInput caller = new ValidateCarInput();
+        return caller.carInput(text, request);
+    }
+
+    private String Input(String text)
     {
         String input;
         do
@@ -140,12 +155,16 @@ public class AdminMenu
             input = scan.nextLine().trim();
 
             if(input.isEmpty())
+            {
                 System.out.println("Please enter a valid value.");
+            }
         }
         while(input.isEmpty());
+
         return input;
     }
 
+    
     /**
      * 
      */
@@ -265,25 +284,41 @@ public class AdminMenu
             System.out.println("Please enter all the information of the user. ");
             System.out.println();
 
-            newInfo.add(userInput("Enter money available:"));
-            newInfo.add(userInput("Enter password:"));
-            newInfo.add(userInput("Enter user last name:"));
-            newInfo.add(userInput("Enter user ID:"));
-            newInfo.add(userInput("Enter number of cars purchased:"));
-            newInfo.add(userInput("Enter user first name:"));
-            newInfo.add(userInput("Enter username:"));
-            newInfo.add(userInput("Enter whether user has MinerCars membership: (TRUE/FALSE)"));
+            newInfo.add(UserInput("Enter money available:", "money"));
+            newInfo.add(UserInput("Enter password:", "password"));
+            newInfo.add(Input("Enter user last name:"));
+            newInfo.add(UserInput("Enter user ID:", "ID"));
+            newInfo.add(UserInput("Enter number of cars purchased:", "cars purchased"));
+            newInfo.add(Input("Enter user first name:"));
+            newInfo.add(UserInput("Enter username:", "username"));
+            newInfo.add(UserInput("Enter whether user has MinerCars membership: (TRUE/FALSE)", "membership"));
 
             User newUser = UserFactory.createUser(newInfo);
             users.add(newUser);
 
-            System.out.println("Do you want to add another user (Y/N)");
-            String answer = scan.next();
+            String answer;
 
-            if(answer.equalsIgnoreCase("N"))
+            do{
+                System.out.println("Do you want to add another user (Y/N)");
+                answer = scan.nextLine().trim();
+            }
+            while(answer.isEmpty() || (!answer.equalsIgnoreCase("N") && !answer.equalsIgnoreCase("Y")));
+            
+            if(answer.equalsIgnoreCase("N")){
                 addingUser = false;
+                System.out.println("Invalid response, please enter 'Y' for Yes or 'N' for No.");
+            }
+
+            logger.writeToLog("added user: "+ newUser.getUsername());
         }
 
         new UserDataLoad().updateData(users, userFile); // updates user file
     }
+
+    private String UserInput(String text, String request)
+    {
+        ValidateUserInput caller = new ValidateUserInput();
+        return caller.userInput(text, request);
+    }
+
 }

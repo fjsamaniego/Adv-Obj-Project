@@ -214,7 +214,7 @@ public class UserMenu
      * the desired car. Then the purchase is made, and changes to the availability of the car. 
      * user money are updated
      */
-    private void purchaseCar()
+    public void purchaseCar()
     {
         System.out.println();
         System.out.println("Enter the ID of the car you would like to purchase:");
@@ -307,7 +307,7 @@ public class UserMenu
      * Here we just show the ticket of the user's purchased cars, 
      * as per the purchased cars list.
      */
-    private void viewTickets()
+    public void viewTickets()
     {
         // if current user has an empty purchased cars list
         if (currentUser.getPurchasedCars().isEmpty()) {
@@ -334,7 +334,7 @@ public class UserMenu
      * Method first checks if user has purchased car. If true, user can return car and gets refunded.
      * The car availability is updated and number of cars purchased by user is updated.
      */
-    private void returnCar(){
+    public void returnCar(){
         System.out.println();
         System.out.println("Enter the ID of the car you would like to return.");
         int choice = scan.nextInt();

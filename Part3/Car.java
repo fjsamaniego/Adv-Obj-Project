@@ -324,6 +324,7 @@ public class Car
         carInfoMap.put("Fuel Type", getFuelType());
         carInfoMap.put("Model", getModel());
         carInfoMap.put("hasTurbo", getHasTurbo());
+        
         return carInfoMap;
     }
 }

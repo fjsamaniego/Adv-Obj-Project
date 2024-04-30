@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +68,10 @@ public class UserMenuTest {
         // add a purchased car to the currentUser's list
         currentUser.getPurchasedCars().add(cars.get(2));
 
-        // Call viewTickets
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // call viewTickets
         userMenu.viewTickets();
 
         // that the printed output contains the ticket information

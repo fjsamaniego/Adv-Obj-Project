@@ -161,6 +161,7 @@
 16:19:28 04/26/24 - Admin added a car of ID: 123456
 16:22:35 04/26/24 - Admin Logged in
 16:23:32 04/26/24 - Admin added a car of ID: 123456
+<<<<<<< HEAD
 13:55:51 04/29/24 - jasonbourne Logged in
 14:00:04 04/29/24 - jasonbourne Purchased a car
 14:21:22 04/29/24 - jasonbourne Viewed ticket of purchased car
@@ -169,3 +170,8 @@
 14:28:15 04/29/24 - Admin deleted 3 cars of ID: 123456
 14:34:28 04/29/24 - Admin Logged in
 14:34:39 04/29/24 - Admin deleted 1car of ID: 123456
+=======
+17:49:45 04/29/24 - Admin Logged in
+17:58:37 04/29/24 - Admin added a car of ID: 123
+>>>>>>> bd2ae017b6bffcc5f4342e8e690db57e536453c5
+21:24:29 04/29/24 - john Viewed ticket of purchased car

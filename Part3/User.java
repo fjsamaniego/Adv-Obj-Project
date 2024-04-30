@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Map;
+import java.util.HashMap;
 /**
  * The User class extends the Person class and represents the user and all 
  * their attributes and functions
@@ -179,5 +180,20 @@ public class User extends Person
         return String.format("%-5s %-15s %-18s %-10s",
             userID, firstName, lastName, moneyAvailable);
     }
+    //New method
+    public Map<String, String> toMap()
+    {
+        Map<String, String> userInfoMap = new HashMap<>();
+        userInfoMap.put("Money Available", String.valueOf(getMoneyAvailable()));
+        userInfoMap.put("Password", getPassword());
+        userInfoMap.put("Last Name", getLastName());
+        userInfoMap.put("ID", String.valueOf(getID()));
+        userInfoMap.put("Cars Purchased", String.valueOf(getCarsPurchased()));
+        userInfoMap.put("First Name", getFirstName());
+        userInfoMap.put("Username", getUsername());
+        userInfoMap.put("MinerCars Membership", String.valueOf(getMinerCarsMembership()));
 
+        return userInfoMap;
+    }
 }
+

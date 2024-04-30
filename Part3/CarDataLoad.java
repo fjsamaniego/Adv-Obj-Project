@@ -35,18 +35,20 @@ public class CarDataLoad implements DataLoad<Car>
             
             while(line != null)
             {
-                if (line.trim().isEmpty()) {
+                if (line.trim().isEmpty())
                     continue; // Skip the empty line and move to the next
-                }
+
                 Map<String, String> carInformation = new HashMap<>();
 
                 String []details = line.split(",",-1);
                 int i = 0;
+
                 for(String header:headers)
                 {
                     carInformation.put(header,details[i]);
                     i++;
                 }
+                
                 Car car = CarFactory.createCar(carInformation);
 
                 cars.add(car);
@@ -98,7 +100,6 @@ public class CarDataLoad implements DataLoad<Car>
             for (Car car : cars) 
             {
                 Map<String, String> carMap = car.toMap();
-                //System.out.println("**********************"+carMap.get("Car Type"));
                 List<String> info = new ArrayList<>();
 
                 for (String header : headers)
