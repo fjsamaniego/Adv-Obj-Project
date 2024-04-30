@@ -14,11 +14,11 @@ public class ValidateUserInput
 
             if(input.isEmpty())
             {
-                System.out.println("Please enter a valid value.");
+                System.out.println("Please enter a valid value.\n");
                 continue;
             }
             if(!validateInput(input, request))
-                System.out.println("Please enter a valid input.");
+                System.out.println("Please enter a valid input.\n");
         }
         while(input.isEmpty() || !validateInput(input, request));
         return input;

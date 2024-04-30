@@ -91,18 +91,17 @@ public class RunShop
                 if(choice == 1)
                 {
                     userLogin();
-                    inSystem = false;
                 }
                 else if(choice == 2)
                 {
                     adminLogin();
-                    inSystem = false;
                 }                
                 // if user chooses option 3
                 else if(choice == 3)
                 {
-                    System.exit(0);
+                    System.out.println("Exiting program...");
                     inSystem = false;
+                    break;
                 }
                 else // error if neither is chosen
                 {
