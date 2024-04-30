@@ -1,9 +1,21 @@
 import java.util.Scanner;
 
+/**
+ * 
+ */
 public class ValidateUserInput 
 {
+    /**
+     * 
+     */
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * 
+     * @param text
+     * @param request
+     * @return
+     */
     public String userInput(String text, String request)
     {
         String input;
@@ -24,6 +36,12 @@ public class ValidateUserInput
         return input;
     }
 
+    /**
+     * 
+     * @param input
+     * @param request
+     * @return
+     */
     private boolean validateInput(String input, String request)
     {
         try 
@@ -50,6 +68,11 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateMoney(String input)
     {
         try{
@@ -63,6 +86,11 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validatePassword(String input)
     {
         if(input.length()<6)
@@ -73,6 +101,11 @@ public class ValidateUserInput
         return true;
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateID(String input)
     {
         try{
@@ -86,6 +119,11 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateCarsPurchased(String input)
     {
         try{
@@ -100,6 +138,11 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateUsername(String input)
     {
         if(input.length()<3)
@@ -110,6 +153,11 @@ public class ValidateUserInput
         return true;
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateMembership(String input)
     {
         return (input.equalsIgnoreCase("true") ||

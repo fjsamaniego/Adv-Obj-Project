@@ -1,9 +1,21 @@
 import java.util.Scanner;
 
+/**
+ * 
+ */
 public class ValidateCarInput
 {
+    /**
+     * 
+     */
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * 
+     * @param text
+     * @param request
+     * @return
+     */
     public String carInput(String text, String request)
     {
         String input;
@@ -26,7 +38,12 @@ public class ValidateCarInput
     }
 
 
-
+    /**
+     * 
+     * @param input
+     * @param request
+     * @return
+     */
     private boolean validateInput(String input, String request)
     {
         try 
@@ -62,6 +79,11 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateCapacity(String input)
     {
         try{
@@ -75,6 +97,11 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateAvailability(String input)
     {
         
@@ -89,12 +116,22 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateCondition(String input)
     {
         return (input.equalsIgnoreCase("used") || 
         input.equalsIgnoreCase("new"));
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateID(String input)
     {
         try{
@@ -108,6 +145,11 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateYear(String input)
     {
         try{
@@ -121,6 +163,11 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validatePrice(String input)
     {
         try{
@@ -134,17 +181,32 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateTransmission(String input)
     {
         return (input.equalsIgnoreCase("automatic") ||
         input.equalsIgnoreCase("manual"));
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateVIN(String input)
     {
         return input.length()>=15;
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateFuelType(String input)
     {
         return (input.equalsIgnoreCase("gasoline") ||
@@ -153,6 +215,11 @@ public class ValidateCarInput
         input.equalsIgnoreCase("electric"));
     }
 
+    /**
+     * 
+     * @param input
+     * @return
+     */
     private boolean validateTurbo(String input)
     {
         return (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no"));
