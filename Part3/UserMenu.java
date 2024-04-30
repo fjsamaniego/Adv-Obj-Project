@@ -90,7 +90,6 @@ public class UserMenu
                         break;
                     case 6:
                         stillLoggedIn = false;
-
                         signOut();
                         break;
                     default:
@@ -128,10 +127,8 @@ public class UserMenu
 
         for(Car car : cars)
         {
-            
             System.out.println(car);
             System.out.println("----");
-            
         }
     }
 
@@ -390,7 +387,9 @@ public class UserMenu
         {
             new UserDataLoad().updateData(users, userFile); // updates user data in updated_user_data.csv
             new CarDataLoad().updateData(cars, carFile); // updates car data in updatedCarData.csv
-            log.writeToLog("Logged out", currentUser); // logs action to dealership_log.txt
         }
+
+        log.writeToLog("Logged out", currentUser); // logs action to dealership_log.txt
+        System.out.println("You have been logged out.");
     }
 }

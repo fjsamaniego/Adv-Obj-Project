@@ -14,8 +14,6 @@ public class AdminMenu
     private String userFile;
     private String carFile;
     private Log logger = new Log();
-    private int changesMade = 0;
-    private List<Car> purchasedCarsByUsers;
 
     /**
      * Constructs menu for managing cars and users. 
@@ -31,7 +29,6 @@ public class AdminMenu
         this.users = users;
         this.userFile = userFile;
         this.carFile = carFile;
-        this.purchasedCarsByUsers = purchasedCarsByUsers;
         this.scan = new Scanner(System.in);
 
     }
@@ -260,7 +257,7 @@ public class AdminMenu
             System.out.println("Do you want to delete another car? (Y/N)");
             String input;
             do
-            {   System.out.println("Please input either Y or N.");
+            {   System.out.println("Please input either Y or N ('Y' for yes and 'N' for no). ");
                 input = scan.nextLine();
             }
             while(!input.equalsIgnoreCase("Y") && !input.equalsIgnoreCase("N"));
@@ -277,6 +274,8 @@ public class AdminMenu
      */
     private void addMoreUsers()
     {
+        System.out.println();
+
         boolean addingUser = true;
         while(addingUser)
         {
@@ -284,11 +283,11 @@ public class AdminMenu
             System.out.println("Please enter all the information of the user. ");
             System.out.println();
 
-            newInfo.add(UserInput("Enter money available:", "money"));
+            newInfo.add(UserInput("Enter money available (number):", "money"));
             newInfo.add(UserInput("Enter password:", "password"));
             newInfo.add(Input("Enter user last name:"));
-            newInfo.add(UserInput("Enter user ID:", "ID"));
-            newInfo.add(UserInput("Enter number of cars purchased:", "cars purchased"));
+            newInfo.add(UserInput("Enter user ID (number):", "ID"));
+            newInfo.add(UserInput("Enter number of cars purchased (number):", "cars purchased"));
             newInfo.add(Input("Enter user first name:"));
             newInfo.add(UserInput("Enter username:", "username"));
             newInfo.add(UserInput("Enter whether user has MinerCars membership: (TRUE/FALSE)", "membership"));
@@ -299,15 +298,14 @@ public class AdminMenu
             String answer;
 
             do{
-                System.out.println("Do you want to add another user (Y/N)");
+                System.out.println("Do you want to add another user (Y/N).");
+                System.out.println("('Y' for yes and 'N' for no)");
                 answer = scan.nextLine().trim();
             }
             while(answer.isEmpty() || (!answer.equalsIgnoreCase("N") && !answer.equalsIgnoreCase("Y")));
             
-            if(answer.equalsIgnoreCase("N")){
+            if(answer.equalsIgnoreCase("N"))
                 addingUser = false;
-                System.out.println("Invalid response, please enter 'Y' for Yes or 'N' for No.");
-            }
 
             logger.writeToLog("added user: "+ newUser.getUsername());
         }
