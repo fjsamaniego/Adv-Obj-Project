@@ -107,7 +107,9 @@ public class RunShop
             catch (InputMismatchException e){
                 System.out.println("Invalid, please enter a number."); // prompts if user enters something other than a number
                 scan.nextLine();
-
+            }
+            catch(MenuException e){
+                System.out.println(e.getMessage());
             }
             catch(MenuException e){
                 System.out.println(e.getMessage());
