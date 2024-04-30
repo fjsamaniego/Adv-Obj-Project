@@ -87,32 +87,28 @@ public class RunShop
                 int choice = scan.nextInt();
                 System.out.println();
 
-                // if user chooses option 1 
-                if(choice == 1)
-                {
-                    userLogin();
-                }
-                else if(choice == 2)
-                {
-                    adminLogin();
-                }                
-                // if user chooses option 3
-                else if(choice == 3)
-                {
-                    System.out.println("Exiting program...");
-                    inSystem = false;
-                    break;
-                }
-                else // error if neither is chosen
-                {
-                    System.out.println("Invalid, please select 1 or 2.");
+                switch (choice) {
+                    case 1:
+                        userLogin();
+                        break;
+                    case 2:
+                        adminLogin();
+                        break;
+                    case 3:
+                        System.out.println("Exiting program...");
+                        inSystem = false;
+                        break;
+                    default:
+                        throw new MenuException("Invalid option selected. Please select 1, 2, or 3.");
                 }
             }
             catch (InputMismatchException e)
             {
                 System.out.println("Invalid, please enter a number."); // prompts if user enters something other than a number
                 scan.nextLine();
-
+            }
+            catch(MenuException e){
+                System.out.println(e.getMessage());
             }
             System.out.println();
         }
