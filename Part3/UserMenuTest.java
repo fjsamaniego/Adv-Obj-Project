@@ -24,7 +24,7 @@ public class UserMenuTest {
         cars.add(new Car(3, "Truck", "Ford", "Used", "Blue", 6, 2019, "Diesel", "Automatic", "VIN91011", 35000.03, 1, "Yes"));
 
         users = new ArrayList<>();
-        currentUser = new User(1, "John", "Doe", 5000.0, 0, false, "john", "password");
+        currentUser = new User(1, "John", "Doe", 5000.0, 0, false, "johndoe", "password");
 
         // UserMenu with the loaded data
         userMenu = new UserMenu(cars, users, currentUser, "userFile", "carFile");
