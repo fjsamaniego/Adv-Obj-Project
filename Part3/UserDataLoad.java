@@ -58,7 +58,7 @@ public class UserDataLoad implements DataLoad<User>
     public String[] getHeaders(List<User> users, String filePath)
     {
         String[] headers = null;
-        try(BufferedReader br = new BufferedReader(new FileReader(filePath)));
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath)))
         {
             headers = br.readLine().split(",");
         }

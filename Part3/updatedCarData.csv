@@ -8,7 +8,7 @@ Capacity,Car Type,Cars Available,Condition,Color,ID,Year,Price,Transmission,VIN,
 5,Pickup,10,New,Black,7,2018,21687.59,Automatic,9OV4OJ6SREVR4V2ZQ,Gasoline,Ford F-150,No
 5,Sedan,4,Used,Silver,8,2004,47923.73,Automatic,LFQPTQR031YTVPP1E,Electric,Honda Accord,No
 5,Sedan,10,New,Black,9,2013,38296.01,Manual,92UZINYP8A0KIJEI9,Diesel,Honda Accord,No
-5,SUV,3,Used,Yellow,10,2006,27068.68,Automatic,0JXHMCBULISXP7E8J,Diesel,Toyota RAV4,No
+5,SUV,2,Used,Yellow,10,2006,24361.811999999998,Automatic,0JXHMCBULISXP7E8J,Diesel,Toyota RAV4,No
 5,Sedan,7,New,Green,11,2008,43403.38,Automatic,5V4P8GNLJ8HHDB083,Hybrid,Nissan Altima,Yes
 5,Pickup,4,New,Red,12,2012,37757.99,Manual,KFPBWW4MWB2JNA559,Gasoline,Toyota Tacoma,No
 5,Pickup,4,Used,Blue,13,2003,33207.49,Automatic,CA31K96L8M3EGKKSE,Hybrid,Chevrolet Silverado,No
@@ -101,4 +101,4 @@ Capacity,Car Type,Cars Available,Condition,Color,ID,Year,Price,Transmission,VIN,
 5,Hatchback,3,New,Black,100,2023,24443.93,Manual,7R8A7T8XAH9BKD0U4,Gasoline,Toyota Prius,No
 4,Sedan,0,New,Blue,101,2024,35000.5,Gasoline,ZZZZZZZZZZZZZZZZ,Gasoline,Honda Civic,Yes
 4,Sedan,3,New,Grey,102,2024,30987.55,Automatic,BJQAK617SPRPN8K5L,Gasoline,Ford Explorer,Yes
-3,Sedan,4,Used,Black,123456,2020,123456.0,Manual,YYYYYYYYYYYYYYYYYYYYYYYY,Gasoline,Prius,No
+3,Sedan,0,Used,Black,123456,2020,123456.0,Manual,YYYYYYYYYYYYYYYYYYYYYYYY,Gasoline,Prius,No
