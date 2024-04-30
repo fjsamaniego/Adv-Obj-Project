@@ -87,9 +87,7 @@ public class RunShop
                 int choice = scan.nextInt();
                 System.out.println();
 
-                // if user chooses option 1 
-                switch (choice) 
-                {
+                switch (choice) {
                     case 1:
                         userLogin();
                         break;
@@ -101,15 +99,13 @@ public class RunShop
                         inSystem = false;
                         break;
                     default:
-                        throw new MenuException("Invalid option selected.");
+                        throw new MenuException("Invalid option selected. Please select 1, 2, or 3.");
                 }
             }
-            catch (InputMismatchException e){
+            catch (InputMismatchException e)
+            {
                 System.out.println("Invalid, please enter a number."); // prompts if user enters something other than a number
                 scan.nextLine();
-            }
-            catch(MenuException e){
-                System.out.println(e.getMessage());
             }
             catch(MenuException e){
                 System.out.println(e.getMessage());

@@ -14,6 +14,8 @@ public class AdminMenu
     private String userFile;
     private String carFile;
     private Log logger = new Log();
+    private int changesMade = 0;
+    private List<Car> purchasedCarsByUsers;
 
     /**
      * Constructs menu for managing cars and users. 
@@ -29,6 +31,7 @@ public class AdminMenu
         this.users = users;
         this.userFile = userFile;
         this.carFile = carFile;
+        this.purchasedCarsByUsers = purchasedCarsByUsers;
         this.scan = new Scanner(System.in);
 
     }
