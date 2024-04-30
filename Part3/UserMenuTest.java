@@ -19,12 +19,12 @@ public class UserMenuTest {
     public void setUp() {
         // cars and users based on the provided data
         cars = new ArrayList<>();
-        cars.add(new Car(1, "SUV", "Toyota", "New", "Black", 5, 2022, "Gas", "Automatic", "VIN1234", 30000.0, 5, "Yes"));
-        cars.add(new Car(2, "Sedan", "Honda", "New", "White", 4, 2021, "Gas", "Automatic", "VIN5678", 25000.0, 1, "No"));
-        cars.add(new Car(3, "Truck", "Ford", "Used", "Blue", 6, 2019, "Diesel", "Automatic", "VIN91011", 35000.0, 1, "Yes"));
+        cars.add(new Car(1, "SUV", "Toyota", "New", "Black", 5, 2022, "Gas", "Automatic", "VIN1234", 30000.35, 5, "Yes"));
+        cars.add(new Car(2, "Sedan", "Honda", "New", "White", 4, 2021, "Gas", "Automatic", "VIN5678", 25000.55, 1, "No"));
+        cars.add(new Car(3, "Truck", "Ford", "Used", "Blue", 6, 2019, "Diesel", "Automatic", "VIN91011", 35000.03, 1, "Yes"));
 
         users = new ArrayList<>();
-        currentUser = new User(1, "John", "Doe", 5000.0, 0, false, "john", "password");
+        currentUser = new User(1, "John", "Doe", 5000.0, 0, false, "johndoe", "password");
 
         // UserMenu with the loaded data
         userMenu = new UserMenu(cars, users, currentUser, "userFile", "carFile");
@@ -34,13 +34,13 @@ public class UserMenuTest {
     @Test
     public void testPurchaseCar() {
         // set currentUser's money available
-        currentUser.setMoneyAvailable(35000.0);
+        currentUser.setMoneyAvailable(35000.03);
 
         // purchase a car
         userMenu.purchaseCar();
 
         // the currentUser's money available is updated
-        assertEquals(2000.0, currentUser.getMoneyAvailable());
+        assertEquals(2000, currentUser.getMoneyAvailable());
 
         // the car's availability is updated
         assertEquals(4, cars.get(0).getCarsAvailable());
@@ -51,13 +51,13 @@ public class UserMenuTest {
         currentUser.getPurchasedCars().add(cars.get(1));
 
         // set currentUser's money available
-        currentUser.setMoneyAvailable(20000.0);
+        currentUser.setMoneyAvailable(20000);
 
         // return the purchased car
         userMenu.returnCar();
 
         // the currentUser's money available is updated
-        assertEquals(5000.0, currentUser.getMoneyAvailable());
+        assertEquals(5000, currentUser.getMoneyAvailable());
 
         // the car's availability is updated
         assertEquals(2, cars.get(1).getCarsAvailable());

@@ -183,3 +183,9 @@
 22:38:02 04/29/24 - neo Logged out
 22:46:14 04/29/24 - neo Logged in
 22:46:18 04/29/24 - neo Logged out
+21:29:48 04/29/24 - Admin Logged in
+21:33:56 04/29/24 - Admin added user: jamesbond
+21:37:47 04/29/24 - Admin added user: janedoe
+21:38:11 04/29/24 - Admin Logged in
+21:38:46 04/29/24 - Admin added user: johndoe
+22:53:46 04/29/24 - johndoe Viewed ticket of purchased car
