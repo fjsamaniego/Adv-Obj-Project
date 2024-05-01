@@ -14,12 +14,14 @@ import java.util.HashMap;
  * the given .csv file, in addition to updating the list and csv file
  * everytime a user purchases a car
  */
-
 public class UserDataLoad implements DataLoad<User>
 {
     /**
-     * 
-     */
+    * Loads user data from the specified user data file.
+    * 
+    * @param userFile the file path of the user data file to load
+    * @return a list containing the loaded user objects
+    */
     @Override
     public List<User> loadData(String userFile)
     {
@@ -61,6 +63,13 @@ public class UserDataLoad implements DataLoad<User>
         return users;
     }
 
+    /**
+    * Retrieves the headers (column names) from the user data file.
+    * 
+    * @param users the list of users (not used in this method, only for consistency with interface)
+    * @param filePath the file path of the user data file
+    * @return an array containing the headers from the user data file
+    */
     @Override
     public String[] getHeaders(List<User> users, String filePath)
     {
@@ -78,8 +87,11 @@ public class UserDataLoad implements DataLoad<User>
     }
 
     /**
-     * 
-     */
+    * Updates the data of users in the specified user file with the provided list of users.
+    * 
+    * @param users the list of users whose data needs to be updated
+    * @param userFile the file path of the user data file to be updated
+    */
     @Override
     public void updateData(List<User> users, String userFile) 
     {
