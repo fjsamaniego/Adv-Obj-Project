@@ -1,9 +1,19 @@
 import java.util.Scanner;
 
+/**
+ *  This class provides methods to validate various inputs related to car
+ */
 public class ValidateCarInput
 {
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * Validates car input based on the specified request.
+     * 
+     * @param text the text to prompt the user for input
+     * @param request the type of input being requested
+     * @return the validated input
+     */
     public String carInput(String text, String request)
     {
         String input;
@@ -27,6 +37,13 @@ public class ValidateCarInput
 
 
 
+    /**
+     * Validates the input based on the specified request.
+     * 
+     * @param input the input to validate
+     * @param request request the type of input being requested
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateInput(String input, String request)
     {
         try 
@@ -62,6 +79,12 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * Validates the capacity input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validateCapacity(String input)
     {
         try{
@@ -75,6 +98,12 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * Validates the availability input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateAvailability(String input)
     {
         
@@ -89,12 +118,24 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * Validates the condition input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateCondition(String input)
     {
         return (input.equalsIgnoreCase("used") || 
         input.equalsIgnoreCase("new"));
     }
 
+    /**
+     * Validates the ID input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateID(String input)
     {
         try{
@@ -108,6 +149,12 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * Validates the year input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateYear(String input)
     {
         try{
@@ -121,6 +168,12 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * Validates the price input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validatePrice(String input)
     {
         try{
@@ -134,17 +187,35 @@ public class ValidateCarInput
         }
     }
 
+    /**
+     * Validates the transmission input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateTransmission(String input)
     {
         return (input.equalsIgnoreCase("automatic") ||
         input.equalsIgnoreCase("manual"));
     }
 
+    /**
+     * Validates the VIN input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateVIN(String input)
     {
         return input.length()>=15;
     }
 
+    /**
+     * Validates the fuel type input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateFuelType(String input)
     {
         return (input.equalsIgnoreCase("gasoline") ||
@@ -153,6 +224,12 @@ public class ValidateCarInput
         input.equalsIgnoreCase("electric"));
     }
 
+    /**
+     * Validates the turbo input.
+     * 
+     * @param input the input to validate
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateTurbo(String input)
     {
         return (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no"));

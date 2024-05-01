@@ -1,9 +1,19 @@
 import java.util.Scanner;
 
+/**
+ * This class provides methods to validate various inputs related to the user
+ */
 public class ValidateUserInput 
 {
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * Validates user input based on the specified request.
+     * 
+     * @param text the text to prompt the user for input
+     * @param request the type of input being requested
+     * @return the validated input
+     */
     public String userInput(String text, String request)
     {
         String input;
@@ -24,6 +34,13 @@ public class ValidateUserInput
         return input;
     }
 
+    /**
+     * Validates the input based on the specified request.
+     * 
+     * @param input the input to validate
+     * @param request request the type of input being requested
+     * @return true if the input is valid, false otherwise
+     */
     private boolean validateInput(String input, String request)
     {
         try 
@@ -50,6 +67,12 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * Validates the money input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validateMoney(String input)
     {
         try{
@@ -63,6 +86,12 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * Validates the password input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validatePassword(String input)
     {
         if(input.length()<6)
@@ -73,6 +102,12 @@ public class ValidateUserInput
         return true;
     }
 
+    /**
+     * Validates the ID input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validateID(String input)
     {
         try{
@@ -86,6 +121,12 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * Validates the car purchased input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validateCarsPurchased(String input)
     {
         try{
@@ -100,6 +141,12 @@ public class ValidateUserInput
         }
     }
 
+    /**
+     * Validates the username input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validateUsername(String input)
     {
         if(input.length()<3)
@@ -110,6 +157,12 @@ public class ValidateUserInput
         return true;
     }
 
+    /**
+     * Validates the membership input.
+     * 
+     * @param input the input to validate
+     * @return if the input is valid, false otherwise
+     */
     private boolean validateMembership(String input)
     {
         return (input.equalsIgnoreCase("true") ||
