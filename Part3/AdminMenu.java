@@ -89,7 +89,7 @@ public class AdminMenu
      * Allows admin to all a car with all the fields required, to the 
      * updated car data file.
      */
-    private void addCar()
+    public void addCar()
     {
         boolean addingCars = true;
         while(addingCars)

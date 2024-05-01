@@ -14,6 +14,7 @@ public class UserMenuTest {
     private List<User> users;
     private User currentUser;
     private UserMenu userMenu;
+    private AdminMenu adminMenu;
 
     @BeforeEach
     public void setUp() {
@@ -61,6 +62,21 @@ public class UserMenuTest {
 
         // the car's availability is updated
         assertEquals(2, cars.get(1).getCarsAvailable());
+    }
+
+    @Test
+    public void testAddCar() {
+        
+        List<Car> cars = new ArrayList<>();
+        List<User> users = new ArrayList<>();
+        List<Car> purchasedCarsByUsers = new ArrayList<>();
+        adminMenu = new AdminMenu(cars, users, "userFile", "carFile", purchasedCarsByUsers);
+
+        // call the addCar() method
+        adminMenu.addCar();
+
+        // the car is added correctly
+        assertEquals(1, cars.size()); 
     }
 
     @Test
