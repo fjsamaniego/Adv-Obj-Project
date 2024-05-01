@@ -307,7 +307,13 @@ public class Car
             id, carType, model, condition, color, capacity, year, fuelType, transmission, price, carsAvailable, hasTurbo);
     } 
     
-    //New method
+    /**
+    * Converts the car object to a map containing car information.
+    * 
+    * @return A map containing car information, where keys represent
+    *         different attributes of the car and values represent
+    *         corresponding values of those attributes.
+    */
     public Map<String, String> toMap() 
     {
         Map<String, String> carInfoMap = new HashMap<>();

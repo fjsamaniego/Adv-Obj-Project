@@ -11,7 +11,7 @@ import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 
-public class Test {
+public class TestClass {
     
     private List<Car> cars;
     private List<User> users;

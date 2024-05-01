@@ -180,7 +180,14 @@ public class User extends Person
         return String.format("%-5s %-15s %-18s %-10s",
             userID, firstName, lastName, moneyAvailable);
     }
-    //New method
+    
+    /**
+    * Converts the user object to a map containing user information.
+    * 
+    * @return A map containing user information, where keys represent
+    *         different attributes of the user and values represent
+    *         corresponding values of those attributes.
+    */
     public Map<String, String> toMap()
     {
         Map<String, String> userInfoMap = new HashMap<>();
