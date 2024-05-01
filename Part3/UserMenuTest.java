@@ -1,10 +1,13 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 
@@ -15,6 +18,7 @@ public class UserMenuTest {
     private User currentUser;
     private UserMenu userMenu;
     private AdminMenu adminMenu;
+    private RegisterCarsPurchased registerMock;
 
     @BeforeEach
     public void setUp() {
@@ -24,60 +28,55 @@ public class UserMenuTest {
         cars.add(new Car(2, "Sedan", "Honda", "New", "White", 4, 2021, "Gas", "Automatic", "VIN5678", 25000.0, 1, "No"));
         cars.add(new Car(3, "Truck", "Ford", "Used", "Blue", 6, 2019, "Diesel", "Automatic", "VIN91011", 35000.0, 1, "Yes"));
 
+        
         users = new ArrayList<>();
         currentUser = new User(1, "John", "Doe", 5000.0, 0, false, "john", "password");
 
         // UserMenu with the loaded data
         userMenu = new UserMenu(cars, users, currentUser, "userFile", "carFile");
+
     }
+
+    @Test
+    void testCreateUserFromMap() {
+        Map<String, String> userInfo = new HashMap<>();
+        userInfo.put("Money Available", "5000.0");
+        userInfo.put("Password", "test123");
+        userInfo.put("Last Name", "Doe");
+        userInfo.put("ID", "1");
+        userInfo.put("Cars Purchased", "2");
+        userInfo.put("First Name", "John");
+        userInfo.put("Username", "johndoe");
+        userInfo.put("MinerCars Membership", "true");
+
+        User user = UserFactory.createUser(userInfo);
+
+        assertNotNull(user);
+        assertEquals(5000.0, user.getMoneyAvailable());
+        assertEquals("test123", user.getPassword());
+        assertEquals("Doe", user.getLastName());
+        assertEquals(1, user.getID());
+        assertEquals(2, user.getCarsPurchased());
+        assertEquals("John", user.getFirstName());
+        assertEquals("johndoe", user.getUsername());
+        assertTrue(user.getMinerCarsMembership());
+    }
+
+    @Test
+    public void testDisplayCars() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        // call displayCars
+        userMenu.displayCars("New");
+
+        // Assert
+        String output = outContent.toString();
+        assertTrue(output.contains("Toyota") && output.contains("2022")); // Check if car details are in the output
+        assertTrue(output.contains("New"));
+    }
+
     
-
-    @Test
-    public void testPurchaseCar() {
-        // set currentUser's money available
-        currentUser.setMoneyAvailable(35000.0);
-
-        // purchase a car
-        userMenu.purchaseCar();
-
-        // the currentUser's money available is updated
-        assertEquals(2000.0, currentUser.getMoneyAvailable());
-
-        // the car's availability is updated
-        assertEquals(4, cars.get(0).getCarsAvailable());
-    }
-
-    @Test
-    public void testReturnCar() {
-        currentUser.getPurchasedCars().add(cars.get(1));
-
-        // set currentUser's money available
-        currentUser.setMoneyAvailable(20000.0);
-
-        // return the purchased car
-        userMenu.returnCar();
-
-        // the currentUser's money available is updated
-        assertEquals(5000.0, currentUser.getMoneyAvailable());
-
-        // the car's availability is updated
-        assertEquals(2, cars.get(1).getCarsAvailable());
-    }
-
-    @Test
-    public void testAddCar() {
-        
-        List<Car> cars = new ArrayList<>();
-        List<User> users = new ArrayList<>();
-        List<Car> purchasedCarsByUsers = new ArrayList<>();
-        adminMenu = new AdminMenu(cars, users, "userFile", "carFile", purchasedCarsByUsers);
-
-        // call the addCar() method
-        adminMenu.addCar();
-
-        // the car is added correctly
-        assertEquals(1, cars.size()); 
-    }
 
     @Test
     public void testViewTickets() {

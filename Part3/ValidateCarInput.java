@@ -70,6 +70,8 @@ public class ValidateCarInput
                     return validateFuelType(input);
                 case "turbo":
                     return validateTurbo(input);
+                case "car type":
+                    return validateCarType(input);
                 default:
                     return false;
 
@@ -208,6 +210,20 @@ public class ValidateCarInput
     private boolean validateVIN(String input)
     {
         return input.length()>=15;
+    }
+
+    /**
+     * Validate the car type input
+     * 
+     * @param input the input to validate
+     * @return true if the inpout is valid, false otherwise
+     */
+    private boolean validateCarType(String input)
+    {
+        return (input.equalsIgnoreCase("sedan") || 
+        input.equalsIgnoreCase("suv") ||
+        input.equalsIgnoreCase("hatchback") ||
+        input.equalsIgnoreCase("pickup"));
     }
 
     /**

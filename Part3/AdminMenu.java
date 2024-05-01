@@ -14,8 +14,6 @@ public class AdminMenu
     private String userFile;
     private String carFile;
     private Log logger = new Log();
-    private int changesMade = 0;
-    private List<Car> purchasedCarsByUsers;
 
     /**
      * Constructs menu for managing cars and users. 
@@ -31,7 +29,6 @@ public class AdminMenu
         this.users = users;
         this.userFile = userFile;
         this.carFile = carFile;
-        this.purchasedCarsByUsers = purchasedCarsByUsers;
         this.scan = new Scanner(System.in);
 
     }
@@ -99,7 +96,7 @@ public class AdminMenu
             System.out.println();
 
             newInformation.add(CarInput("Enter capacity:", "capacity"));
-            newInformation.add(Input("Enter car type:"));
+            newInformation.add(CarInput("Enter car type:", "car type"));
             newInformation.add(CarInput("Enter availability:", "availability"));
             newInformation.add(CarInput("Enter the condition:", "condition"));
             newInformation.add(Input("Enter the color:"));

@@ -138,7 +138,7 @@ public class UserMenu
      * 
      * @param option could be either "New" of "Used"
      */
-    private void displayCars(String option)
+    public void displayCars(String option)
     {
         System.out.println(String.format("%-5s %-15s %-15s %-12s %-8s %-9s %-15s %-10s %-12s %-8s %s",
             "ID", 
